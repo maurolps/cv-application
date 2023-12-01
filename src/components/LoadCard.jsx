@@ -6,7 +6,7 @@ export function LoadCard(props) {
   return (
     <div className="card">
       <div className="card-title" onClick={() => setCollapse(!collapse)}>
-        <p>{props.title}</p><p>+</p>
+        <p>{props.title}</p><p>{collapse ? "-" : "+"}</p>
       </div>
       { collapse && <props.component />}
     </div>
