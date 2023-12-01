@@ -1,7 +1,8 @@
 import { Personal } from "./components/Personal.jsx"
 import { Experience } from "./components/Experience.jsx"
-import './App.css'
+import { LoadCard } from "./components/LoadCard.jsx"
 import { useState } from "react"
+import './App.css'
 
 function App() {
   const [collapse, setCollapse] = useState(false);
@@ -10,17 +11,8 @@ function App() {
     <>
       <p>CV Application</p>
       <div className="container">
-        <div className="card">
-          <div className="card-title" onClick={() => setCollapse(!collapse)}>
-            <p>Experience</p><p>+</p>
-          </div>
-          { collapse && <Experience /> }
-          
-        </div>
-        <div className="card">
-          <p>Personal</p>
-          <Personal />
-        </div>
+        <LoadCard title="Personal Details" component={Personal} />
+        <LoadCard title="Work Experience" component={Experience} />
       </div>
     </>
   )
