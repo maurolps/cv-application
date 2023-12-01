@@ -15,10 +15,6 @@ p {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
   background-color: rgb(77, 77, 77);
   padding-right: 20px;
   padding-left: 20px;
@@ -28,18 +24,30 @@ p {
   user-select: none;
 }
 
-.card label {
-  padding-left: 0.2rem;
-}
-
-.card input {
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-
 .card-title {
   display: flex;
   justify-content: space-between;
+}
+
+.fields-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.fields-container label {
+  padding-left: 0.2rem;
+}
+
+.fields-container input {
+  background-color: #6d6d6d;
+  border: 1px solid;
+  border-color: #747474;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 0.6rem;
+  color: whitesmoke;
 }
 
 

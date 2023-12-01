@@ -1,6 +1,6 @@
 export function LoadFields (props) {
   return (
-    <>
+    <div className="fields-container">
       {
         props.inputList.map((inputName) => {
           const inputId = inputName.toLowerCase().replace(/\s+/g, "-");
@@ -12,6 +12,6 @@ export function LoadFields (props) {
           )
         })
       }
-    </>
+    </div>
   )
 }
