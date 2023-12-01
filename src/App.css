@@ -5,6 +5,32 @@
   text-align: center;
 }
 
+.container {
+  display: flex;
+  gap: 10px;
+}
+
 p {
   color: #888;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  background-color: rgb(77, 77, 77);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card label {
+  padding-top: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+.card input {
+  border-radius: 5px;
+}
+
+

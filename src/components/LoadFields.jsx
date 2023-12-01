@@ -4,7 +4,6 @@ export function LoadFields (props) {
       {
         props.inputList.map((inputName) => {
           const inputId = inputName.toLowerCase().replace(/\s+/g, "-");
-          console.log(inputId);
           return (
             <>
               <label htmlFor={inputId}>{inputName}</label>

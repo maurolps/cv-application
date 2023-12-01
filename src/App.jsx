@@ -4,11 +4,18 @@ import './App.css'
 
 function App() {
   return (
-    <>        
+    <>
       <p>CV Application</p>
-      {/* <Personal /> */}
-      <Experience />
-
+      <div className="container">
+        <div className="card">
+          <p>Experience</p>
+          <Experience />
+        </div>
+        <div className="card">
+          <p>Personal</p>
+          <Personal />
+        </div>
+      </div>
     </>
   )
 }
