@@ -1,0 +1,17 @@
+header {
+  width: 100vw;
+  width: 100dvw;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 1px;
+  margin-bottom: 30px;
+}
+
+header p {
+  color: rgb(80, 80, 80);
+  font-weight: bolder;
+  margin: 0px;
+}
