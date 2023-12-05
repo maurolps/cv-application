@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 export function LoadCard(props) {
 
   return (
@@ -7,7 +5,7 @@ export function LoadCard(props) {
       <div className="card-title" onClick={() => {props.toggle(props.title)}}>
         <p>{props.title}</p><p>{props.collapse == props.title ? "-" : "+"}</p>
       </div>
-      { props.collapse == props.title && <props.component />}
+      { props.collapse == props.title && <props.component inputChange={props.inputChange} />}
     </div>
   )
 }

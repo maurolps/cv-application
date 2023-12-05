@@ -1,4 +1,7 @@
 export function LoadFields (props) {
+
+
+
   return (
     <div className="fields-container">
       {
@@ -7,7 +10,13 @@ export function LoadFields (props) {
           return (
             <>
               <label htmlFor={inputId}>{inputName}</label>
-              <input type="text" id={inputId} name={inputId} key={inputId} />
+              <input 
+                type="text"
+                id={inputId}
+                onChange={props.inputChange}
+                name={inputId}
+                key={inputId} 
+              />
             </>
           )
         })
