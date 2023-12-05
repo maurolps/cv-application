@@ -9,14 +9,14 @@ import './App.css'
 
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
-  const [updatePreview, setUpdatePreview] = useState('');
+  const [updatePreview, setUpdatePreview] = useState({ text: '', id:''});
 
   const toggleCards = (title) => {
     setCardCollapse(title);
   }
 
   const inputChange = (e) => {
-    setUpdatePreview(e.target.value);
+    setUpdatePreview({ text: e.target.value, id: e.target.id});
   }
 
   return (
@@ -31,7 +31,7 @@ function App() {
           <LoadCard title="Education" component={Education} toggle={toggleCards} collapse={cardCollapse} inputChange={inputChange} />
         </div>
         <div className="preview">
-          <Preview text={updatePreview}/>
+          <Preview update={updatePreview}/>
         </div>
       </main>
     </>
