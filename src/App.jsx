@@ -7,10 +7,10 @@ import './App.css'
 import { useState } from "react"
 
 function App() {
-  const [cardCollapse, setCardCollapse] = useState(false);
+  const [cardCollapse, setCardCollapse] = useState('Personal Details');
 
-  const toggleCards = () => {
-    setCardCollapse(!cardCollapse);
+  const toggleCards = (title) => {
+    setCardCollapse(title);
   }
 
   return (
