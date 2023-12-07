@@ -9,14 +9,25 @@ import './App.css'
 
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
-  const [updatePreview, setUpdatePreview] = useState({ text: '', id:''});
+  // const [updatePreview, setUpdatePreview] = useState({ text: '', id:''});
+  const [updatePersonal, setUpdatePersonal] = useState({
+    ["full-name"]: "",
+    email: "",
+    ["phone-number"]: "",
+    address: "Fernando de Noronha",
+  })
+
 
   const toggleCards = (title) => {
     setCardCollapse(title);
   }
 
   const inputChange = (e) => {
-    setUpdatePreview({ text: e.target.value, id: e.target.id});
+    const { value, id } = e.target;
+    setUpdatePersonal((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
   }
 
   return (
@@ -26,12 +37,21 @@ function App() {
       </header>
       <main>
         <div className="container">
-          <LoadCard title="Personal Details" component={Personal} toggle={toggleCards} collapse={cardCollapse} inputChange={inputChange} />
-          <LoadCard title="Work Experience" component={Experience} toggle={toggleCards} collapse={cardCollapse} inputChange={inputChange} />
-          <LoadCard title="Education" component={Education} toggle={toggleCards} collapse={cardCollapse} inputChange={inputChange} />
+          <LoadCard title="Personal Details" 
+            component={Personal} 
+            toggle={toggleCards} 
+            collapse={cardCollapse} 
+            inputChange={inputChange} 
+            update={updatePersonal} 
+          />
+          <LoadCard title="Work Experience" component={Experience} toggle={toggleCards} collapse={cardCollapse} />
+          <LoadCard title="Education" component={Education} toggle={toggleCards} collapse={cardCollapse} />
         </div>
         <div className="preview">
-          <Preview update={updatePreview}/>
+          {Object.entries(updatePersonal).map(([id, value]) => (
+            <p key={'p'+id}>{id}: {value}</p>
+          ))}
+          {/* <Preview update={updatePreview}/> */}
         </div>
       </main>
     </>
