@@ -9,14 +9,23 @@ import './App.css'
 
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
-  // const [updatePreview, setUpdatePreview] = useState({ text: '', id:''});
   const [updatePersonal, setUpdatePersonal] = useState({
     ["full-name"]: "",
-    email: "",
+    ["email"]: "",
     ["phone-number"]: "",
-    address: "Fernando de Noronha",
+    ["address"]: "",
+    ["company-name"]: "",
+    ["position-title"]: "",
+    ["start-date"]: "",
+    ["end-date"]: "",
+    ["location"]: "",
+    ["description"]: "",
+    ["school"]: "",
+    ["degree"]: "",
+    ["start"]: "",
+    ["end"]: "",
+    ["region"]: "",
   })
-
 
   const toggleCards = (title) => {
     setCardCollapse(title);
@@ -44,14 +53,23 @@ function App() {
             inputChange={inputChange} 
             update={updatePersonal} 
           />
-          <LoadCard title="Work Experience" component={Experience} toggle={toggleCards} collapse={cardCollapse} />
-          <LoadCard title="Education" component={Education} toggle={toggleCards} collapse={cardCollapse} />
+          <LoadCard title="Work Experience" 
+            component={Experience} 
+            toggle={toggleCards} 
+            collapse={cardCollapse} 
+            inputChange={inputChange}
+            update={updatePersonal} 
+          />
+          <LoadCard title="Education" 
+            component={Education} 
+            toggle={toggleCards} 
+            collapse={cardCollapse} 
+            inputChange={inputChange}
+            update={updatePersonal} 
+          />
         </div>
         <div className="preview">
-          {Object.entries(updatePersonal).map(([id, value]) => (
-            <p key={'p'+id}>{id}: {value}</p>
-          ))}
-          {/* <Preview update={updatePreview}/> */}
+          <Preview update={updatePersonal}/>
         </div>
       </main>
     </>

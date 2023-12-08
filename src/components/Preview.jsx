@@ -1,20 +1,40 @@
 export function Preview(props) {
-
-  const loadPreview = (id) => {
-    const fieldText = document.getElementById(id)
-    if ( fieldText !== null ) return fieldText.value;
-  }
+  const { update } = props;
 
   return (
     <>
       <p>Preview</p>
       <h3>Personal Details</h3>
-      <p>{(props.update.id == 'full-name' && props.update.text) || loadPreview('full-name')}&nbsp;</p>
-      <p>{(props.update.id == 'email' && props.update.text)  || loadPreview('email')}&nbsp;</p>
-      <p>{(props.update.id == 'phone-number' && props.update.text) || loadPreview('phone-number')}&nbsp;</p>
-      <p>{(props.update.id == 'address' && props.update.text) || loadPreview('address')}&nbsp;</p>
+      {Object.entries(update).map(([id, text]) => (
+        <>
+          <p>{(id == 'full-name' && text)}</p>
+          <p>{(id == 'email' && text)}</p>
+          <p>{(id == 'phone-number' && text)}</p>
+          <p>{(id == 'address' && text)}</p>
+        </>
+      ))}
       <h3>Work Experience</h3>
+      {Object.entries(update).map(([id, text]) => (
+        <>
+          <p>{(id == 'company-name' && text)}</p>
+          <p>{(id == 'position-title' && text)}</p>
+          <p>{(id == 'start-date' && text)}</p>
+          <p>{(id == 'end-date' && text)}</p>
+          <p>{(id == 'location' && text)}</p>
+          <p>{(id == 'description' && text)}</p>
+        </>
+      ))}
+
       <h3>Education</h3>
+      {Object.entries(update).map(([id, text]) => (
+        <>
+          <p>{(id == 'school' && text)}</p>
+          <p>{(id == 'degree' && text)}</p>
+          <p>{(id == 'start' && text)}</p>
+          <p>{(id == 'end' && text)}</p>
+          <p>{(id == 'region' && text)}</p>
+        </>
+      ))}
     </>
   )
 }
