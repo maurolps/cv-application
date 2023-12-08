@@ -1,6 +1,6 @@
 export function LoadFields (props) {
 
-  console.log('loadfields: ', typeof(props.update));
+
 
   return (
     <div className="fields-container">

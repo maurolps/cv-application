@@ -34,14 +34,23 @@ p {
   padding-left: 20px;
   border-radius: 10px;
   height: fit-content;
-  min-width: 180px;
-  max-width: 200px;
+  min-width: 190px;
+  max-width: 250px;
   user-select: none;
 }
 
 .card-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+}
+
+.card-svg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
 }
 
 .fields-container {
