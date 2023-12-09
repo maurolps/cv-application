@@ -6,7 +6,7 @@ import { LoadCard } from "./components/LoadCard"
 import { Preview} from "./components/Preview"
 import { useState } from "react"
 
-import { svgPersonal, svgExp, svgEdu }  from './assets/svgs'
+import { svgPersonal, svgExp, svgEdu, svgDownload }  from './assets/svgs'
 
 import './App.css'
 
@@ -74,8 +74,13 @@ function App() {
             update={updatePersonal} 
           />
         </div>
-        <div className="preview">
-          <Preview update={updatePersonal}/>
+        <div className="preview-wrapper">
+          <div className="preview">
+            <Preview update={updatePersonal}/>
+          </div>
+          <div className="action">
+            <button className="btn-download">PDF {svgDownload}</button>
+          </div>
         </div>
       </main>
     </>

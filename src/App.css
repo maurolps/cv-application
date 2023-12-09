@@ -16,7 +16,15 @@ main {
   padding-right: 20px;
   padding-left: 20px;
   border-radius: 10px;
-  box-shadow: #dfdfdf 1px 1px;
+  /* box-shadow: #e0e0e0 0.5px 0.5px; */
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-style: groove;
+}
+
+.preview-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -27,16 +35,21 @@ main {
 }
 
 .card {
-  background-color: #4e4e4e;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
   padding-right: 20px;
   padding-left: 20px;
   border-radius: 10px;
   height: fit-content;
-  min-width: 190px;
+  min-width: 200px;
   max-width: 250px;
   user-select: none;
-  /* box-shadow: #dfdfdf 1px 1px; */
-  color:  #cfcfcf;
+  box-shadow: #e0e0e0 0.5px 0.5px;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-style: solid;
+  color:  #666666;
 }
 
 .card-title {
@@ -44,7 +57,7 @@ main {
   justify-content: space-between;
   align-items: center;
   justify-items: center;
-  color:  #f5f5f5;
+  color:  black;
   font-weight: 600;
 }
 
@@ -53,6 +66,24 @@ main {
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+}
+
+.action {
+  padding: 10px;
+  align-self: flex-end;
+}
+
+.action button {
+  border: none;
+  padding: 5px 14px 5px 14px;
+  border-radius: 30px;
+  background-color: #369fff;
+  color: #fdfdfd; 
+}
+
+.action .btn-download {
+  padding: 2px 14px 5px 14px;
+  background-color: #8336ff;
 }
 
 .fields-container {
@@ -66,14 +97,15 @@ main {
 }
 
 .fields-container input {
-  background-color: white;
-  border: none;
-  /* border-color: #747474; */
   border-radius: 5px;
   margin-bottom: 5px;
+  margin-top: 2px;
   padding: 5px;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: #888;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-style: solid;
 }
 
 

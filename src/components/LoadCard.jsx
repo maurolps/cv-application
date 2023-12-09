@@ -1,3 +1,5 @@
+import { svgArrowDown, svgArrowUp } from "../assets/svgs"
+
 export function LoadCard(props) {
 
   return (
@@ -6,10 +8,16 @@ export function LoadCard(props) {
         <div className="card-svg">
           {props.svg}<p>{props.title}</p>
         </div>
-        <p>{props.collapse == props.title ? "-" : "+"}</p>
+        <p>{props.collapse == props.title ? svgArrowUp : svgArrowDown}</p>
       </div>
-      { props.collapse == props.title && 
-      <props.component inputChange={props.inputChange} update={props.update} />}
+      { props.collapse == props.title && (
+        <>
+          <props.component inputChange={props.inputChange} update={props.update} />
+          <div className="action">
+            <button>Clear</button>
+          </div>
+        </>
+        )}
     </div>
   )
 }
