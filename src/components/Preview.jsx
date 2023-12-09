@@ -3,7 +3,9 @@ export function Preview(props) {
 
   return (
     <>
-      <p>Preview</p>
+      <div className="preview-info">
+        <p>Preview</p>
+      </div>
       <h3>Personal Details</h3>
       {Object.entries(update).map(([id, text]) => (
         <>

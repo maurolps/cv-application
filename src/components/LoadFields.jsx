@@ -9,10 +9,11 @@ export function LoadFields (props) {
           const inputId = inputName.toLowerCase().replace(/\s+/g, "-");
           return (
             <>
-              <label htmlFor={inputId}>{inputName}</label>
+              <label htmlFor={inputId}></label>
               <input 
                 type="text"
                 id={inputId}
+                placeholder={inputName}
                 onChange={props.inputChange}
                 name={inputId}
                 key={inputId}
