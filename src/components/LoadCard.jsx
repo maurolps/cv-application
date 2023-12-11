@@ -4,7 +4,9 @@ export function LoadCard(props) {
 
   return (
     <div className="card">
-      <div className="card-title" onClick={() => {props.toggle(props.title)}}>
+      <div className="card-title" onClick={() => {
+        props.collapse == props.title ? props.toggle('') : props.toggle(props.title);
+        }}>
         <div className="card-svg">
           {props.svg}<p>{props.title}</p>
         </div>

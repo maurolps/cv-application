@@ -12,7 +12,7 @@ main {
 .preview {
   background-color: #ffffff;
   min-width: 300px;
-  height: 400px;
+  min-height: 500px;
   padding-right: 20px;
   padding-left: 20px;
   border-radius: 10px;
@@ -40,6 +40,13 @@ main {
   gap: 10px;
 }
 
+.card-actions {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  justify-content: end;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -65,6 +72,7 @@ main {
   justify-items: center;
   color:  black;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .card-svg {
@@ -79,17 +87,36 @@ main {
   align-self: flex-end;
 }
 
-.action button {
+button {
+  display: flex;
+  align-items: center;
   border: none;
   padding: 5px 14px 5px 14px;
   border-radius: 30px;
   background-color: #369fff;
   color: white; 
+  cursor: pointer;
+}
+
+.action button:hover{
+  background-color: #36b5ff;
+}
+
+.card-actions {
+  scale: 0.8;
+}
+
+.card-actions .btn-autofill {
+  background-color: #ff6536;
 }
 
 .action .btn-download {
-  padding: 2px 14px 5px 14px;
+  padding: 5px 14px 5px 14px;
   background-color: #8336ff;
+}
+
+.action .btn-download:hover {
+  background-color: #8d36ff;
 }
 
 .fields-container {

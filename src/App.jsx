@@ -6,7 +6,7 @@ import { LoadCard } from "./components/LoadCard"
 import { Preview} from "./components/Preview"
 import { useState } from "react"
 
-import { svgPersonal, svgExp, svgEdu, svgDownload }  from './assets/svgs'
+import { svgPersonal, svgExp, svgEdu, svgDownload, svgAutofill, svgTrash }  from './assets/svgs'
 
 import './App.css'
 
@@ -49,6 +49,10 @@ function App() {
       </header>
       <main>
         <div className="container">
+          <div className="card-actions">
+            <button className="btn-autofill">Auto Fill {svgAutofill}</button>
+            <button>{svgTrash}</button>
+          </div>
           <LoadCard title="Personal Details" 
             svg={svgPersonal}
             component={Personal} 
