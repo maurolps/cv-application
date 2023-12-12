@@ -38,7 +38,9 @@ function App() {
             <button className="btn-autofill" onClick={() => {
               setUpdatePersonal(exampleData);
             }}>Auto Fill {svgAutofill}</button>
-            <button>{svgTrash}</button>
+            <button onClick={() => {
+              setUpdatePersonal(defaultData);
+            }}>{svgTrash}</button>
           </div>
           <LoadCard title="Personal Details" 
             svg={svgPersonal}
