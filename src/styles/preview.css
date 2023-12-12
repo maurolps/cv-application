@@ -79,10 +79,19 @@
   font-size: 30px;
   font-weight: 600;
   color: white;
-  background-color: #a8a8a8;
+  background-color: #f0f0f0;
   width: 80px;
   height: 80px;
   border-radius: 100%;
+}
+
+.prev-logo-text {
+  font-size: 0;
+}
+
+.prev-logo-text::first-letter {
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
 .personal-details {
@@ -105,9 +114,8 @@
 }
 
 .prev-name h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #369fff;
   margin: 1px;
   line-height: 35px;
 }
@@ -117,6 +125,7 @@
   flex-direction: column;
   align-items: end;
   font-size: 0.5rem;
+  text-align: end;
 }
 
 
