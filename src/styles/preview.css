@@ -105,15 +105,19 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 30px;
 }
 
 .prev-name {
   width: 100%;
-  text-transform: uppercase;
+  max-width: 140px;
+  font-style: italic;
   font-size: 0.5rem
 }
 
 .prev-name h1 {
+  text-transform: uppercase;
+  font-style: normal;
   font-size: 1.5rem;
   font-weight: 600;
   margin: 1px;

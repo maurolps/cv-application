@@ -12,18 +12,18 @@ export function Preview(props) {
       <div className="preview-info">
         <p>Preview</p>
       </div>
-      {update["full-name"] == "" ? null : (
+      {update["name"] == "" ? null : (
         <div className="preview-main">
           <div className="personal-details grid">
             <div>
               <div className="prev-image">
-                <span className="prev-logo-text">{update["full-name"]}</span>
+                <span className="prev-logo-text">{update["name"]}</span>
               </div>
             </div>
             <div className="prev-profile">
               <div className="prev-name">
-                <h1>{update["full-name"]}</h1>
-                <span>FullStack Web developer</span>
+                <h1>{update["name"]}</h1>
+                <span>{update["p-description"]}</span>
               </div>
               <div className="prev-contact">
                 <span>{update["phone-number"]}</span>

@@ -1,13 +1,19 @@
 import { LoadFields } from "./LoadFields"
 
 export function Personal (props) {
-  const inputs = ["Full Name", "Email", "Phone Number", "Address"];  
+  const inputs = ["Name", "Email", "Phone Number", "Address"];  
 
   return (
   <>
     <LoadFields inputList={inputs}  inputChange={props.inputChange} update={props.update}/>
-    <p><textarea name="personal-history" id="personaltext" cols="30" rows="8" 
-        placeholder="<optional> Tell something about your history..."></textarea></p>
+    <textarea name="Personal Description" 
+      id="p-description" 
+      cols="30" 
+      rows="8" 
+      onChange={props.inputChange}
+      value={typeof(props.update) == 'object' ? props.update["p-description"] : ""}
+      placeholder="<optional> Tell something about your history...">
+    </textarea>
   </>
 )
 }

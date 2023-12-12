@@ -1,8 +1,9 @@
 const defaultData = {
-  ["full-name"]: "",
+  ["name"]: "",
   ["email"]: "",
   ["phone-number"]: "",
   ["address"]: "",
+  ["p-description"]: "",
   ["company-name"]: "",
   ["position-title"]: "",
   ["start-date"]: "",
@@ -17,10 +18,11 @@ const defaultData = {
 }
 
 const exampleData = {
-  ["full-name"]: "John Doe",
+  ["name"]: "John Doe",
   ["email"]: "john.doe@techxlead.com",
   ["phone-number"]: "555-3035284",
   ["address"]: "164 Main Street, Cityville State, 235-12345",
+  ["p-description"]: "FULLSTACK WEB DEVELOPER",
   ["company-name"]: "Tech Solutions Inc.",
   ["position-title"]: "Full Stack Web Developer",
   ["start-date"]: "Jan 2018",
