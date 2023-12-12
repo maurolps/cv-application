@@ -1,0 +1,79 @@
+.card-actions {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  justify-content: end;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 10px;
+  height: fit-content;
+  min-width: 220px;
+  max-width: 250px;
+  user-select: none;
+  box-shadow: #e0e0e0 0.5px 0.5px;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-style: solid;
+  color:  #666666;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  color:  black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-svg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-actions {
+  scale: 0.8;
+}
+
+.card-actions .btn-autofill {
+  background-color: #ff6536;
+}
+
+.card textarea {
+  max-width: 200px;
+}
+
+.fields-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.fields-container label {
+  padding-left: 0.2rem;
+}
+
+.fields-container input, textarea {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #888;
+  border-color: #d3d3d3;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.fields-container input::placeholder, textarea::placeholder {
+  color: #afb4c5;
+}
