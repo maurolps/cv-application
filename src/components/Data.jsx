@@ -36,4 +36,23 @@ const exampleData = {
   ["region"]: "Cityville - CET", 
 }
 
-export { defaultData, exampleData }
+const expData = [
+  {
+    ["company-name"]: "Tech Solutions Inc.",
+    ["position-title"]: "Full Stack Web Developer",
+    ["start-date"]: "Jan 2018",
+    ["end-date"]: "Present",
+    ["location"]: "São Paulo - Brasil",
+    ["description"]: "Develop and maintain full-stack applications, participate in system architecture design, troubleshoot and debug issues, collaborate with cross-functional teams.",
+  },
+  {
+    ["company-name"]: "Quantum CNC",
+    ["position-title"]: "Full Stack Ruby on Rails",
+    ["start-date"]: "Jun 2013",
+    ["end-date"]: "Out 2016",
+    ["location"]: "California, EUA",
+    ["description"]: "Develop and maintain full-stack applications, participate in system architecture design, troubleshoot and debug issues, collaborate with cross-functional teams.",
+  }
+];
+
+export { defaultData, exampleData, expData }

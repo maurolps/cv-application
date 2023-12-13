@@ -5,7 +5,7 @@ import { Education } from "./components/Education"
 import { LoadCard } from "./components/LoadCard"
 import { Preview} from "./components/Preview"
 import { useState } from "react"
-import { defaultData, exampleData } from "./components/Data"
+import { defaultData, exampleData, expData } from "./components/Data"
 import { svgPersonal, svgExp, svgEdu, svgDownload, svgAutofill, svgTrash }  from './assets/svgs'
 import './App.css'
 
@@ -14,9 +14,19 @@ import './App.css'
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
   const [updatePersonal, setUpdatePersonal] = useState(defaultData);
+  const [updateExp, setUpdateExp] = useState(expData);
+  const [addingExp, setAddingExp] = useState(false);
 
   const toggleCards = (title) => {
     setCardCollapse(title);
+  }
+
+  const toggleAddingExp = () => {
+    setAddingExp(!addingExp);
+  }
+
+  const addExpItem = (item) => {
+    setUpdateExp((prevData) => ([...prevData, item]))
   }
 
   const inputChange = (e) => {
@@ -40,6 +50,8 @@ function App() {
             }}>Auto Fill {svgAutofill}</button>
             <button onClick={() => {
               setUpdatePersonal(defaultData);
+              setAddingExp(false);
+              setUpdateExp(expData);
             }}>{svgTrash}</button>
           </div>
           <LoadCard title="Personal Details" 
@@ -56,7 +68,10 @@ function App() {
             toggle={toggleCards} 
             collapse={cardCollapse} 
             inputChange={inputChange}
-            update={updatePersonal} 
+            update={updateExp}
+            adding={addingExp}
+            addExp={addExpItem}
+            toggleAdding={toggleAddingExp} 
           />
           <LoadCard title="Education" 
             svg={svgEdu}
