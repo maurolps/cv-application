@@ -56,6 +56,14 @@ const svgAutofill = <svg viewBox="0 0 24 24"
   </g>
 </svg>
 
+const svgEdit = <svg viewBox="0 0 24 24"
+width="15px"
+fill="#bbb"
+xmlns="http://www.w3.org/2000/svg">
+<title>Edit</title>
+<path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+</svg>
+
 const svgTrash = <svg xmlns="http://www.w3.org/2000/svg" 
     width="20px"
     fill="white"
@@ -73,4 +81,4 @@ const svgAdd = <svg xmlns="http://www.w3.org/2000/svg"
     0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" />
 </svg>
 
-export { svgPersonal, svgEdu, svgExp, svgArrowDown, svgArrowUp, svgDownload, svgAutofill, svgTrash, svgAdd }
+export { svgPersonal, svgEdu, svgExp, svgArrowDown, svgArrowUp, svgDownload, svgAutofill, svgTrash, svgAdd, svgEdit }

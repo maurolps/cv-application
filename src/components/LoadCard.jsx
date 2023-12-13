@@ -1,8 +1,10 @@
 import { svgArrowDown, svgArrowUp } from "../assets/svgs"
+import React from "react";
 import '../styles/loadCard.css'
-import { svgAdd } from "../assets/svgs";
+import { svgAdd, svgTrash, svgEdit } from "../assets/svgs";
 
 export function LoadCard(props) {
+  const svgTrashBlack = React.cloneElement(svgTrash, { fill: "#bbb", width: "15px" });
 
   return (
     <div className="card">
@@ -60,8 +62,8 @@ export function LoadCard(props) {
                                   {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}
                                 </div>
                               </div>
-                              <div>
-                                x
+                              <div className="exp-item-btn">
+                                <button>{svgEdit}</button><button>{svgTrashBlack}</button>
                               </div>
                             </div>
                           </>
