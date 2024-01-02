@@ -35,7 +35,10 @@ export function LoadCard(props) {
               {props.adding && (
                 <>
                   <props.component inputChange={props.inputChange} update={props.update} />
-                  <div className="action">
+                  <div className="card-actions btn-actions">
+                  <button className="btn-cancel" onClick={() => {
+                      {props.toggleAdding()}
+                    }}>Cancel</button>
                     <button onClick={() => {
                       {props.addExp({
                         ["company-name"]: "You should move this code to Exp Component!"
