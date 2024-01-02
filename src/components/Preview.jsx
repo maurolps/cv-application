@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/preview.css"
 
 export function Preview(props) {
-  const { update } = props;
+  const { update, updateExp } = props;
   const svgEduBlack = React.cloneElement(svgEdu, { fill: "black" });
   const svgExpBlack = React.cloneElement(svgExp, { fill: "black" });
 
@@ -36,17 +36,24 @@ export function Preview(props) {
           <div className="prev-section grid">
             <div className="section-title">{svgExpBlack} Work Experience</div>
           </div>
-
-          <div className="work-experience grid">
-            <div>
-              <div className="prev-title">{update["position-title"]}</div>
-              <div className="prev-date"> {update["start-date"]} - {update["end-date"]}</div>
-            </div>
-            <div>
-              <div className="prev-location">{update["company-name"]} - {update.location}</div>
-              <div className="prev-description">{update.description}</div>
-            </div>
-          </div>
+          {
+            updateExp.map((experience) => {
+              return (
+                <>
+                  <div className="work-experience grid">
+                    <div>
+                      <div className="prev-title">{experience["position-title"]}</div>
+                      <div className="prev-date"> {experience["start-date"]} - {experience["end-date"]}</div>
+                    </div>
+                    <div>
+                      <div className="prev-location">{experience["company-name"]} - {experience.location}</div>
+                      <div className="prev-description">{experience.description}</div>
+                    </div>
+                  </div>
+                </>
+              )
+            })
+          }
 
           <div className="prev-section grid">
             <div className="section-title">{svgEduBlack} Education</div>

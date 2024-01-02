@@ -83,7 +83,7 @@ function App() {
           />
         </div>
         <div className="preview-wrapper">
-            <Preview update={updatePersonal}/>
+            <Preview update={updatePersonal} updateExp={updateExp}/>
           <div className="action">
             <button className="btn-download">PDF {svgDownload}</button>
           </div>
