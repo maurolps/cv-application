@@ -41,7 +41,12 @@ export function LoadCard(props) {
                     }}>Cancel</button>
                     <button onClick={() => {
                       {props.addExp({
-                        ["company-name"]: "You should move this code to Exp Component!"
+                        ["company-name"]: props.fieldsData["company-name"],
+                        ["position-title"]: props.fieldsData["position-title"],
+                        ["start-date"]: props.fieldsData["start-date"],
+                        ["end-date"]: props.fieldsData["end-date"],
+                        ["location"]: props.fieldsData.location,
+                        ["description"]: props.fieldsData.description,
                       })}
                       {props.toggleAdding()}
                     }}>Add</button>

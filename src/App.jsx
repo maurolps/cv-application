@@ -71,6 +71,7 @@ function App() {
             update={updateExp}
             adding={addingExp}
             addExp={addExpItem}
+            fieldsData={updatePersonal}
             toggleAdding={toggleAddingExp} 
           />
           <LoadCard title="Education" 
