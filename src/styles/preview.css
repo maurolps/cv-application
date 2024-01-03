@@ -132,4 +132,9 @@
   text-align: end;
 }
 
+.prev-draft {
+  font-style: italic;
+  opacity: 30%;
+}
+
 

@@ -37,18 +37,25 @@ export function LoadCard(props) {
                   <props.component inputChange={props.inputChange} update={props.update} />
                   <div className="card-actions btn-actions">
                   <button className="btn-cancel" onClick={() => {
-                      {props.toggleAdding()}
+
+                      {
+                        props.toggleAdding();
+                        props.resetDraft();
+                      }
                     }}>Cancel</button>
                     <button onClick={() => {
-                      {props.addExp({
-                        ["company-name"]: props.fieldsData["company-name"],
-                        ["position-title"]: props.fieldsData["position-title"],
-                        ["start-date"]: props.fieldsData["start-date"],
-                        ["end-date"]: props.fieldsData["end-date"],
-                        ["location"]: props.fieldsData.location,
-                        ["description"]: props.fieldsData.description,
-                      })}
-                      {props.toggleAdding()}
+                      {
+                        props.addExp({
+                          ["company-name"]: props.fieldsData["company-name"],
+                          ["position-title"]: props.fieldsData["position-title"],
+                          ["start-date"]: props.fieldsData["start-date"],
+                          ["end-date"]: props.fieldsData["end-date"],
+                          ["location"]: props.fieldsData.location,
+                          ["description"]: props.fieldsData.description,
+                        })
+                        props.toggleAdding();
+                        props.resetDraft();
+                      }
                     }}>Add</button>
                   </div>
                 </>                

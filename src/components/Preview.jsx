@@ -54,6 +54,20 @@ export function Preview(props) {
               )
             })
           }
+          {
+            update["company-name"] !== ""? (
+              <div className="work-experience grid prev-draft">
+                <div>
+                  <div className="prev-title">{update["position-title"]}</div>
+                  <div className="prev-date"> {update["start-date"]} - {update["end-date"]} </div>
+                </div>
+                <div>
+                  <div className="prev-location">{update["company-name"]} - {update.location}</div>
+                  <div className="prev-description">{update.description}</div>
+                </div>
+              </div>
+            ): ""
+          }
 
           <div className="prev-section grid">
             <div className="section-title">{svgEduBlack} Education</div>

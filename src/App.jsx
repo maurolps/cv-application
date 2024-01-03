@@ -25,6 +25,23 @@ function App() {
     setAddingExp(!addingExp);
   }
 
+  const resetDraft = () =>  {
+    setUpdatePersonal((prevData) => ({
+      ...prevData,
+      ["company-name"]: "",
+      ["position-title"]: "",
+      ["start-date"]: "",
+      ["end-date"]: "",
+      ["location"]: "",
+      ["description"]: "",
+      ["school"]: "",
+      ["degree"]: "",
+      ["start"]: "",
+      ["end"]: "",
+      ["region"]: "",
+    }))
+  }
+
   const addExpItem = (item) => {
     setUpdateExp((prevData) => ([...prevData, item]))
   }
@@ -72,6 +89,7 @@ function App() {
             adding={addingExp}
             addExp={addExpItem}
             fieldsData={updatePersonal}
+            resetDraft={resetDraft}
             toggleAdding={toggleAddingExp} 
           />
           <LoadCard title="Education" 
