@@ -52,6 +52,7 @@
 
 .card textarea {
   max-width: 200px;
+  margin-bottom: 20px;
 }
 
 .fields-container {

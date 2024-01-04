@@ -23,9 +23,6 @@ export function LoadCard(props) {
           {props.title === "Personal Details" && (
             <>
                 <props.component inputChange={props.inputChange} update={props.update} />
-                <div className="action">
-                  <button>Clear</button>
-                </div>
             </>
           )}
 
@@ -34,7 +31,7 @@ export function LoadCard(props) {
             
               {props.adding && (
                 <>
-                  <props.component inputChange={props.inputChange} update={props.update} />
+                  <props.component inputChange={props.inputChange} update={props.fieldsData} />
                   <div className="card-actions btn-actions">
                   <button className="btn-cancel" onClick={() => {
 
@@ -63,29 +60,33 @@ export function LoadCard(props) {
 
               {!props.adding && (
                 <>
-                  <div className="exp-item-container">
-                    {
-                      props.update.map((experience) => {
-                        return (
-                          <>
-                            <div className="exp-item">
-                              <div>
-                                <div>
-                                  {experience["position-title"]}
+                  {
+                    props.update !== null && (
+                      <div className="exp-item-container">
+                        {
+                          props.update.map((experience) => {
+                            return (
+                              <>
+                                <div className="exp-item">
+                                  <div>
+                                    <div>
+                                      {experience["position-title"]}
+                                    </div>
+                                    <div className="exp-item-date">
+                                      {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}
+                                    </div>
+                                  </div>
+                                  <div className="exp-item-btn">
+                                    <button>{svgEdit}</button><button>{svgTrashBlack}</button>
+                                  </div>
                                 </div>
-                                <div className="exp-item-date">
-                                  {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}
-                                </div>
-                              </div>
-                              <div className="exp-item-btn">
-                                <button>{svgEdit}</button><button>{svgTrashBlack}</button>
-                              </div>
-                            </div>
-                          </>
-                        )
-                      })
-                    }
-                  </div>
+                              </>
+                            )
+                          })
+                        }
+                      </div>
+                    )
+                  }
                   <div className="btn-add">
                     <button onClick={() => {
                       {props.toggleAdding()}

@@ -12,7 +12,7 @@ export function Preview(props) {
       <div className="preview-info">
         <p>Preview</p>
       </div>
-      {update["name"] == "" ? null : (
+      {(update["name"] !== "" || update["company-name"] !== "") && (
         <div className="preview-main">
           <div className="personal-details grid">
             <div>
@@ -37,22 +37,24 @@ export function Preview(props) {
             <div className="section-title">{svgExpBlack} Work Experience</div>
           </div>
           {
-            updateExp.map((experience) => {
-              return (
-                <>
-                  <div className="work-experience grid">
-                    <div>
-                      <div className="prev-title">{experience["position-title"]}</div>
-                      <div className="prev-date"> {experience["start-date"]} - {experience["end-date"]}</div>
+            updateExp !== null && (
+              updateExp.map((experience) => {
+                return (
+                  <>
+                    <div className="work-experience grid">
+                      <div>
+                        <div className="prev-title">{experience["position-title"]}</div>
+                        <div className="prev-date"> {experience["start-date"]} - {experience["end-date"]}</div>
+                      </div>
+                      <div>
+                        <div className="prev-location">{experience["company-name"]} - {experience.location}</div>
+                        <div className="prev-description">{experience.description}</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="prev-location">{experience["company-name"]} - {experience.location}</div>
-                      <div className="prev-description">{experience.description}</div>
-                    </div>
-                  </div>
-                </>
-              )
-            })
+                  </>
+                )
+              })
+            )
           }
           {
             update["company-name"] !== ""? (

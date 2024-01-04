@@ -14,7 +14,7 @@ import './App.css'
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
   const [updatePersonal, setUpdatePersonal] = useState(defaultData);
-  const [updateExp, setUpdateExp] = useState(expData);
+  const [updateExp, setUpdateExp] = useState(null);
   const [addingExp, setAddingExp] = useState(false);
 
   const toggleCards = (title) => {
@@ -43,7 +43,10 @@ function App() {
   }
 
   const addExpItem = (item) => {
-    setUpdateExp((prevData) => ([...prevData, item]))
+    setUpdateExp((prevData) => {
+      if (!Array.isArray(prevData)) return [item];
+      return [...prevData, item]
+    })
   }
 
   const inputChange = (e) => {
@@ -64,11 +67,12 @@ function App() {
           <div className="card-actions">
             <button className="btn-autofill" onClick={() => {
               setUpdatePersonal(exampleData);
+              setUpdateExp(expData);
             }}>Auto Fill {svgAutofill}</button>
             <button onClick={() => {
               setUpdatePersonal(defaultData);
               setAddingExp(false);
-              setUpdateExp(expData);
+              setUpdateExp(null);
             }}>{svgTrash}</button>
           </div>
           <LoadCard title="Personal Details" 
