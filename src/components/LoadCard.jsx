@@ -64,20 +64,25 @@ export function LoadCard(props) {
                     props.update !== null && (
                       <div className="exp-item-container">
                         {
-                          props.update.map((experience) => {
+                          props.update.map((experience, index) => {
                             return (
                               <>
                                 <div className="exp-item">
                                   <div>
                                     <div>
-                                      {experience["position-title"]}
+                                      {index} {experience["position-title"]}
                                     </div>
                                     <div className="exp-item-date">
                                       {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}
                                     </div>
                                   </div>
                                   <div className="exp-item-btn">
-                                    <button>{svgEdit}</button><button>{svgTrashBlack}</button>
+                                    <button onClick={() => {
+                                      // Edit button clicked...
+                                    }}>{svgEdit}</button>
+                                    <button onClick={() => {
+                                      props.delExp(index);
+                                    }}>{svgTrashBlack}</button>
                                   </div>
                                 </div>
                               </>

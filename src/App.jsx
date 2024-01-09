@@ -49,6 +49,12 @@ function App() {
     })
   }
 
+  const delExpItem = (index) => {
+    const tempArr = [...updateExp];
+    tempArr.splice(index, 1);
+    setUpdateExp(tempArr);
+  }
+
   const inputChange = (e) => {
     const { value, id } = e.target;
     setUpdatePersonal((prevData) => ({
@@ -92,6 +98,7 @@ function App() {
             update={updateExp}
             adding={addingExp}
             addExp={addExpItem}
+            delExp={delExpItem}
             fieldsData={updatePersonal}
             resetDraft={resetDraft}
             toggleAdding={toggleAddingExp} 
