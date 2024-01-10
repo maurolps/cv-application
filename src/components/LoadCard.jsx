@@ -37,11 +37,13 @@ export function LoadCard(props) {
 
                       {
                         props.toggleAdding();
+                        props.isEditing && props.toggleEdit();
                         props.resetDraft();
                       }
                     }}>Cancel</button>
                     <button onClick={() => {
                       {
+                        //update logic here...
                         props.addExp({
                           ["company-name"]: props.fieldsData["company-name"],
                           ["position-title"]: props.fieldsData["position-title"],
@@ -51,9 +53,10 @@ export function LoadCard(props) {
                           ["description"]: props.fieldsData.description,
                         })
                         props.toggleAdding();
+                        props.toggleEdit();
                         props.resetDraft();
                       }
-                    }}>Add</button>
+                    }}>{props.isEditing ? (<>Update</>) : (<>Add</>)}</button>
                   </div>
                 </>                
               )}  
@@ -70,7 +73,7 @@ export function LoadCard(props) {
                                 <div className="exp-item">
                                   <div>
                                     <div>
-                                      {index} {experience["position-title"]}
+                                      {experience["position-title"]}
                                     </div>
                                     <div className="exp-item-date">
                                       {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}
@@ -78,7 +81,9 @@ export function LoadCard(props) {
                                   </div>
                                   <div className="exp-item-btn">
                                     <button onClick={() => {
-                                      // Edit button clicked...
+                                      props.editing(experience);
+                                      props.toggleEdit();
+                                      props.toggleAdding();                                      
                                     }}>{svgEdit}</button>
                                     <button onClick={() => {
                                       props.delExp(index);
