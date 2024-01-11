@@ -37,13 +37,13 @@ export function LoadCard(props) {
 
                       {
                         props.toggleAdding();
-                        props.isEditing && props.toggleEdit();
+                        props.editMode && props.toggleEdit();
                         props.resetDraft();
                       }
                     }}>Cancel</button>
                     <button onClick={() => {
                       {
-                        props.isEditing.active ? (
+                        props.editMode.active ? (
                           props.updateItem({
                             ["company-name"]: props.fieldsData["company-name"],
                             ["position-title"]: props.fieldsData["position-title"],
@@ -51,7 +51,7 @@ export function LoadCard(props) {
                             ["end-date"]: props.fieldsData["end-date"],
                             ["location"]: props.fieldsData.location,
                             ["description"]: props.fieldsData.description,
-                          }, props.isEditing.index)                          
+                          }, props.editMode.index)                          
                           ) : (
                             props.addExp({
                               ["company-name"]: props.fieldsData["company-name"],
@@ -64,10 +64,10 @@ export function LoadCard(props) {
                             
                             )
                         props.toggleAdding();
-                        props.isEditing.active && props.toggleEdit();
+                        props.editMode.active && props.toggleEdit();
                         props.resetDraft();
                       }
-                    }}>{props.isEditing.active ? (<>Update</>) : (<>Add</>)}</button>
+                    }}>{props.editMode.active ? (<>Update</>) : (<>Add</>)}</button>
                   </div>
                 </>                
               )}  

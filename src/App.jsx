@@ -125,7 +125,7 @@ function App() {
             updateItem={updateExpItem}
             editing={editing}
             toggleEdit={toggleEditMode}
-            isEditing={editMode}
+            editMode={editMode}
             fieldsData={updatePersonal}
             resetDraft={resetDraft}
             toggleAdding={toggleAddingExp} 
@@ -140,7 +140,7 @@ function App() {
           />
         </div>
         <div className="preview-wrapper">
-            <Preview update={updatePersonal} updateExp={updateExp}/>
+            <Preview update={updatePersonal} updateExp={updateExp} editMode={editMode} />
           <div className="action">
             <button className="btn-download">PDF {svgDownload}</button>
           </div>
