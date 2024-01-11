@@ -1,8 +1,6 @@
 .card-actions {
   display: flex;
   gap: 5px;
-  width: 100%;
-  justify-content: end;
   scale: 0.8;
 }
 
