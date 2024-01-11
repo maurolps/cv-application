@@ -13,7 +13,7 @@ export function Preview(props) {
         <p>Preview</p>
       </div>
       {(update["name"] !== "" || update["company-name"] !== "") && (
-        <div className="preview-main">
+        <div className="preview-main" id="pdf-content">
           <div className="personal-details grid">
             <div>
               <div className="prev-image">

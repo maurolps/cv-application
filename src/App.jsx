@@ -5,11 +5,14 @@ import { Education } from "./components/Education"
 import { LoadCard } from "./components/LoadCard"
 import { Preview} from "./components/Preview"
 import { useState } from "react"
+import generatePDF from 'react-to-pdf';
 import { defaultData, exampleData, expData } from "./components/Data"
 import { svgPersonal, svgExp, svgEdu, svgDownload, svgAutofill, svgTrash }  from './assets/svgs'
 import './App.css'
 
-
+const pdfOptions = {
+  method: 'open',
+}
 
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
@@ -142,7 +145,10 @@ function App() {
         <div className="preview-wrapper">
             <Preview update={updatePersonal} updateExp={updateExp} editMode={editMode} />
           <div className="action">
-            <button className="btn-download">PDF {svgDownload}</button>
+            <button className="btn-download" onClick={() => {
+              const pdfTarget = () => document.getElementById('pdf-content');
+              generatePDF(pdfTarget, pdfOptions);
+            }}>PDF {svgDownload}</button>
           </div>
         </div>
       </main>

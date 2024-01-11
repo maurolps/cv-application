@@ -19,6 +19,7 @@
 
 .preview-main {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   max-height: 550px;
   padding: 10px;
