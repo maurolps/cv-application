@@ -34,7 +34,7 @@ export function Preview(props) {
           </div>
 
           <div className="prev-section grid">
-            <div className="section-title">{svgExpBlack} Work Experience</div>
+            <div className="section-title">{svgExpBlack}Experience</div>
           </div>
           {
             updateExp !== null && (

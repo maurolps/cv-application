@@ -1,7 +1,6 @@
 .preview {
   background-color: #ffffff;
   min-width: 300px;
-  /* max-width: 1000px; */
   min-height: 500px;
   border-radius: 5px;
   border-color: #e0e0e0;
@@ -32,6 +31,45 @@
 .print-pdf {
   width: 600px;
   padding: 100px;
+}
+
+.print-pdf .prev-title {
+  font-size: 16px;
+}
+
+.print-pdf .prev-description {
+  font-size: 12px;
+}
+
+.print-pdf .prev-section {
+  font-size: 18px;
+}
+
+.print-pdf .prev-location {
+  font-size: 16px;
+}
+
+.print-pdf .prev-date {
+  font-size: 12px;
+}
+
+.print-pdf .prev-image {
+  width: 100px;
+  height: 100px;
+}
+
+.print-pdf .prev-name {
+  font-size: 12px;
+  max-width: 400px;
+}
+
+.print-pdf .prev-name h1 {
+  font-size: 26px;
+  line-height: 46px;
+}
+
+.print-pdf .prev-contact {
+  font-size: 12px;
 }
 
 .grid {
@@ -120,14 +158,14 @@
   width: 100%;
   max-width: 140px;
   font-style: italic;
-  font-size: 0.5rem
+  font-size: 0.5rem;
 }
 
 .prev-name h1 {
   text-transform: uppercase;
   font-style: normal;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 1px;
   line-height: 35px;
 }
