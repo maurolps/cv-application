@@ -16,7 +16,7 @@ function App() {
   const [updatePersonal, setUpdatePersonal] = useState(defaultData);
   const [updateExp, setUpdateExp] = useState(null);
   const [addingExp, setAddingExp] = useState(false);
-  const [editMode, setEditMode ] = useState(false);
+  const [editMode, setEditMode ] = useState({active: false, index: null,});
 
   const toggleCards = (title) => {
     setCardCollapse(title);
@@ -26,8 +26,11 @@ function App() {
     setAddingExp(!addingExp);
   }
 
-  const toggleEditMode = () => {
-    setEditMode(!editMode)
+  const toggleEditMode = (index = null) => {
+    setEditMode({
+      active: !editMode.active,
+      index,
+    })
   }
 
   const editing = (fieldsData) => {
@@ -58,6 +61,14 @@ function App() {
     setUpdateExp((prevData) => {
       if (!Array.isArray(prevData)) return [item];
       return [...prevData, item]
+    })
+  }
+
+  const updateExpItem = (item, index) => {
+    setUpdateExp((prevData) => {
+      const expData = [...prevData];
+      expData[index] = item;
+      return expData;
     })
   }
 
@@ -111,6 +122,7 @@ function App() {
             adding={addingExp}
             addExp={addExpItem}
             delExp={delExpItem}
+            updateItem={updateExpItem}
             editing={editing}
             toggleEdit={toggleEditMode}
             isEditing={editMode}

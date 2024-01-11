@@ -43,20 +43,31 @@ export function LoadCard(props) {
                     }}>Cancel</button>
                     <button onClick={() => {
                       {
-                        //update logic here...
-                        props.addExp({
-                          ["company-name"]: props.fieldsData["company-name"],
-                          ["position-title"]: props.fieldsData["position-title"],
-                          ["start-date"]: props.fieldsData["start-date"],
-                          ["end-date"]: props.fieldsData["end-date"],
-                          ["location"]: props.fieldsData.location,
-                          ["description"]: props.fieldsData.description,
-                        })
+                        props.isEditing.active ? (
+                          props.updateItem({
+                            ["company-name"]: props.fieldsData["company-name"],
+                            ["position-title"]: props.fieldsData["position-title"],
+                            ["start-date"]: props.fieldsData["start-date"],
+                            ["end-date"]: props.fieldsData["end-date"],
+                            ["location"]: props.fieldsData.location,
+                            ["description"]: props.fieldsData.description,
+                          }, props.isEditing.index)                          
+                          ) : (
+                            props.addExp({
+                              ["company-name"]: props.fieldsData["company-name"],
+                              ["position-title"]: props.fieldsData["position-title"],
+                              ["start-date"]: props.fieldsData["start-date"],
+                              ["end-date"]: props.fieldsData["end-date"],
+                              ["location"]: props.fieldsData.location,
+                              ["description"]: props.fieldsData.description,
+                            })
+                            
+                            )
                         props.toggleAdding();
-                        props.toggleEdit();
+                        props.isEditing.active && props.toggleEdit();
                         props.resetDraft();
                       }
-                    }}>{props.isEditing ? (<>Update</>) : (<>Add</>)}</button>
+                    }}>{props.isEditing.active ? (<>Update</>) : (<>Add</>)}</button>
                   </div>
                 </>                
               )}  
@@ -82,7 +93,7 @@ export function LoadCard(props) {
                                   <div className="exp-item-btn">
                                     <button onClick={() => {
                                       props.editing(experience);
-                                      props.toggleEdit();
+                                      props.toggleEdit(index);
                                       props.toggleAdding();                                      
                                     }}>{svgEdit}</button>
                                     <button onClick={() => {
