@@ -26,8 +26,12 @@
   padding: 10px;
   padding-bottom: 30px;
   overflow: auto;
-  padding: 50px;
+  padding: 10px;
+}
 
+.print-pdf {
+  width: 600px;
+  padding: 100px;
 }
 
 .grid {

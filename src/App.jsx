@@ -147,7 +147,10 @@ function App() {
           <div className="action">
             <button className="btn-download" onClick={() => {
               const pdfTarget = () => document.getElementById('pdf-content');
+              const pdfContent = pdfTarget();
+              pdfContent.classList.add("print-pdf");
               generatePDF(pdfTarget, pdfOptions);
+              pdfContent.classList.remove("print-pdf");
             }}>PDF {svgDownload}</button>
           </div>
         </div>
