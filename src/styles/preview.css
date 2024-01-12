@@ -125,10 +125,15 @@
   font-size: 30px;
   font-weight: 600;
   color: white;
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
   width: 80px;
   height: 80px;
   border-radius: 100%;
+}
+
+.prev-image img {
+  width: 80px;
+  height: 80px;
 }
 
 .prev-logo-text {

@@ -16,8 +16,8 @@ export function Preview(props) {
         <div className="preview-main" id="pdf-content">
           <div className="personal-details grid">
             <div>
-              <div className="prev-image">
-                <span className="prev-logo-text">{update["name"]}</span>
+              <div className="prev-image">                
+                <img src="" onError={(e) => e.target.src = "./src/assets/img-placeholder.png"} />
               </div>
             </div>
             <div className="prev-profile">
