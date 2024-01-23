@@ -72,6 +72,15 @@ const svgTrash = <svg xmlns="http://www.w3.org/2000/svg"
     19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
   </svg>
 
+const svgPhotoEdit = <svg xmlns="http://www.w3.org/2000/svg" 
+    width="16px"
+    fill="#369fff"
+    viewBox="0 0 24 24"><title>Change Photo</title>
+    <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0
+    0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1
+    15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z" />
+  </svg>
+
 const svgAdd = <svg xmlns="http://www.w3.org/2000/svg" 
   width="30px"
   fill="#ddd"
@@ -81,4 +90,4 @@ const svgAdd = <svg xmlns="http://www.w3.org/2000/svg"
     0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" />
 </svg>
 
-export { svgPersonal, svgEdu, svgExp, svgArrowDown, svgArrowUp, svgDownload, svgAutofill, svgTrash, svgAdd, svgEdit }
+export { svgPersonal, svgEdu, svgExp, svgArrowDown, svgArrowUp, svgDownload, svgAutofill, svgTrash, svgAdd, svgEdit, svgPhotoEdit }

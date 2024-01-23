@@ -1,4 +1,5 @@
 import { svgEdu, svgExp} from "../assets/svgs";
+import { ProfileImage } from "./ProfileImage";
 import React from "react";
 import "../styles/preview.css"
 
@@ -16,8 +17,8 @@ export function Preview(props) {
         <div className="preview-main" id="pdf-content">
           <div className="personal-details grid">
             <div>
-              <div className="prev-image">                
-                <img src="" onError={(e) => e.target.src = "./src/assets/img-placeholder.png"} />
+              <div className="prev-image">
+                <ProfileImage />
               </div>
             </div>
             <div className="prev-profile">

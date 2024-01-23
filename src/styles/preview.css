@@ -72,6 +72,23 @@
   font-size: 12px;
 }
 
+.print-pdf .prev-image img {
+  width: 110px;
+  height: 110px;
+}
+
+.prev-image input {
+  display: none;
+}
+
+.prev-image label {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  cursor: pointer;
+}
+
+
 .grid {
   margin: 10px;
   display: grid;
@@ -120,6 +137,7 @@
 
 .prev-image {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   font-size: 30px;
