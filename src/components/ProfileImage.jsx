@@ -19,6 +19,7 @@ export function ProfileImage() {
   return (
     <>
       <img 
+        id='profile-img'
         src={profileImage || './src/assets/img-placeholder.png'}
         onError={(e) => e.target.src = "./src/assets/img-placeholder.png"}
       />

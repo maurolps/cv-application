@@ -100,6 +100,10 @@ function App() {
             <button className="btn-autofill" onClick={() => {
               setUpdatePersonal(exampleData);
               setUpdateExp(expData);
+              setTimeout(() => {
+                const profileImg = document.getElementById('profile-img');
+                profileImg.src = "./src/assets/john-doe.png";      
+              }, 300);
             }}>Auto Fill {svgAutofill}</button>
             <button onClick={() => {
               setUpdatePersonal(defaultData);
