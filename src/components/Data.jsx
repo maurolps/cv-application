@@ -44,4 +44,21 @@ const expData = [
   }
 ];
 
-export { defaultData, exampleData, expData }
+const eduData = [
+  {
+    ["school"]: "Tech Solutions Inc.",
+    ["degree"]: "Full Stack Web Developer",
+    ["start"]: "Jan 2018",
+    ["end"]: "Present",
+    ["region"]: "São Paulo - Brasil",
+  },
+  {
+    ["school"]: "Quantum CNC",
+    ["degree"]: "Full Stack Ruby on Rails",
+    ["start"]: "Jun 2013",
+    ["end"]: "Out 2016",
+    ["region"]: "California, EUA",
+  }
+];
+
+export { defaultData, exampleData, expData, eduData }

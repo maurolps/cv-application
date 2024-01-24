@@ -26,7 +26,7 @@ export function LoadCard(props) {
             </>
           )}
 
-          {props.title === "Work Experience" && (
+          {props.title !== "Personal Details" && (
             <>
             
               {props.adding && (
@@ -84,7 +84,9 @@ export function LoadCard(props) {
                                 <div className="exp-item">
                                   <div>
                                     <div>
-                                      {experience["position-title"]}
+                                      {/* next step do more of this \/ */}
+                                      {console.log(experience)} 
+                                      {experience["position-title"] || experience["school"]}
                                     </div>
                                     <div className="exp-item-date">
                                       {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}

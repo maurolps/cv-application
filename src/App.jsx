@@ -6,7 +6,7 @@ import { LoadCard } from "./components/LoadCard"
 import { Preview} from "./components/Preview"
 import { useState } from "react"
 import generatePDF from 'react-to-pdf';
-import { defaultData, exampleData, expData } from "./components/Data"
+import { defaultData, exampleData, expData, eduData } from "./components/Data"
 import { svgPersonal, svgExp, svgEdu, svgDownload, svgAutofill, svgTrash }  from './assets/svgs'
 import './App.css'
 
@@ -20,6 +20,10 @@ function App() {
   const [updateExp, setUpdateExp] = useState(null);
   const [addingExp, setAddingExp] = useState(false);
   const [editMode, setEditMode ] = useState({active: false, index: null,});
+  const [updateEdu, setUpdateEdu] = useState(null);
+  const [addingEdu, setAddingEdu] = useState(false);
+  const [editModeEdu, setEditModeEdu ] = useState({active: false, index: null,});
+
 
   const toggleCards = (title) => {
     setCardCollapse(title);
@@ -29,9 +33,20 @@ function App() {
     setAddingExp(!addingExp);
   }
 
+  const toggleAddingEdu = () => {
+    setAddingEdu(!addingEdu);
+  }
+
   const toggleEditMode = (index = null) => {
     setEditMode({
       active: !editMode.active,
+      index,
+    })
+  }
+
+  const toggleEditModeEdu = (index = null) => {
+    setEditModeEdu({
+      active: !editModeEdu.active,
       index,
     })
   }
@@ -67,11 +82,26 @@ function App() {
     })
   }
 
+  const addEduItem = (item) => {
+    setUpdateEdu((prevData) => {
+      if (!Array.isArray(prevData)) return [item];
+      return [...prevData, item]
+    })
+  }
+
   const updateExpItem = (item, index) => {
     setUpdateExp((prevData) => {
-      const expData = [...prevData];
-      expData[index] = item;
-      return expData;
+      const eduData = [...prevData];
+      eduData[index] = item;
+      return eduData;
+    })
+  }
+
+  const updateEduItem = (item, index) => {
+    setUpdateEdu((prevData) => {
+      const eduData = [...prevData];
+      eduData[index] = item;
+      return eduData;
     })
   }
 
@@ -79,6 +109,12 @@ function App() {
     const tempArr = [...updateExp];
     tempArr.splice(index, 1);
     setUpdateExp(tempArr);
+  }
+
+  const delEduItem = (index) => {
+    const tempArr = [...updateEdu];
+    tempArr.splice(index, 1);
+    setUpdateEdu(tempArr);
   }
 
   const inputChange = (e) => {
@@ -100,6 +136,7 @@ function App() {
             <button className="btn-autofill" onClick={() => {
               setUpdatePersonal(exampleData);
               setUpdateExp(expData);
+              setUpdateEdu(eduData);
               setTimeout(() => {
                 const profileImg = document.getElementById('profile-img');
                 profileImg.src = "./src/assets/john-doe.png";      
@@ -108,7 +145,9 @@ function App() {
             <button onClick={() => {
               setUpdatePersonal(defaultData);
               setAddingExp(false);
+              setAddingEdu(false);
               setUpdateExp(null);
+              setUpdateEdu(null);
             }}>{svgTrash}</button>
           </div>
           <LoadCard title="Personal Details" 
@@ -143,7 +182,18 @@ function App() {
             toggle={toggleCards} 
             collapse={cardCollapse} 
             inputChange={inputChange}
-            update={updatePersonal} 
+            update={updateEdu} 
+            adding={addingEdu}
+            addExp={addEduItem}
+            delExp={delEduItem}
+            updateItem={updateEduItem}
+            editing={editing}
+            toggleEdit={toggleEditModeEdu}
+            editMode={editModeEdu}
+            fieldsData={updatePersonal}
+            resetDraft={resetDraft}
+            toggleAdding={toggleAddingEdu}
+
           />
         </div>
         <div className="preview-wrapper">
