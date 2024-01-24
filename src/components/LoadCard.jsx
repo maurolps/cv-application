@@ -84,12 +84,10 @@ export function LoadCard(props) {
                                 <div className="exp-item">
                                   <div>
                                     <div>
-                                      {/* next step do more of this \/ */}
-                                      {console.log(experience)} 
-                                      {experience["position-title"] || experience["school"]}
+                                      {experience["position-title"] || experience["degree"]}
                                     </div>
                                     <div className="exp-item-date">
-                                      {experience["company-name"]} | {experience["start-date"]} - {experience["end-date"]}
+                                      {experience["company-name"] || experience["school"]} | {experience["start-date"] || experience["start"]} - {experience["end-date"] || experience["end"]}
                                     </div>
                                   </div>
                                   <div className="exp-item-btn">

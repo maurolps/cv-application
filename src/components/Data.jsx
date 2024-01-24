@@ -46,17 +46,17 @@ const expData = [
 
 const eduData = [
   {
-    ["school"]: "Tech Solutions Inc.",
-    ["degree"]: "Full Stack Web Developer",
-    ["start"]: "Jan 2018",
-    ["end"]: "Present",
+    ["school"]: "Tech Universe",
+    ["degree"]: "Bachelor in Computer Science",
+    ["start"]: "Sep 2014",
+    ["end"]: "May 2018",
     ["region"]: "São Paulo - Brasil",
   },
   {
-    ["school"]: "Quantum CNC",
-    ["degree"]: "Full Stack Ruby on Rails",
-    ["start"]: "Jun 2013",
-    ["end"]: "Out 2016",
+    ["school"]: "Innovate",
+    ["degree"]: "Software Engineer",
+    ["start"]: "Jan 2019",
+    ["end"]: "Present",
     ["region"]: "California, EUA",
   }
 ];
