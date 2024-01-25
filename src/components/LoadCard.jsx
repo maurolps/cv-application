@@ -41,6 +41,8 @@ export function LoadCard(props) {
                         props.resetDraft();
                       }
                     }}>Cancel</button>
+                    {/* You need to fix this \/
+                        If you click add or update it will always update experience instead of education... */}
                     <button onClick={() => {
                       {
                         props.editMode.active ? (

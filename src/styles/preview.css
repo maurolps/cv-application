@@ -123,7 +123,7 @@
 
 .section-title {
   display: flex;
-  justify-content: start;
+  justify-content: end;
   gap: 10px;
 }
 
