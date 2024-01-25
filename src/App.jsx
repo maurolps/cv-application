@@ -16,7 +16,7 @@ const pdfOptions = {
 
 function App() {
   const [cardCollapse, setCardCollapse] = useState('Personal Details');
-  const [updatePersonal, setUpdatePersonal] = useState(defaultData);
+  const [fieldsData, setFieldsData] = useState(defaultData);
   const [updateExp, setUpdateExp] = useState(null);
   const [addingExp, setAddingExp] = useState(false);
   const [editMode, setEditMode ] = useState({active: false, index: null,});
@@ -51,15 +51,15 @@ function App() {
     })
   }
 
-  const editing = (fieldsData) => {
-    setUpdatePersonal((prevData) => ({
+  const editing = (data) => {
+    setFieldsData((prevData) => ({
       ...prevData,
-      ...fieldsData
+      ...data
     }))
   }
 
   const resetDraft = () =>  {
-    setUpdatePersonal((prevData) => ({
+    setFieldsData((prevData) => ({
       ...prevData,
       ["company-name"]: "",
       ["position-title"]: "",
@@ -119,7 +119,7 @@ function App() {
 
   const inputChange = (e) => {
     const { value, id } = e.target;
-    setUpdatePersonal((prevData) => ({
+    setFieldsData((prevData) => ({
       ...prevData,
       [id]: value,
     }));
@@ -134,7 +134,7 @@ function App() {
         <div className="container">
           <div className="card-actions">
             <button className="btn-autofill" onClick={() => {
-              setUpdatePersonal(exampleData);
+              setFieldsData(exampleData);
               setUpdateExp(expData);
               setUpdateEdu(eduData);
               setTimeout(() => {
@@ -143,7 +143,7 @@ function App() {
               }, 300);
             }}>Auto Fill {svgAutofill}</button>
             <button onClick={() => {
-              setUpdatePersonal(defaultData);
+              setFieldsData(defaultData);
               setAddingExp(false);
               setAddingEdu(false);
               setUpdateExp(null);
@@ -156,7 +156,7 @@ function App() {
             toggle={toggleCards} 
             collapse={cardCollapse} 
             inputChange={inputChange} 
-            update={updatePersonal} 
+            update={fieldsData} 
           />
           <LoadCard title="Work Experience" 
             svg={svgExp}
@@ -166,13 +166,13 @@ function App() {
             inputChange={inputChange}
             update={updateExp}
             adding={addingExp}
-            addExp={addExpItem}
-            delExp={delExpItem}
+            addItem={addExpItem}
+            delItem={delExpItem}
             updateItem={updateExpItem}
             editing={editing}
             toggleEdit={toggleEditMode}
             editMode={editMode}
-            fieldsData={updatePersonal}
+            fieldsData={fieldsData}
             resetDraft={resetDraft}
             toggleAdding={toggleAddingExp} 
           />
@@ -184,20 +184,20 @@ function App() {
             inputChange={inputChange}
             update={updateEdu} 
             adding={addingEdu}
-            addExp={addEduItem}
-            delExp={delEduItem}
+            addItem={addEduItem}
+            delItem={delEduItem}
             updateItem={updateEduItem}
             editing={editing}
             toggleEdit={toggleEditModeEdu}
             editMode={editModeEdu}
-            fieldsData={updatePersonal}
+            fieldsData={fieldsData}
             resetDraft={resetDraft}
             toggleAdding={toggleAddingEdu}
 
           />
         </div>
         <div className="preview-wrapper">
-            <Preview update={updatePersonal} updateExp={updateExp} updateEdu={updateEdu} editMode={editMode} />
+            <Preview update={fieldsData} updateExp={updateExp} updateEdu={updateEdu} editMode={editMode} editModeEdu={editModeEdu} />
           <div className="action">
             <button className="btn-download" onClick={() => {
               const pdfTarget = () => document.getElementById('pdf-content');

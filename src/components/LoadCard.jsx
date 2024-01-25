@@ -46,7 +46,7 @@ export function LoadCard(props) {
                         props.editMode.active ? (
                           props.updateItem(props.fieldsData, props.editMode.index)                          
                           ) : (
-                            props.addExp(props.fieldsData)
+                            props.addItem(props.fieldsData)
                             )
                         props.toggleAdding();
                         props.editMode.active && props.toggleEdit();
@@ -82,7 +82,7 @@ export function LoadCard(props) {
                                       props.toggleAdding();                                      
                                     }}>{svgEdit}</button>
                                     <button onClick={() => {
-                                      props.delExp(index);
+                                      props.delItem(index);
                                     }}>{svgTrashBlack}</button>
                                   </div>
                                 </div>

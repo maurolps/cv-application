@@ -97,7 +97,7 @@ export function Preview(props) {
             )
           }
           {
-            !props.editMode.active && (
+            !props.editModeEdu.active && (
               update.school !== ""? (
                 <div className="education grid prev-draft">
                   <div>
