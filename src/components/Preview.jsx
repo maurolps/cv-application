@@ -4,7 +4,7 @@ import React from "react";
 import "../styles/preview.css"
 
 export function Preview(props) {
-  const { update, updateExp } = props;
+  const { update, updateExp, updateEdu } = props;
   const svgEduBlack = React.cloneElement(svgEdu, { fill: "black" });
   const svgExpBlack = React.cloneElement(svgExp, { fill: "black" });
 
@@ -77,16 +77,40 @@ export function Preview(props) {
           <div className="prev-section grid">
             <div className="section-title">{svgEduBlack} Education</div>
           </div>
-          <div className="education grid">
-            <div>
-              <div className="prev-title">{update.degree}</div>
-              <div className="prev-date"> {update.start} - {update.end} </div>
-            </div>
-            <div>
-              <div className="prev-location">{update.school} - {update.region}</div>
-              <div className="prev-description"></div>
-            </div>
-          </div>
+          {
+            updateEdu !== null && (
+              updateEdu.map((experience) => {
+                return (
+                  <>
+                    <div className="education grid">
+                      <div>
+                        <div className="prev-title">{experience.degree}</div>
+                        <div className="prev-date"> {experience.start} - {experience.end}</div>
+                      </div>
+                      <div>
+                        <div className="prev-location">{experience.school} - {experience.region}</div>
+                      </div>
+                    </div>
+                  </>
+                )
+              })
+            )
+          }
+          {
+            !props.editMode.active && (
+              update.school !== ""? (
+                <div className="education grid prev-draft">
+                  <div>
+                    <div className="prev-title">{update.degree}</div>
+                    <div className="prev-date"> {update.start} - {update.end} </div>
+                  </div>
+                  <div>
+                    <div className="prev-location">{update.school} - {update.region}</div>
+                  </div>
+                </div>
+              ): ""
+            )
+          }
         </div>
       )}
     </div>

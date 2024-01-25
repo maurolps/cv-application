@@ -197,7 +197,7 @@ function App() {
           />
         </div>
         <div className="preview-wrapper">
-            <Preview update={updatePersonal} updateExp={updateExp} editMode={editMode} />
+            <Preview update={updatePersonal} updateExp={updateExp} updateEdu={updateEdu} editMode={editMode} />
           <div className="action">
             <button className="btn-download" onClick={() => {
               const pdfTarget = () => document.getElementById('pdf-content');

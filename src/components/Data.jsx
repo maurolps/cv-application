@@ -47,10 +47,10 @@ const expData = [
 const eduData = [
   {
     ["school"]: "Tech Universe",
-    ["degree"]: "Bachelor in Computer Science",
+    ["degree"]: "Bachelor in CS",
     ["start"]: "Sep 2014",
     ["end"]: "May 2018",
-    ["region"]: "São Paulo - Brasil",
+    ["region"]: "São Paulo, Brasil",
   },
   {
     ["school"]: "Innovate",
