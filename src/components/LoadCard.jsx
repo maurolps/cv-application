@@ -41,29 +41,12 @@ export function LoadCard(props) {
                         props.resetDraft();
                       }
                     }}>Cancel</button>
-                    {/* You need to fix this \/
-                        If you click add or update it will always update experience instead of education... */}
                     <button onClick={() => {
                       {
                         props.editMode.active ? (
-                          props.updateItem({
-                            ["company-name"]: props.fieldsData["company-name"],
-                            ["position-title"]: props.fieldsData["position-title"],
-                            ["start-date"]: props.fieldsData["start-date"],
-                            ["end-date"]: props.fieldsData["end-date"],
-                            ["location"]: props.fieldsData.location,
-                            ["description"]: props.fieldsData.description,
-                          }, props.editMode.index)                          
+                          props.updateItem(props.fieldsData, props.editMode.index)                          
                           ) : (
-                            props.addExp({
-                              ["company-name"]: props.fieldsData["company-name"],
-                              ["position-title"]: props.fieldsData["position-title"],
-                              ["start-date"]: props.fieldsData["start-date"],
-                              ["end-date"]: props.fieldsData["end-date"],
-                              ["location"]: props.fieldsData.location,
-                              ["description"]: props.fieldsData.description,
-                            })
-                            
+                            props.addExp(props.fieldsData)
                             )
                         props.toggleAdding();
                         props.editMode.active && props.toggleEdit();
