@@ -11,10 +11,10 @@ header {
 header .logo {
   display: flex;
   justify-content: space-between;
-  background-color: var(--background-color);
+  background-color: var(--card-background-color);
   align-items: end;
   width: 100%;
-  border: 1px solid var(--card-background-color);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   padding: 10px;
 }

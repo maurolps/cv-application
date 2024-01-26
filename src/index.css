@@ -2,15 +2,16 @@
   --primary-color: #0cb6c2;
   --secondary-color: #ff6a50;
   --background-color: #ffffff;
-  --text-color: black;
+  --text-color: #3f3c3c;
   --border-color: #e0e0e0;
   --action-color: #963fdf;
   --input-color: #888;
   --input-placeholder-color: #b2b5c0;
   --card-background-color: #f8f8f8;
+  --darkmode-bg: rgba(255, 182, 98, 0.4);
 
   /* dark mode */
-  --primary-color: #1bb7c2;
+  /* --primary-color: #1bb7c2;
   --secondary-color: #ec6e58;
   --background-color: #333333;
   --text-color: #cbcbcb;
@@ -18,7 +19,8 @@
   --action-color: #973ddd;
   --input-color: #707070;
   --input-placeholder-color: #504c4c;
-  --card-background-color: #414141; 
+  --darkmode-bg: rgba(15, 15, 15, 0.4);
+  --card-background-color: #414141;  */
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
