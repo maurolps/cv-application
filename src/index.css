@@ -1,8 +1,18 @@
 :root {
+  --primary-color: #369fff;
+  --secondary-color: #ff6536;
+  --background-color: #fafafa;
+  --text-color: black;
+  --border-color: #e0e0e0;
+  --action-color: #8336ff;
+  --input-color: #888;
+  --input-placeholder-color: #b2b5c0;
+  --card-background-color: white;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #fafafa;
+  background-color: var(--background-color);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,5 +21,3 @@
 body {
   margin: 0;
 }
-
-

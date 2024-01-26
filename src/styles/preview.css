@@ -1,9 +1,9 @@
 .preview {
-  background-color: #ffffff;
+  background-color: var(--card-background-color);
   min-width: 300px;
   min-height: 500px;
   border-radius: 5px;
-  border-color: #e0e0e0;
+  border-color: var(--border-color);
   border-width: 1px;
   border-style: groove;
   
@@ -11,7 +11,7 @@
 
 .preview-info {
   font-size: 0.6rem;
-  color: #afb4c5;
+  color: var(--input-placeholder-color);
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
@@ -90,14 +90,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--card-background-color);
   width: 18px;
   height: 18px;
   position: absolute;
   right: 0;
   bottom: -5px;  
   border-radius: 50%;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border-color);
 }
 
 .update-photo label {
@@ -128,7 +128,7 @@
 }
 
 .prev-separator {
-  border-bottom: 2px dotted #bbb;
+  border-bottom: 2px dotted var(--input-color);
 }
 
 .prev-title, .prev-location {
@@ -136,12 +136,12 @@
   font-size: 0.7rem;
   font-weight: 600;
   text-align: end;
-  color: #369fff;
+  color: var(--primary-color);
 }
 
 .prev-location {
   text-align: start;
-  color: black;
+  color: var(--text-color);
 }
 
 .prev-date {
@@ -152,6 +152,7 @@
 
 .prev-description {
   font-size: 0.6rem;
+  font-style: italic;
 }
 
 .prev-image {
@@ -161,11 +162,10 @@
   align-items: center;
   font-size: 30px;
   font-weight: 600;
-  color: white;
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border-color);
 }
 
 .prev-image img {

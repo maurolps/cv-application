@@ -1,5 +1,5 @@
 const svgPersonal = <svg width="30px" 
-  fill="#369fff" 
+  style={{ fill: 'var(--primary-color)' }} 
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"><title>Personal Info</title>
   <path d="M12 3C14.21 3 16 4.79 16 7S14.21 11 12 11 8 9.21 8 7 9.79 3 12
@@ -9,15 +9,15 @@ const svgPersonal = <svg width="30px"
 </svg>
 
 const svgEdu = <svg width="25px" 
-  fill="#369fff" 
+  style={{ fill: 'var(--primary-color)' }}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"><title>Education</title>
   <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,
   17.18V13.18L12,17L5,13.18Z"/>
 </svg>
 
-const svgExp = <svg width="20px" 
-  fill="#369fff" 
+const svgExp = <svg width="25px" 
+  style={{ fill: 'var(--primary-color)' }}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"><title>Work Experience</title>
   <path d="M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4C2.89,
@@ -25,12 +25,14 @@ const svgExp = <svg width="20px"
 </svg>
 
 const svgArrowDown = <svg width="20px" 
+  style={{ fill: 'var(--text-color)' }}
   xmlns="http://www.w3.org/2000/svg" 
   viewBox="0 0 24 24"><title>Expand</title>
   <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
 </svg>
 
 const svgArrowUp = <svg width="20px"
+  style={{ fill: 'var(--text-color)' }}
   xmlns="http://www.w3.org/2000/svg" 
   viewBox="0 0 24 24"><title>Collapse</title>
   <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
@@ -58,7 +60,7 @@ const svgAutofill = <svg viewBox="0 0 24 24"
 
 const svgEdit = <svg viewBox="0 0 24 24"
 width="15px"
-fill="#bbb"
+style={{ fill: 'var(--border-color)' }}
 xmlns="http://www.w3.org/2000/svg">
 <title>Edit</title>
 <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
@@ -66,7 +68,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 const svgTrash = <svg xmlns="http://www.w3.org/2000/svg" 
     width="20px"
-    fill="white"
+    style={{ fill: 'var(--border-color)' }}
     viewBox="0 0 24 24"><title>Clear All</title>
     <path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 
     19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
@@ -74,7 +76,7 @@ const svgTrash = <svg xmlns="http://www.w3.org/2000/svg"
 
 const svgPhotoEdit = <svg xmlns="http://www.w3.org/2000/svg" 
     width="16px"
-    fill="#369fff"
+    style={{ fill: 'var(--primary-color)' }} 
     viewBox="0 0 24 24"><title>Change Photo</title>
     <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0
     0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1
@@ -83,7 +85,7 @@ const svgPhotoEdit = <svg xmlns="http://www.w3.org/2000/svg"
 
 const svgAdd = <svg xmlns="http://www.w3.org/2000/svg" 
   width="30px"
-  fill="#ddd"
+  style={{ fill: 'var(--primary-color)' }}
   viewBox="0 0 24 24"><title>Add new item</title>
   <path d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59
     20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 
