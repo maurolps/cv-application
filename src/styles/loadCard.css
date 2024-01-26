@@ -1,12 +1,4 @@
-.card-actions {
-  display: flex;
-  gap: 5px;
-  scale: 0.8;
-}
 
-.card-actions button {
-  text-transform: uppercase;
-}
 
 .card {
   display: flex;

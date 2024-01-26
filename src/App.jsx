@@ -6,8 +6,8 @@ import { LoadCard } from "./components/LoadCard"
 import { Preview} from "./components/Preview"
 import { useState } from "react"
 import generatePDF from 'react-to-pdf';
-import { defaultData, exampleData, expData, eduData } from "./components/Data"
-import { svgPersonal, svgExp, svgEdu, svgDownload, svgAutofill, svgTrash }  from './assets/svgs'
+import { defaultData } from "./components/Data"
+import { svgPersonal, svgExp, svgEdu, svgDownload }  from './assets/svgs'
 import './App.css'
 
 const pdfOptions = {
@@ -127,29 +127,19 @@ function App() {
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
+
       <main>
         <div className="container">
-          <div className="card-actions">
-            <button className="btn-autofill" onClick={() => {
-              setFieldsData(exampleData);
-              setUpdateExp(expData);
-              setUpdateEdu(eduData);
-              setTimeout(() => {
-                const profileImg = document.getElementById('profile-img');
-                profileImg.src = "./src/assets/john-doe.png";      
-              }, 300);
-            }}>Auto Fill {svgAutofill}</button>
-            <button onClick={() => {
-              setFieldsData(defaultData);
-              setAddingExp(false);
-              setAddingEdu(false);
-              setUpdateExp(null);
-              setUpdateEdu(null);
-            }}>{svgTrash}</button>
-          </div>
+          <header>
+            <Header 
+              setFieldsData={setFieldsData}
+              setUpdateExp={setUpdateExp}
+              setUpdateEdu={setUpdateEdu}
+              setAddingEdu={setAddingEdu}
+              setAddingExp={setAddingExp}
+            />
+          </header>
+          
           <LoadCard title="Personal Details" 
             svg={svgPersonal}
             component={Personal} 
