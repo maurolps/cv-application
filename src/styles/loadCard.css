@@ -71,7 +71,7 @@
   border-color: var(--border-color);
   border-width: 1px;
   border-style: solid;
-  background-color: var(--card-background-color);
+  background-color: var(--background-color);
 }
 
 .fields-container input::placeholder, textarea::placeholder {
