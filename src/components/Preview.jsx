@@ -5,8 +5,8 @@ import "../styles/preview.css"
 
 export function Preview(props) {
   const { update, updateExp, updateEdu } = props;
-  const svgEduBlack = React.cloneElement(svgEdu, { fill: "black" });
-  const svgExpBlack = React.cloneElement(svgExp, { fill: "black" });
+  const svgEduBlack = React.cloneElement(svgEdu, { style: {fill: 'var(--text-color'} });
+  const svgExpBlack = React.cloneElement(svgExp, { style: {fill: 'var(--text-color'} });
 
   return (
     <div className="preview">
@@ -34,83 +34,87 @@ export function Preview(props) {
             </div>
           </div>
 
-          <div className="prev-section grid">
-            <div className="section-title">{svgExpBlack}Experience</div>
-          </div>
-          {
-            updateExp !== null && (
-              updateExp.map((experience) => {
-                return (
-                  <>
-                    <div className="work-experience grid">
-                      <div>
-                        <div className="prev-title">{experience["position-title"]}</div>
-                        <div className="prev-date"> {experience["start-date"]} - {experience["end-date"]}</div>
+          <div className="section-wrapper">
+            <div className="prev-section grid">
+              <div className="section-title">{svgExpBlack}Experience</div>
+            </div>
+            {
+              updateExp !== null && (
+                updateExp.map((experience) => {
+                  return (
+                    <>
+                      <div className="work-experience grid">
+                        <div>
+                          <div className="prev-title">{experience["position-title"]}</div>
+                          <div className="prev-date"> {experience["start-date"]} - {experience["end-date"]}</div>
+                        </div>
+                        <div>
+                          <div className="prev-location">{experience["company-name"]} - {experience.location}</div>
+                          <div className="prev-description">{experience.description}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="prev-location">{experience["company-name"]} - {experience.location}</div>
-                        <div className="prev-description">{experience.description}</div>
-                      </div>
+                    </>
+                  )
+                })
+              )
+            }
+            {
+              props.editMode.active && (
+                update["company-name"] !== ""? (
+                  <div className="work-experience grid prev-draft">
+                    <div>
+                      <div className="prev-title">{update["position-title"]}</div>
+                      <div className="prev-date"> {update["start-date"]} - {update["end-date"]} </div>
                     </div>
-                  </>
-                )
-              })
-            )
-          }
-          {
-            props.editMode.active && (
-              update["company-name"] !== ""? (
-                <div className="work-experience grid prev-draft">
-                  <div>
-                    <div className="prev-title">{update["position-title"]}</div>
-                    <div className="prev-date"> {update["start-date"]} - {update["end-date"]} </div>
+                    <div>
+                      <div className="prev-location">{update["company-name"]} - {update.location}</div>
+                      <div className="prev-description">{update.description}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="prev-location">{update["company-name"]} - {update.location}</div>
-                    <div className="prev-description">{update.description}</div>
-                  </div>
-                </div>
-              ): ""
-            )
-          }
+                ): ""
+              )
+            }
+          </div>
 
-          <div className="prev-section grid">
-            <div className="section-title">{svgEduBlack} Education</div>
-          </div>
-          {
-            updateEdu !== null && (
-              updateEdu.map((experience) => {
-                return (
-                  <>
-                    <div className="education grid">
-                      <div>
-                        <div className="prev-title">{experience.degree}</div>
-                        <div className="prev-date"> {experience.start} - {experience.end}</div>
+          <div className="section-wrapper">
+            <div className="prev-section grid">
+              <div className="section-title">{svgEduBlack} Education</div>
+            </div>
+            {
+              updateEdu !== null && (
+                updateEdu.map((experience) => {
+                  return (
+                    <>
+                      <div className="education grid">
+                        <div>
+                          <div className="prev-title">{experience.degree}</div>
+                          <div className="prev-date"> {experience.start} - {experience.end}</div>
+                        </div>
+                        <div>
+                          <div className="prev-location">{experience.school} - {experience.region}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="prev-location">{experience.school} - {experience.region}</div>
-                      </div>
+                    </>
+                  )
+                })
+              )
+            }
+            {
+              props.editModeEdu.active && (
+                update.school !== ""? (
+                  <div className="education grid prev-draft">
+                    <div>
+                      <div className="prev-title">{update.degree}</div>
+                      <div className="prev-date"> {update.start} - {update.end} </div>
                     </div>
-                  </>
-                )
-              })
-            )
-          }
-          {
-            props.editModeEdu.active && (
-              update.school !== ""? (
-                <div className="education grid prev-draft">
-                  <div>
-                    <div className="prev-title">{update.degree}</div>
-                    <div className="prev-date"> {update.start} - {update.end} </div>
+                    <div>
+                      <div className="prev-location">{update.school} - {update.region}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="prev-location">{update.school} - {update.region}</div>
-                  </div>
-                </div>
-              ): ""
-            )
-          }
+                ): ""
+              )
+            }
+          </div>
         </div>
       )}
     </div>

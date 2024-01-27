@@ -11,7 +11,7 @@
 
 .preview-info {
   font-size: 0.6rem;
-  color: var(--input-placeholder-color);
+  color: var(--input-color);
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
@@ -26,11 +26,15 @@
   padding-bottom: 30px;
   overflow: auto;
   padding: 10px;
+  padding-top: 30px;
+  gap: 30px;
 }
 
 .print-pdf {
   width: 600px;
   padding: 100px;
+  color: black;
+  --text-color: black;
 }
 
 .print-pdf .prev-title {
@@ -47,6 +51,7 @@
 
 .print-pdf .prev-location {
   font-size: 16px;
+  color: black;
 }
 
 .print-pdf .prev-date {

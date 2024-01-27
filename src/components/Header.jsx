@@ -1,10 +1,12 @@
 import "../styles/header.css"
+import React from "react"
 import DarkMode from "./DarkMode"
 import { svgAutofill, svgTrash }  from '../assets/svgs'
 import { defaultData, exampleData, expData, eduData } from "./Data"
 
 export function Header(props) {
   const {setFieldsData, setUpdateExp, setUpdateEdu, setAddingExp, setAddingEdu} = props;
+  const svgTrashWhite = React.cloneElement(svgTrash, { style: {fill: '#fdfdfd'} });
 
   return (
     <>
@@ -28,7 +30,7 @@ export function Header(props) {
               setAddingEdu(false);
               setUpdateExp(null);
               setUpdateEdu(null);
-            }}>{svgTrash}</button>
+            }}>{svgTrashWhite}</button>
           </div>
     </>
   )
