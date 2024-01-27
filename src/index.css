@@ -6,6 +6,7 @@
   --border-color: #e0e0e0;
   --action-color: #963fdf;
   --input-color: #888;
+  --small-icons-color: #d1d1d1;
   --input-placeholder-color: #b2b5c0;
   --card-background-color: #f8f8f8;
 
@@ -13,16 +14,21 @@
   line-height: 1.5;
 }
 
+/* todo: 
+add skills? 
+responsive design */
+
 [data-theme="dark"] {
-  --primary-color: #1bb7c2;
+  --primary-color: #1aa0aa;
   --secondary-color: #ec6e58;
   --background-color: #333333;
   --text-color: #cbcbcb;
+  --small-icons-color: #5f5f5f;
   --border-color: #353535;
-  --action-color: #973ddd;
-  --input-color: #707070;
+  --action-color: #a457c5;
+  --input-color: #999;
   --input-placeholder-color: #504c4c;
-  --card-background-color: #414141; 
+  --card-background-color: #414141;
 }
 
 #root {

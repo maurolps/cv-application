@@ -1,10 +1,20 @@
-import { LoadFields } from "./LoadFields"
+import { LoadFields } from "./LoadFields";
 
+export function Experience(props) {
+  const inputs = [
+    "Company Name",
+    "Position Title",
+    "Start Date",
+    "End Date",
+    "Location",
+    "Description",
+  ];
 
-export function Experience (props) {
-
-
-  const inputs = ["Company Name", "Position Title", "Start Date", "End Date", "Location", "Description"];
-
-  return <LoadFields inputList={inputs} inputChange={props.inputChange} update={props.update} />
+  return (
+    <LoadFields
+      inputList={inputs}
+      inputChange={props.inputChange}
+      update={props.update}
+    />
+  );
 }

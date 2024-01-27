@@ -12,7 +12,11 @@ header {
 header .logo {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(360deg, var(--card-background-color), var(--background-color));
+  background: linear-gradient(
+    360deg,
+    var(--card-background-color),
+    var(--background-color)
+  );
   align-items: end;
   height: 35px;
   width: 100%;

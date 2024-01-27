@@ -6,7 +6,6 @@
   border-color: var(--border-color);
   border-width: 1px;
   border-style: groove;
-  
 }
 
 .preview-info {
@@ -100,18 +99,17 @@
   height: 18px;
   position: absolute;
   right: 0;
-  bottom: -5px;  
+  bottom: -5px;
   border-radius: 50%;
   border: 2px solid var(--border-color);
 }
 
 .update-photo label {
-  cursor: pointer;  
+  cursor: pointer;
   display: flex;
   justify-content: center;
   z-index: 10;
 }
-
 
 .grid {
   margin: 10px;
@@ -136,7 +134,8 @@
   border-bottom: 2px dotted var(--input-color);
 }
 
-.prev-title, .prev-location {
+.prev-title,
+.prev-location {
   text-transform: uppercase;
   font-size: 0.7rem;
   font-weight: 600;
@@ -230,5 +229,3 @@
   font-style: italic;
   opacity: 30%;
 }
-
-
