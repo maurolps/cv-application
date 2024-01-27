@@ -1,22 +1,23 @@
 header {
   width: 100%;
-  max-width: 240px;
+  max-width: 251px;
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   align-items: end;
   gap: 30px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 header .logo {
   display: flex;
   justify-content: space-between;
-  background-color: var(--card-background-color);
+  background: linear-gradient(360deg, var(--card-background-color), var(--background-color));
   align-items: end;
+  height: 35px;
   width: 100%;
-  border: 1px solid var(--border-color);
   border-radius: 5px;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 header p {

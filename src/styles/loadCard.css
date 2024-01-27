@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
+.card-title * {
+  transition: d 0.2s ease-in-out;
+}
+
 .card-svg {
   display: flex;
   justify-content: flex-end;

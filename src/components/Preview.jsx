@@ -58,7 +58,7 @@ export function Preview(props) {
             )
           }
           {
-            !props.editMode.active && (
+            props.editMode.active && (
               update["company-name"] !== ""? (
                 <div className="work-experience grid prev-draft">
                   <div>
@@ -97,7 +97,7 @@ export function Preview(props) {
             )
           }
           {
-            !props.editModeEdu.active && (
+            props.editModeEdu.active && (
               update.school !== ""? (
                 <div className="education grid prev-draft">
                   <div>

@@ -28,11 +28,11 @@ const exampleData = {
 const expData = [
   {
     ["company-name"]: "Tech Solutions Inc.",
-    ["position-title"]: "Full Stack Web Developer",
+    ["position-title"]: "Front-End Engineer",
     ["start-date"]: "Jan 2018",
     ["end-date"]: "Present",
-    ["location"]: "São Paulo - Brasil",
-    ["description"]: "Develop and maintain full-stack applications, participate in system architecture design, troubleshoot and debug issues, collaborate with cross-functional teams.",
+    ["location"]: "São Paulo, Brasil",
+    ["description"]: "Craft and enhance user interfaces for web applications, collaborate with UX/UI designers to implement visually appealing and responsive designs, optimize website performance, and ensure a seamless user experience. Additionally, actively participate in agile development processes, conduct code reviews, and contribute to the continuous improvement of development workflows.",
   },
   {
     ["company-name"]: "Quantum CNC",

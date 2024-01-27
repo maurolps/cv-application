@@ -8,10 +8,13 @@
   --input-color: #888;
   --input-placeholder-color: #b2b5c0;
   --card-background-color: #f8f8f8;
-  --darkmode-bg: rgba(255, 182, 98, 0.4);
 
-  /* dark mode */
-  /* --primary-color: #1bb7c2;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] {
+  --primary-color: #1bb7c2;
   --secondary-color: #ec6e58;
   --background-color: #333333;
   --text-color: #cbcbcb;
@@ -19,16 +22,14 @@
   --action-color: #973ddd;
   --input-color: #707070;
   --input-placeholder-color: #504c4c;
-  --darkmode-bg: rgba(15, 15, 15, 0.4);
-  --card-background-color: #414141;  */
+  --card-background-color: #414141; 
+}
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+#root {
+  margin: 0 auto;
   background-color: var(--background-color);
-  font-synthesis: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  transition: background-color 0.3s ease-in-out;
 }
 
 body {
