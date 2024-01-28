@@ -9,7 +9,8 @@ main {
 .preview-wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 900px;
+  min-width: 330px;
 }
 
 .container {
@@ -44,5 +45,9 @@ button {
 @media (max-width: 640px) {
   main {
     grid-template-columns: minmax(265px, 1fr);
+    gap: 30px;
+  }
+  .preview-wrapper {
+    min-width: 260px;
   }
 }

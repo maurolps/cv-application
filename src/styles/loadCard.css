@@ -6,8 +6,6 @@
   padding-left: 20px;
   border-radius: 5px;
   height: fit-content;
-  /* min-width: 220px; */
-  /* max-width: 250px; */
   width: 100%;
   min-width: 260px;
   max-width: 350px;
@@ -45,7 +43,6 @@
 }
 
 .card textarea {
-  max-width: 200px;
   margin-bottom: 20px;
 }
 

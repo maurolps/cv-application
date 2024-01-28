@@ -14,10 +14,6 @@
   line-height: 1.5;
 }
 
-/* todo: 
-add skills? 
-responsive design */
-
 [data-theme="dark"] {
   --primary-color: #1aa0aa;
   --secondary-color: #ec6e58;

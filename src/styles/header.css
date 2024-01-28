@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  max-width: 251px;
+  max-width: 350px;
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
@@ -12,22 +12,20 @@ header {
 header .logo {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(
-    360deg,
-    var(--card-background-color),
-    var(--background-color)
-  );
+  background-color: var(--card-background-color);
   align-items: end;
-  height: 35px;
+  min-height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
   width: 100%;
   border-radius: 5px;
-  padding-left: 10px;
 }
 
 header p {
   color: var(--text-color);
   font-weight: bolder;
   margin: 0px;
+  padding-left: 30px;
 }
 
 .card-actions {
@@ -38,4 +36,10 @@ header p {
 
 .card-actions button {
   text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  header {
+    max-width: 100%;
+  }
 }

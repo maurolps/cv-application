@@ -22,6 +22,7 @@
   flex-direction: column;
   overflow: auto;
   gap: 30px;
+  max-width: 800px;
 }
 
 .print-pdf {
@@ -163,7 +164,6 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
   font-weight: 600;
   width: 80px;
   height: 80px;
@@ -179,11 +179,6 @@
 
 .prev-logo-text {
   font-size: 0;
-}
-
-.prev-logo-text::first-letter {
-  font-size: 30px;
-  text-transform: uppercase;
 }
 
 .personal-details {
