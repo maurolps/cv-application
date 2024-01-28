@@ -1,6 +1,6 @@
 .preview {
   background-color: var(--card-background-color);
-  min-width: 300px;
+  min-width: 260px;
   min-height: 500px;
   border-radius: 5px;
   border-color: var(--border-color);
@@ -20,12 +20,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-height: 550px;
-  padding: 10px;
-  padding-bottom: 30px;
   overflow: auto;
-  padding: 10px;
-  padding-top: 30px;
   gap: 30px;
 }
 
@@ -85,6 +80,10 @@
   display: none;
 }
 
+.print-pdf .grid {
+  grid-template: 1fr / 150px 3fr;
+}
+
 .update-photo input {
   opacity: 0;
   position: absolute;
@@ -114,7 +113,7 @@
 .grid {
   margin: 10px;
   display: grid;
-  grid-template: 1fr / 150px 3fr;
+  grid-template: 1fr / minmax(100px, 1fr) 2fr;
   column-gap: 20px;
 }
 

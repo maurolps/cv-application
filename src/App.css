@@ -1,6 +1,6 @@
 main {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr minmax(260px, 2fr);
   gap: 10px;
   padding: 30px;
   color: var(--text-color);
@@ -39,4 +39,10 @@ button {
 .action .btn-download {
   padding: 5px 14px 5px 14px;
   background-color: var(--action-color);
+}
+
+@media (max-width: 640px) {
+  main {
+    grid-template-columns: minmax(265px, 1fr);
+  }
 }
