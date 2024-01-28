@@ -2,6 +2,53 @@ import { svgArrowDown, svgArrowUp } from "../assets/svgs";
 import React from "react";
 import "../styles/loadCard.css";
 import { svgAdd, svgTrash, svgEdit } from "../assets/svgs";
+import proptypes from "prop-types";
+
+LoadCard.propTypes = {
+  title: proptypes.string,
+  svg: proptypes.element,
+  component: proptypes.any,
+  inputChange: proptypes.func,
+  update: proptypes.any,
+  fieldsData: proptypes.object,
+  collapse: proptypes.string,
+  toggle: proptypes.func,
+  adding: proptypes.bool,
+  setAdding: proptypes.func,
+  setUpdate: proptypes.func,
+  setFieldsData: proptypes.func,
+  setUpdateEdu: proptypes.func,
+  setUpdateExp: proptypes.func,
+  setAddingEdu: proptypes.func,
+  setAddingExp: proptypes.func,
+  setEditMode: proptypes.func,
+  setEditModeEdu: proptypes.func,
+  setEditModeExp: proptypes.func,
+  editMode: proptypes.object,
+  editModeEdu: proptypes.object,
+  editModeExp: proptypes.object,
+  toggleEditMode: proptypes.func,
+  toggleEditModeEdu: proptypes.func,
+  toggleEditModeExp: proptypes.func,
+  toggleAdding: proptypes.func,
+  toggleAddingEdu: proptypes.func,
+  toggleAddingExp: proptypes.func,
+  setCardCollapse: proptypes.func,
+  cardCollapse: proptypes.string,
+  toggleCards: proptypes.func,
+  toggleCardsEdu: proptypes.func,
+  toggleCardsExp: proptypes.func,
+  setCardCollapseEdu: proptypes.func,
+  setCardCollapseExp: proptypes.func,
+  cardCollapseEdu: proptypes.string,
+  cardCollapseExp: proptypes.string,
+  toggleEdit: proptypes.func,
+  resetDraft: proptypes.func,
+  addItem: proptypes.func,
+  updateItem: proptypes.func,
+  editing: proptypes.func,
+  delItem: proptypes.func,
+};
 
 export function LoadCard(props) {
   const svgTrashBlack = React.cloneElement(svgTrash, {

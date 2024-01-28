@@ -1,3 +1,11 @@
+import propstypes from "prop-types";
+
+LoadFields.propTypes = {
+  inputList: propstypes.array,
+  inputChange: propstypes.func,
+  update: propstypes.object,
+};
+
 export function LoadFields(props) {
   return (
     <div className="fields-container">

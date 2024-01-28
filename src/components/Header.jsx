@@ -3,6 +3,15 @@ import React from "react";
 import DarkMode from "./DarkMode";
 import { svgAutofill, svgTrash } from "../assets/svgs";
 import { defaultData, exampleData, expData, eduData } from "./Data";
+import PropTypes from "prop-types";
+
+Header.propTypes = {
+  setFieldsData: PropTypes.func,
+  setUpdateExp: PropTypes.func,
+  setUpdateEdu: PropTypes.func,
+  setAddingExp: PropTypes.func,
+  setAddingEdu: PropTypes.func,
+};
 
 export function Header(props) {
   const {
@@ -12,6 +21,7 @@ export function Header(props) {
     setAddingExp,
     setAddingEdu,
   } = props;
+
   const svgTrashWhite = React.cloneElement(svgTrash, {
     style: { fill: "#fdfdfd" },
   });

@@ -1,4 +1,10 @@
 import { LoadFields } from "./LoadFields";
+import propstypes from "prop-types";
+
+Personal.propTypes = {
+  inputChange: propstypes.func,
+  update: propstypes.object,
+};
 
 export function Personal(props) {
   const inputs = ["Name", "Email", "Phone Number", "Address"];

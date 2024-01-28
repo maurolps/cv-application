@@ -1,4 +1,10 @@
 import { LoadFields } from "./LoadFields";
+import propstypes from "prop-types";
+
+Experience.propTypes = {
+  inputChange: propstypes.func,
+  update: propstypes.object,
+};
 
 export function Experience(props) {
   const inputs = [

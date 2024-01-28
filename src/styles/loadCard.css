@@ -101,7 +101,9 @@ textarea::placeholder {
   font-weight: 500;
   background: var(--background-color);
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .exp-item-btn {
