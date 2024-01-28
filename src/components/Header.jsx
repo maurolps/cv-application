@@ -22,6 +22,26 @@ export function Header(props) {
     setAddingEdu,
   } = props;
 
+  const handleAutoFill = () => {
+    setTimeout(() => {
+      const profileImg = document.getElementById("profile-img");
+      if (profileImg) {
+        profileImg.src = "./src/assets/john-doe.png";
+      }
+    }, 50);
+    setFieldsData(exampleData);
+    setUpdateExp(expData);
+    setUpdateEdu(eduData);
+  };
+
+  const handleClearData = () => {
+    setFieldsData(defaultData);
+    setAddingExp(false);
+    setAddingEdu(false);
+    setUpdateExp(null);
+    setUpdateEdu(null);
+  };
+
   const svgTrashWhite = React.cloneElement(svgTrash, {
     style: { fill: "#fdfdfd" },
   });
@@ -36,24 +56,14 @@ export function Header(props) {
         <button
           className="btn-autofill"
           onClick={() => {
-            setFieldsData(exampleData);
-            setUpdateExp(expData);
-            setUpdateEdu(eduData);
-            setTimeout(() => {
-              const profileImg = document.getElementById("profile-img");
-              profileImg.src = "./src/assets/john-doe.png";
-            }, 300);
+            handleAutoFill();
           }}
         >
           Auto Fill {svgAutofill}
         </button>
         <button
           onClick={() => {
-            setFieldsData(defaultData);
-            setAddingExp(false);
-            setAddingEdu(false);
-            setUpdateExp(null);
-            setUpdateEdu(null);
+            handleClearData();
           }}
         >
           {svgTrashWhite}
