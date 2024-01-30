@@ -98,7 +98,7 @@ export function LoadCard(props) {
                       onClick={() => {
                         {
                           props.toggleAdding();
-                          props.editMode && props.toggleEdit();
+                          props.editMode.active && props.toggleEdit();
                           props.resetDraft();
                         }
                       }}
@@ -177,6 +177,7 @@ export function LoadCard(props) {
                     <button
                       onClick={() => {
                         {
+                          !props.editMode.active && props.toggleEdit();
                           props.toggleAdding();
                         }
                       }}

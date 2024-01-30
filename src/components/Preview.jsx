@@ -2,6 +2,15 @@ import { svgEdu, svgExp } from "../assets/svgs";
 import { ProfileImage } from "./ProfileImage";
 import React from "react";
 import "../styles/preview.css";
+import proptypes from "prop-types";
+
+Preview.propTypes = {
+  update: proptypes.object,
+  updateExp: proptypes.array,
+  updateEdu: proptypes.array,
+  editMode: proptypes.object,
+  editModeEdu: proptypes.object,
+};
 
 export function Preview(props) {
   const { update, updateExp, updateEdu } = props;
