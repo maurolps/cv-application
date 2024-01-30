@@ -46,6 +46,7 @@ button {
   main {
     grid-template-columns: minmax(265px, 1fr);
     gap: 30px;
+    padding: 10px;
   }
   .preview-wrapper {
     min-width: 260px;

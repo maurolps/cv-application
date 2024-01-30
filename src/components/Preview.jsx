@@ -13,6 +13,21 @@ Preview.propTypes = {
 };
 
 export function Preview(props) {
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "TypeScript",
+    "Unit Testing",
+    "RESTful APIs",
+    "Git",
+    "Design Patterns",
+    "SOLID",
+    "Sorting Algorithms",
+    "Data Structures",
+  ];
   const { update, updateExp, updateEdu } = props;
   const svgEduBlack = React.cloneElement(svgEdu, {
     style: { fill: "var(--text-color" },
@@ -28,22 +43,31 @@ export function Preview(props) {
       </div>
       {(update["name"] !== "" || update["company-name"] !== "") && (
         <div className="preview-main" id="pdf-content">
-          <div className="personal-details grid">
-            <div>
-              <div className="prev-image">
-                <ProfileImage />
+          <div className="section-wrapper">
+            <div className="personal-details grid">
+              <div>
+                <div className="prev-image">
+                  <ProfileImage />
+                </div>
+              </div>
+              <div className="prev-profile">
+                <div className="prev-name">
+                  <h1>{update["name"]}</h1>
+                  <span>{update["p-description"]}</span>
+                </div>
+                <div className="prev-contact">
+                  <span>{update["phone-number"]}</span>
+                  <span>{update.email}</span>
+                  <span>{update.address}</span>
+                </div>
               </div>
             </div>
-            <div className="prev-profile">
-              <div className="prev-name">
-                <h1>{update["name"]}</h1>
-                <span>{update["p-description"]}</span>
-              </div>
-              <div className="prev-contact">
-                <span>{update["phone-number"]}</span>
-                <span>{update.email}</span>
-                <span>{update.address}</span>
-              </div>
+            <div className="skill-list">
+              <ul>
+                {skills.map((skill, index) => {
+                  return <li key={"skill" + index}>{skill}</li>;
+                })}
+              </ul>
             </div>
           </div>
 
