@@ -10,25 +10,26 @@ Preview.propTypes = {
   updateEdu: proptypes.array,
   editMode: proptypes.object,
   editModeEdu: proptypes.object,
+  skillsInput: proptypes.string,
 };
 
+function parseSkills(skills) {
+  return skills
+    .split(",")
+    .map((skill) => skill.trim())
+    .filter((skill) => skill !== "");
+}
+
 export function Preview(props) {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "TypeScript",
-    "Unit Testing",
-    "RESTful APIs",
-    "Git",
-    "Design Patterns",
-    "SOLID",
-    "Sorting Algorithms",
-    "Data Structures",
-  ];
   const { update, updateExp, updateEdu } = props;
+
+  const skillsInput = update.skills;
+  const skills = [];
+
+  if (skillsInput != null) {
+    skills.push(...parseSkills(skillsInput));
+  }
+
   const svgEduBlack = React.cloneElement(svgEdu, {
     style: { fill: "var(--text-color" },
   });
@@ -64,9 +65,10 @@ export function Preview(props) {
             </div>
             <div className="skill-list">
               <ul>
-                {skills.map((skill, index) => {
-                  return <li key={"skill" + index}>{skill}</li>;
-                })}
+                {skills !== null &&
+                  skills.map((skill, index) => {
+                    return <li key={"skill" + index}>{skill}</li>;
+                  })}
               </ul>
             </div>
           </div>
