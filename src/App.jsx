@@ -63,17 +63,17 @@ function App() {
   const resetDraft = () => {
     setFieldsData((prevData) => ({
       ...prevData,
-      ["company-name"]: "",
-      ["position-title"]: "",
-      ["start-date"]: "",
-      ["end-date"]: "",
-      ["location"]: "",
-      ["description"]: "",
-      ["school"]: "",
-      ["degree"]: "",
-      ["start"]: "",
-      ["end"]: "",
-      ["region"]: "",
+      ["company-name"]: null,
+      ["position-title"]: null,
+      ["start-date"]: null,
+      ["end-date"]: null,
+      ["location"]: null,
+      ["description"]: null,
+      ["school"]: null,
+      ["degree"]: null,
+      ["start"]: null,
+      ["end"]: null,
+      ["region"]: null,
     }));
   };
 

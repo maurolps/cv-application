@@ -44,6 +44,7 @@
 
 .card textarea {
   margin-bottom: 20px;
+  resize: none;
 }
 
 .fields-container {

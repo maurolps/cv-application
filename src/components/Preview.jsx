@@ -61,7 +61,6 @@ export function Preview(props) {
                           {experience["position-title"]}
                         </div>
                         <div className="prev-date">
-                          {" "}
                           {experience["start-date"]} - {experience["end-date"]}
                         </div>
                       </div>
@@ -77,14 +76,13 @@ export function Preview(props) {
                   </>
                 );
               })}
-            {props.editMode.active &&
-              (update["company-name"] !== "" ? (
+            {!props.editMode.active &&
+              (update["company-name"] != null ? (
                 <div className="work-experience grid prev-draft">
                   <div>
                     <div className="prev-title">{update["position-title"]}</div>
                     <div className="prev-date">
-                      {" "}
-                      {update["start-date"]} - {update["end-date"]}{" "}
+                      {update["start-date"]} - {update["end-date"]}
                     </div>
                   </div>
                   <div>
@@ -111,7 +109,6 @@ export function Preview(props) {
                       <div>
                         <div className="prev-title">{experience.degree}</div>
                         <div className="prev-date">
-                          {" "}
                           {experience.start} - {experience.end}
                         </div>
                       </div>
@@ -124,14 +121,13 @@ export function Preview(props) {
                   </>
                 );
               })}
-            {props.editModeEdu.active &&
-              (update.school !== "" ? (
+            {!props.editModeEdu.active &&
+              (update.school != null ? (
                 <div className="education grid prev-draft">
                   <div>
                     <div className="prev-title">{update.degree}</div>
                     <div className="prev-date">
-                      {" "}
-                      {update.start} - {update.end}{" "}
+                      {update.start} - {update.end}
                     </div>
                   </div>
                   <div>
