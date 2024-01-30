@@ -15,6 +15,7 @@ const defaultData = {
   ["start"]: "",
   ["end"]: "",
   ["region"]: "",
+  ["skills"]: "",
 };
 
 const exampleData = {
@@ -23,6 +24,7 @@ const exampleData = {
   ["phone-number"]: "555-3035284",
   ["address"]: "164 Main Street, Cityville State, 235-12345",
   ["p-description"]: "FULLSTACK WEB DEVELOPER",
+  ["skills"]: `HTML, CSS, JavaScript, React, Node.js, TypeScript, Unit Testing, RESTful APIs, Git, Design Patterns, SOLID, Sorting Algorithms, Data Structures`,
 };
 
 const expData = [

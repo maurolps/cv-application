@@ -84,7 +84,17 @@ export function LoadCard(props) {
             </>
           )}
 
-          {props.title !== "Personal Details" && (
+          {props.title === "Skills" && (
+            <>
+              <props.component
+                inputChange={props.inputChange}
+                update={props.update}
+              />
+            </>
+          )}
+
+          {(props.title === "Education" ||
+            props.title === "Work Experience") && (
             <>
               {props.adding && (
                 <>

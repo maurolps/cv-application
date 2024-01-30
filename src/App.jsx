@@ -4,10 +4,17 @@ import { Experience } from "./components/Experience";
 import { Education } from "./components/Education";
 import { LoadCard } from "./components/LoadCard";
 import { Preview } from "./components/Preview";
+import { Skills } from "./components/Skills";
 import { useState } from "react";
 import generatePDF from "react-to-pdf";
 import { defaultData } from "./components/Data";
-import { svgPersonal, svgExp, svgEdu, svgDownload } from "./assets/svgs";
+import {
+  svgPersonal,
+  svgExp,
+  svgEdu,
+  svgDownload,
+  svgSkills,
+} from "./assets/svgs";
 import "./App.css";
 
 const pdfOptions = {
@@ -150,6 +157,17 @@ function App() {
             inputChange={inputChange}
             update={fieldsData}
           />
+
+          <LoadCard
+            title="Skills"
+            svg={svgSkills}
+            component={Skills}
+            toggle={toggleCards}
+            collapse={cardCollapse}
+            inputChange={inputChange}
+            update={fieldsData}
+          />
+
           <LoadCard
             title="Work Experience"
             svg={svgExp}
