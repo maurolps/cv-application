@@ -1,4 +1,4 @@
-import { svgSun, svgMoon } from "../assets/svgs";
+import { svgSun, svgMoon } from "./Svgs";
 import "../styles/darkmode.css";
 
 const DarkMode = () => {

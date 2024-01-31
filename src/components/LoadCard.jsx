@@ -1,7 +1,7 @@
-import { svgArrowDown, svgArrowUp } from "../assets/svgs";
+import { svgArrowDown, svgArrowUp } from "./Svgs";
 import React from "react";
 import "../styles/loadCard.css";
-import { svgAdd, svgTrash, svgEdit } from "../assets/svgs";
+import { svgAdd, svgTrash, svgEdit } from "./Svgs";
 import proptypes from "prop-types";
 
 LoadCard.propTypes = {

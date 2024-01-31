@@ -15,7 +15,7 @@ import {
   svgDownload,
   svgSkills,
   svgGithub,
-} from "./assets/svgs";
+} from "./components/Svgs";
 import "./App.css";
 
 const pdfOptions = {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { svgPhotoEdit } from "../assets/svgs";
+import { svgPhotoEdit } from "./Svgs";
 
 export function ProfileImage() {
   const [profileImage, setProfileImage] = useState(null);
@@ -20,8 +20,8 @@ export function ProfileImage() {
     <>
       <img
         id="profile-img"
-        src={profileImage || "./src/assets/img-placeholder.png"}
-        onError={(e) => (e.target.src = "./src/assets/img-placeholder.png")}
+        src={profileImage || "/assets/img-placeholder.png"}
+        onError={(e) => (e.target.src = "/assets/img-placeholder.png")}
       />
       <div className="update-photo">
         <label htmlFor="img-file">{svgPhotoEdit}</label>

@@ -1,7 +1,7 @@
 import "../styles/header.css";
 import React from "react";
 import DarkMode from "./DarkMode";
-import { svgAutofill, svgTrash } from "../assets/svgs";
+import { svgAutofill, svgTrash } from "./Svgs";
 import { defaultData, exampleData, expData, eduData } from "./Data";
 import PropTypes from "prop-types";
 
@@ -26,7 +26,7 @@ export function Header(props) {
     setTimeout(() => {
       const profileImg = document.getElementById("profile-img");
       if (profileImg) {
-        profileImg.src = "./src/assets/john-doe.png";
+        profileImg.src = "/assets/john-doe.png";
       }
     }, 50);
     setFieldsData(exampleData);

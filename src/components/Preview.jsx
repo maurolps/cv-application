@@ -1,4 +1,4 @@
-import { svgEdu, svgExp } from "../assets/svgs";
+import { svgEdu, svgExp } from "./Svgs";
 import { ProfileImage } from "./ProfileImage";
 import React from "react";
 import "../styles/preview.css";
