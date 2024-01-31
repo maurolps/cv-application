@@ -42,6 +42,20 @@ button {
   background-color: var(--action-color);
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 0.8rem;
+  gap: 2px;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+footer a {
+  color: var(--text-color);
+}
+
 @media (max-width: 640px) {
   main {
     grid-template-columns: minmax(265px, 1fr);

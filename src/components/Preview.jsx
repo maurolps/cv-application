@@ -46,7 +46,7 @@ export function Preview(props) {
         <div className="preview-main" id="pdf-content">
           <div className="section-wrapper">
             <div className="personal-details grid">
-              <div>
+              <div className="prev-image-wrapper">
                 <div className="prev-image">
                   <ProfileImage />
                 </div>

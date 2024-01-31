@@ -14,6 +14,7 @@ import {
   svgEdu,
   svgDownload,
   svgSkills,
+  svgGithub,
 } from "./assets/svgs";
 import "./App.css";
 
@@ -231,6 +232,10 @@ function App() {
           </div>
         </div>
       </main>
+      <footer>
+        {svgGithub}{" "}
+        <a href="https://github.com/maurolps/cv-application">maurolps</a>
+      </footer>
     </>
   );
 }

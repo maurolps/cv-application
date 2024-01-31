@@ -205,6 +205,10 @@
   border-radius: 100%;
 }
 
+.prev-image-wrapper {
+  justify-self: end;
+}
+
 .prev-logo-text {
   font-size: 0;
 }
