@@ -3,12 +3,12 @@ import "../styles/darkmode.css";
 
 const DarkMode = () => {
   const darkMode = () => {
-    document.getElementById("root").setAttribute("data-theme", "dark");
+    document.getElementById("root")?.setAttribute("data-theme", "dark");
   };
   const lightMode = () => {
-    document.getElementById("root").setAttribute("data-theme", "light");
+    document.getElementById("root")?.setAttribute("data-theme", "light");
   };
-  const toggleTheme = (e) => {
+  const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) darkMode();
     else lightMode();
   };
@@ -19,7 +19,7 @@ const DarkMode = () => {
         className="dark_mode_input"
         type="checkbox"
         id="darkmode-toggle"
-        defaultChecked="true"
+        defaultChecked={true}
         onChange={toggleTheme}
       />
       <label className="dark_mode_label" htmlFor="darkmode-toggle">
