@@ -224,7 +224,7 @@ const svgMoon = (
     x="0px"
     y="0px"
     viewBox="0 0 49.739 49.739"
-    style={{ enableBackground: "new 0 0 49.739 49.739" }}
+    enableBackground="new 0 0 49.739 49.739"
     xmlSpace="preserve"
   >
     <path
@@ -247,7 +247,7 @@ const svgSun = (
     x="0px"
     y="0px"
     viewBox="0 0 496 496"
-    style={{ enableBackground: "new 0 0 496 496" }}
+    enableBackground="new 0 0 496 496"
     xmlSpace="preserve"
   >
     <rect
