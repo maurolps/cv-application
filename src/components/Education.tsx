@@ -1,12 +1,14 @@
 import { LoadFields } from "./LoadFields";
-import prototypes from "prop-types";
+import { FieldsData } from "../types";
 
-Education.propTypes = {
-  inputChange: prototypes.func,
-  update: prototypes.object,
+type EducationProps = {
+  inputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  update: FieldsData;
 };
 
-export function Education(props) {
+export function Education(props: EducationProps) {
   const inputs = ["School", "Degree", "Start", "End", "Region"];
 
   return (

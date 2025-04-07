@@ -1,12 +1,14 @@
 import { LoadFields } from "./LoadFields";
-import propstypes from "prop-types";
+import { FieldsData } from "../types";
 
-Experience.propTypes = {
-  inputChange: propstypes.func,
-  update: propstypes.object,
+type ExperienceProps = {
+  inputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  update: FieldsData;
 };
 
-export function Experience(props) {
+export function Experience(props: ExperienceProps) {
   const inputs = [
     "Company Name",
     "Position Title",
