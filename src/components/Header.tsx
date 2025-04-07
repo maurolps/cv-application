@@ -1,30 +1,22 @@
 import "../styles/header.css";
-import React from "react";
+import React, { FC } from "react";
 import DarkMode from "./DarkMode";
 import { svgAutofill, svgTrash } from "./Svgs";
 import { defaultData, exampleData, expData, eduData } from "./Data";
-import PropTypes from "prop-types";
+import { HeaderProps } from "../types/header";
 
-Header.propTypes = {
-  setFieldsData: PropTypes.func,
-  setUpdateExp: PropTypes.func,
-  setUpdateEdu: PropTypes.func,
-  setAddingExp: PropTypes.func,
-  setAddingEdu: PropTypes.func,
-};
-
-export function Header(props) {
-  const {
-    setFieldsData,
-    setUpdateExp,
-    setUpdateEdu,
-    setAddingExp,
-    setAddingEdu,
-  } = props;
-
+export const Header: FC<HeaderProps> = ({
+  setFieldsData,
+  setUpdateExp,
+  setUpdateEdu,
+  setAddingExp,
+  setAddingEdu,
+}) => {
   const handleAutoFill = () => {
     setTimeout(() => {
-      const profileImg = document.getElementById("profile-img");
+      const profileImg = document.getElementById(
+        "profile-img"
+      ) as HTMLImageElement;
       if (profileImg) {
         profileImg.src = "/assets/john-doe.png";
       }
@@ -71,4 +63,4 @@ export function Header(props) {
       </div>
     </>
   );
-}
+};

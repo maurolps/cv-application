@@ -17,25 +17,36 @@ import {
   svgGithub,
 } from "./components/Svgs";
 import "./App.css";
+import { ChangeEvent } from "react";
+import {
+  FieldsData,
+  EditMode,
+  ExperienceItem,
+  EducationItem,
+  PdfOptions,
+} from "./types";
 
-const pdfOptions = {
+const pdfOptions: PdfOptions = {
   method: "open",
 };
 
 function App() {
   const [cardCollapse, setCardCollapse] = useState("Personal Details");
-  const [fieldsData, setFieldsData] = useState(defaultData);
-  const [updateExp, setUpdateExp] = useState(null);
+  const [fieldsData, setFieldsData] = useState<FieldsData>(defaultData);
+  const [updateExp, setUpdateExp] = useState<ExperienceItem[] | null>(null);
   const [addingExp, setAddingExp] = useState(false);
-  const [editMode, setEditMode] = useState({ active: false, index: null });
-  const [updateEdu, setUpdateEdu] = useState(null);
+  const [editMode, setEditMode] = useState<EditMode>({
+    active: false,
+    index: null,
+  });
+  const [updateEdu, setUpdateEdu] = useState<EducationItem[] | null>(null);
   const [addingEdu, setAddingEdu] = useState(false);
-  const [editModeEdu, setEditModeEdu] = useState({
+  const [editModeEdu, setEditModeEdu] = useState<EditMode>({
     active: false,
     index: null,
   });
 
-  const toggleCards = (title) => {
+  const toggleCards = (title: string) => {
     setCardCollapse(title);
   };
 
@@ -47,21 +58,21 @@ function App() {
     setAddingEdu(!addingEdu);
   };
 
-  const toggleEditMode = (index = null) => {
+  const toggleEditMode = (index: number | null = null) => {
     setEditMode({
       active: !editMode.active,
       index,
     });
   };
 
-  const toggleEditModeEdu = (index = null) => {
+  const toggleEditModeEdu = (index: number | null = null) => {
     setEditModeEdu({
       active: !editModeEdu.active,
       index,
     });
   };
 
-  const editing = (data) => {
+  const editing = (data: FieldsData) => {
     setFieldsData((prevData) => ({
       ...prevData,
       ...data,
@@ -85,49 +96,53 @@ function App() {
     }));
   };
 
-  const addExpItem = (item) => {
+  const addExpItem = (item: ExperienceItem) => {
     setUpdateExp((prevData) => {
       if (!Array.isArray(prevData)) return [item];
       return [...prevData, item];
     });
   };
 
-  const addEduItem = (item) => {
+  const addEduItem = (item: EducationItem) => {
     setUpdateEdu((prevData) => {
       if (!Array.isArray(prevData)) return [item];
       return [...prevData, item];
     });
   };
 
-  const updateExpItem = (item, index) => {
+  const updateExpItem = (item: ExperienceItem, index: number) => {
     setUpdateExp((prevData) => {
+      if (!prevData) return null;
       const eduData = [...prevData];
       eduData[index] = item;
       return eduData;
     });
   };
 
-  const updateEduItem = (item, index) => {
+  const updateEduItem = (item: EducationItem, index: number) => {
     setUpdateEdu((prevData) => {
+      if (!prevData) return null;
       const eduData = [...prevData];
       eduData[index] = item;
       return eduData;
     });
   };
 
-  const delExpItem = (index) => {
+  const delExpItem = (index: number) => {
+    if (!updateExp) return;
     const tempArr = [...updateExp];
     tempArr.splice(index, 1);
     setUpdateExp(tempArr);
   };
 
-  const delEduItem = (index) => {
+  const delEduItem = (index: number) => {
+    if (!updateEdu) return;
     const tempArr = [...updateEdu];
     tempArr.splice(index, 1);
     setUpdateEdu(tempArr);
   };
 
-  const inputChange = (e) => {
+  const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, id } = e.target;
     setFieldsData((prevData) => ({
       ...prevData,
@@ -222,9 +237,9 @@ function App() {
               onClick={() => {
                 const pdfTarget = () => document.getElementById("pdf-content");
                 const pdfContent = pdfTarget();
-                pdfContent.classList.add("print-pdf");
+                pdfContent?.classList.add("print-pdf");
                 generatePDF(pdfTarget, pdfOptions);
-                pdfContent.classList.remove("print-pdf");
+                pdfContent?.classList.remove("print-pdf");
               }}
             >
               PDF {svgDownload}

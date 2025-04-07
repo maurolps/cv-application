@@ -1,12 +1,12 @@
-import propstypes from "prop-types";
+import { FieldsData } from "../types";
 
-LoadFields.propTypes = {
-  inputList: propstypes.array,
-  inputChange: propstypes.func,
-  update: propstypes.object,
+type LoadFieldsProps = {
+  inputList: string[];
+  inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  update: FieldsData | null;
 };
 
-export function LoadFields(props) {
+export function LoadFields(props: LoadFieldsProps) {
   return (
     <div className="fields-container">
       {props.inputList.map((inputName) => {
@@ -22,7 +22,11 @@ export function LoadFields(props) {
               name={inputId}
               key={inputId}
               value={
-                typeof props.update == "object" ? props.update[inputId] : ""
+                props.update &&
+                typeof props.update == "object" &&
+                props.update[inputId]
+                  ? props.update[inputId]
+                  : ""
               }
             />
           </>

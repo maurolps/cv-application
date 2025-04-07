@@ -1,12 +1,15 @@
 import { LoadFields } from "./LoadFields";
-import propstypes from "prop-types";
 
-Personal.propTypes = {
-  inputChange: propstypes.func,
-  update: propstypes.object,
+type PersonalProps = {
+  inputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  update: {
+    [key: string]: string;
+  };
 };
 
-export function Personal(props) {
+export function Personal(props: PersonalProps) {
   const inputs = ["Name", "Email", "Phone Number", "Address"];
 
   return (
@@ -19,8 +22,8 @@ export function Personal(props) {
       <textarea
         name="Personal Description"
         id="p-description"
-        cols="30"
-        rows="8"
+        cols={30}
+        rows={8}
         onChange={props.inputChange}
         value={
           typeof props.update == "object" ? props.update["p-description"] : ""
