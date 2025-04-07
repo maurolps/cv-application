@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import { svgPhotoEdit } from "./Svgs";
 
 export function ProfileImage() {
-  const [profileImage, setProfileImage] = useState(null);
+  const [profileImage, setProfileImage] = useState<string | null>(null);
 
-  const imageUpload = (e) => {
-    const file = e.target.files[0];
+  const imageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
 
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setProfileImage(reader.result);
+        setProfileImage(reader.result as string);
       };
       reader.readAsDataURL(file);
     }
@@ -21,7 +21,9 @@ export function ProfileImage() {
       <img
         id="profile-img"
         src={profileImage || "/assets/img-placeholder.png"}
-        onError={(e) => (e.target.src = "/assets/img-placeholder.png")}
+        onError={(e) =>
+          ((e.target as HTMLImageElement).src = "/assets/img-placeholder.png")
+        }
       />
       <div className="update-photo">
         <label htmlFor="img-file">{svgPhotoEdit}</label>
