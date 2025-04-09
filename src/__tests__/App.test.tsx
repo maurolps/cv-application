@@ -52,3 +52,26 @@ describe("Inputs Behavior and Preview Updates", () => {
     expect(previewName).toHaveTextContent("Mauro");
   });
 });
+
+describe("Add, Update and Delete Items", () => {
+  beforeEach(() => {
+    render(<App />);
+  });
+
+  test("Adding a new item should display the new input fields", async () => {
+    const user = userEvent.setup();
+    const workCard = screen.getByRole("button", {
+      name: /Work Experience/i,
+    });
+
+    await user.click(workCard);
+    const addButton = await screen.findByRole("button", {
+      name: /New Item/i,
+    });
+
+    await user.click(addButton);
+
+    const newItemInput = await screen.findByPlaceholderText(/Company Name/i);
+    expect(newItemInput).toBeInTheDocument();
+  });
+});
