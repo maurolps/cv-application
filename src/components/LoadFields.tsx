@@ -12,7 +12,7 @@ export function LoadFields(props: LoadFieldsProps) {
       {props.inputList.map((inputName) => {
         const inputId = inputName.toLowerCase().replace(/\s+/g, "-");
         return (
-          <>
+          <div key={inputId}>
             <label htmlFor={inputId}></label>
             <input
               type="text"
@@ -20,7 +20,6 @@ export function LoadFields(props: LoadFieldsProps) {
               placeholder={inputName}
               onChange={props.inputChange}
               name={inputId}
-              key={inputId}
               value={
                 props.update &&
                 typeof props.update == "object" &&
@@ -29,7 +28,7 @@ export function LoadFields(props: LoadFieldsProps) {
                   : ""
               }
             />
-          </>
+          </div>
         );
       })}
     </div>
