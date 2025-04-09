@@ -54,11 +54,7 @@ describe("Inputs Behavior and Preview Updates", () => {
 });
 
 describe("Add, Update and Delete Items", () => {
-  beforeEach(() => {
-    render(<App />);
-  });
-
-  test("Adding a new item should display the new input fields", async () => {
+  async function helperSetup() {
     const user = userEvent.setup();
     const workCard = screen.getByRole("button", {
       name: /Work Experience/i,
@@ -70,6 +66,16 @@ describe("Add, Update and Delete Items", () => {
     });
 
     await user.click(addButton);
+
+    return user;
+  }
+
+  beforeEach(() => {
+    render(<App />);
+  });
+
+  test("Adding a new item should display the new input fields", async () => {
+    const user = await helperSetup();
 
     const newItemInput = await screen.findByPlaceholderText(/Company Name/i);
     expect(newItemInput).toBeInTheDocument();
