@@ -75,13 +75,13 @@ describe("Add, Update and Delete Items", () => {
   }
 
   test("Adding a new item should display the new input fields", async () => {
-    const user = await newItemHelper();
+    await newItemHelper();
 
     const newItemInput = await screen.findByPlaceholderText(/Company Name/i);
     expect(newItemInput).toBeInTheDocument();
   });
 
-  test("Adding an item should display it on the item list and Preview", async () => {
+  async function addItemHelper() {
     const user = await newItemHelper();
     const companyNameInput = await screen.findByPlaceholderText(
       /Company Name/i
@@ -94,8 +94,26 @@ describe("Add, Update and Delete Items", () => {
     await user.type(companyNameInput, "Test Company");
     await user.click(addButton);
 
+    return user;
+  }
+
+  test("Adding an item should display it on the item list and Preview", async () => {
+    await addItemHelper();
+
     const newItemCompany = await screen.findAllByText(/Test Company/i);
 
     expect(newItemCompany).toHaveLength(2);
+  });
+
+  test("Deleting an item should remove it from the item list and Preview", async () => {
+    const user = await addItemHelper();
+    const deleteItem = screen.getByRole("button", {
+      name: /Remove Item/i,
+    });
+    const newItemCompany = screen.queryAllByText(/Test Company/i);
+
+    await user.click(deleteItem);
+
+    expect(newItemCompany[0]).not.toBeInTheDocument();
   });
 });
