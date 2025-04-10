@@ -116,4 +116,27 @@ describe("Add, Update and Delete Items", () => {
 
     expect(newItemCompany[0]).not.toBeInTheDocument();
   });
+
+  test("Editing an item should update the item list and Preview", async () => {
+    const user = await addItemHelper();
+    const editButton = screen.getByRole("button", {
+      name: /Edit/i,
+    });
+
+    await user.click(editButton);
+
+    const companyEditInput = await screen.findByPlaceholderText(
+      /Company Name/i
+    );
+
+    const updateButton = screen.getByRole("button", {
+      name: /Update/i,
+    });
+
+    await user.type(companyEditInput, "Edited Company");
+    await user.click(updateButton);
+
+    const editedCompany = await screen.findAllByText(/Edited Company/i);
+    expect(editedCompany).toHaveLength(2);
+  });
 });
