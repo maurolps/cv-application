@@ -11,24 +11,36 @@ export function LoadCard(props: LoadCardProps) {
     width: "15px",
   });
 
+  const isCardExpanded = props.collapse === props.title;
+  const handleTitleClick = () => {
+    isCardExpanded ? props.toggle("") : props.toggle(props.title);
+  };
+
   return (
     <div className="card">
       <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={isCardExpanded}
+        aria-label={`Toggle ${props.title} card`}
         className="card-title"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleTitleClick();
+          }
+        }}
         onClick={() => {
-          props.collapse === props.title
-            ? props.toggle("")
-            : props.toggle(props.title);
+          handleTitleClick();
         }}
       >
         <div className="card-svg">
           {props.svg}
           <p>{props.title}</p>
         </div>
-        <p>{props.collapse === props.title ? svgArrowUp : svgArrowDown}</p>
+        <p>{isCardExpanded ? svgArrowUp : svgArrowDown}</p>
       </div>
 
-      {props.collapse === props.title && (
+      {isCardExpanded && (
         <>
           {props.title === "Personal Details" && (
             <>
@@ -121,6 +133,7 @@ export function LoadCard(props: LoadCardProps) {
                                 {svgEdit}
                               </button>
                               <button
+                                aria-label="Remove item"
                                 onClick={() => {
                                   props.delItem?.(index);
                                 }}

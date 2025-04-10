@@ -69,6 +69,8 @@ textarea {
   border-width: 1px;
   border-style: solid;
   background-color: var(--background-color);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .fields-container input::placeholder,
