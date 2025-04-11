@@ -24,7 +24,7 @@ import {
   ExperienceItem,
   EducationItem,
   PdfOptions,
-} from "./types";
+} from "@Types/app";
 
 const pdfOptions: PdfOptions = {
   method: "open",

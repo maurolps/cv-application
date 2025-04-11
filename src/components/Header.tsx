@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import DarkMode from "./DarkMode";
 import { svgAutofill, svgTrash } from "./Svgs";
 import { defaultData, exampleData, expData, eduData } from "./Data";
-import { HeaderProps } from "../types/header";
+import { HeaderProps } from "@Types/header";
 
 export const Header: FC<HeaderProps> = ({
   setFieldsData,

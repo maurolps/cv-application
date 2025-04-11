@@ -2,8 +2,8 @@ import { svgArrowDown, svgArrowUp } from "./Svgs";
 import React from "react";
 import "../styles/loadCard.css";
 import { svgAdd, svgTrash, svgEdit } from "./Svgs";
-import { LoadCardProps } from "../types/loadcard";
-import { ExperienceItem } from "../types";
+import { LoadCardProps } from "@Types/loadcard";
+import { ExperienceItem } from "@Types/app";
 
 export function LoadCard(props: LoadCardProps) {
   const svgTrashBlack = React.cloneElement(svgTrash, {

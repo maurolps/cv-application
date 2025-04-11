@@ -1,4 +1,4 @@
-import { FieldsData } from "../types";
+import { FieldsData } from "@Types/app";
 
 type LoadFieldsProps = {
   inputList: string[];
