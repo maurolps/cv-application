@@ -1,5 +1,5 @@
 import { LoadFields } from "./LoadFields";
-import { FieldsData } from "../types";
+import { FieldsData } from "@Types/app";
 
 type EducationProps = {
   inputChange: (

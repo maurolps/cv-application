@@ -2,7 +2,7 @@ import { svgEdu, svgExp } from "./Svgs";
 import { ProfileImage } from "./ProfileImage";
 import React from "react";
 import "../styles/preview.css";
-import { PreviewProps } from "../types/preview";
+import { PreviewProps } from "@Types/preview";
 
 function parseSkills(skills: string): string[] {
   return skills
