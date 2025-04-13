@@ -5,9 +5,7 @@ import { Education } from "./components/Education";
 import { LoadCard } from "./components/LoadCard";
 import { Preview } from "./components/Preview";
 import { Skills } from "./components/Skills";
-import { useState } from "react";
 import generatePDF from "react-to-pdf";
-import { defaultData } from "./components/Data";
 import {
   svgPersonal,
   svgExp,
@@ -17,144 +15,45 @@ import {
   svgGithub,
 } from "./components/Svgs";
 import "./App.css";
-import { ChangeEvent } from "react";
-import {
-  FieldsData,
-  EditMode,
-  ExperienceItem,
-  EducationItem,
-  PdfOptions,
-} from "@Types/app";
+import { PdfOptions } from "@Types/app";
+
+import useAppStore from "./store/useAppStore";
 
 const pdfOptions: PdfOptions = {
   method: "open",
 };
 
 function App() {
-  const [cardCollapse, setCardCollapse] = useState("Personal Details");
-  const [fieldsData, setFieldsData] = useState<FieldsData>(defaultData);
-  const [updateExp, setUpdateExp] = useState<ExperienceItem[] | null>(null);
-  const [addingExp, setAddingExp] = useState(false);
-  const [editMode, setEditMode] = useState<EditMode>({
-    active: false,
-    index: null,
-  });
-  const [updateEdu, setUpdateEdu] = useState<EducationItem[] | null>(null);
-  const [addingEdu, setAddingEdu] = useState(false);
-  const [editModeEdu, setEditModeEdu] = useState<EditMode>({
-    active: false,
-    index: null,
-  });
-
-  const toggleCards = (title: string) => {
-    setCardCollapse(title);
-  };
-
-  const toggleAddingExp = () => {
-    setAddingExp(!addingExp);
-  };
-
-  const toggleAddingEdu = () => {
-    setAddingEdu(!addingEdu);
-  };
-
-  const toggleEditMode = (index: number | null = null) => {
-    setEditMode({
-      active: !editMode.active,
-      index,
-    });
-  };
-
-  const toggleEditModeEdu = (index: number | null = null) => {
-    setEditModeEdu({
-      active: !editModeEdu.active,
-      index,
-    });
-  };
-
-  const editing = (data: FieldsData) => {
-    setFieldsData((prevData) => ({
-      ...prevData,
-      ...data,
-    }));
-  };
-
-  const resetDraft = () => {
-    setFieldsData((prevData) => ({
-      ...prevData,
-      ["company-name"]: null,
-      ["position-title"]: null,
-      ["start-date"]: null,
-      ["end-date"]: null,
-      ["location"]: null,
-      ["description"]: null,
-      ["school"]: null,
-      ["degree"]: null,
-      ["start"]: null,
-      ["end"]: null,
-      ["region"]: null,
-    }));
-  };
-
-  const addExpItem = (item: ExperienceItem) => {
-    setUpdateExp((prevData) => {
-      if (!Array.isArray(prevData)) return [item];
-      return [...prevData, item];
-    });
-  };
-
-  const addEduItem = (item: EducationItem) => {
-    setUpdateEdu((prevData) => {
-      if (!Array.isArray(prevData)) return [item];
-      return [...prevData, item];
-    });
-  };
-
-  const updateExpItem = (item: ExperienceItem, index: number) => {
-    setUpdateExp((prevData) => {
-      if (!prevData) return null;
-      const eduData = [...prevData];
-      eduData[index] = item;
-      return eduData;
-    });
-  };
-
-  const updateEduItem = (item: EducationItem, index: number) => {
-    setUpdateEdu((prevData) => {
-      if (!prevData) return null;
-      const eduData = [...prevData];
-      eduData[index] = item;
-      return eduData;
-    });
-  };
-
-  const delExpItem = (index: number) => {
-    if (!updateExp) return;
-    const tempArr = [...updateExp];
-    tempArr.splice(index, 1);
-    setUpdateExp(tempArr);
-  };
-
-  const delEduItem = (index: number) => {
-    if (!updateEdu) return;
-    const tempArr = [...updateEdu];
-    tempArr.splice(index, 1);
-    setUpdateEdu(tempArr);
-  };
-
-  const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value, id } = e.target;
-    setFieldsData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
+  const {
+    cardCollapse,
+    fieldsData,
+    updateExp,
+    addingExp,
+    editMode,
+    updateEdu,
+    addingEdu,
+    editModeEdu,
+    toggleCards,
+    inputChange,
+    toggleAddingExp,
+    toggleAddingEdu,
+    toggleEditMode,
+    toggleEditModeEdu,
+    editing,
+    resetDraft,
+    addExpItem,
+    addEduItem,
+    updateExpItem,
+    updateEduItem,
+    delExpItem,
+    delEduItem,
+  } = useAppStore();
 
   return (
     <>
       <main>
         <div className="container">
-          <header>
+          {/* <header>
             <Header
               setFieldsData={setFieldsData}
               setUpdateExp={setUpdateExp}
@@ -162,7 +61,7 @@ function App() {
               setAddingEdu={setAddingEdu}
               setAddingExp={setAddingExp}
             />
-          </header>
+          </header> */}
 
           <LoadCard
             title="Personal Details"
