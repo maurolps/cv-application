@@ -15,12 +15,13 @@ export type AppStore = {
   addingEdu: boolean;
   editModeEdu: EditMode;
 
+  resetStore: () => void;
   toggleCards: (title: string) => void;
   toggleAddingExp: () => void;
   toggleAddingEdu: () => void;
   toggleEditMode: (index?: number | null) => void;
   toggleEditModeEdu: (index?: number | null) => void;
-  editing: (data: FieldsData) => void;
+  editFields: (data: FieldsData) => void;
   resetDraft: () => void;
   addExpItem: (item: ExperienceItem) => void;
   addEduItem: (item: EducationItem) => void;

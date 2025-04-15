@@ -1,9 +1,8 @@
 import { create } from "zustand";
 import { AppStore } from "@Types/appStore";
 import { defaultData } from "../components/Data";
-import { FieldsData } from "@Types/app";
 
-const useAppStore = create<AppStore>((set) => ({
+const initalState = {
   cardCollapse: "Personal Details",
   fieldsData: defaultData,
   updateExp: null,
@@ -12,8 +11,12 @@ const useAppStore = create<AppStore>((set) => ({
   updateEdu: null,
   addingEdu: false,
   editModeEdu: { active: false, index: null },
+};
 
-  toggleCards: (title) => set({ cardCollapse: title }),
+const useAppStore = create<AppStore>((set) => ({
+  ...initalState,
+  resetStore: () => set(() => ({ ...initalState })),
+  toggleCards: (title) => set(() => ({ cardCollapse: title })),
   toggleAddingExp: () => set((state) => ({ addingExp: !state.addingExp })),
   toggleAddingEdu: () => set((state) => ({ addingEdu: !state.addingEdu })),
   toggleEditMode: (index = null) =>
@@ -22,7 +25,7 @@ const useAppStore = create<AppStore>((set) => ({
     set((state) => ({
       editModeEdu: { active: !state.editModeEdu.active, index },
     })),
-  editing: (data) =>
+  editFields: (data) =>
     set((state) => ({ fieldsData: { ...state.fieldsData, ...data } })),
   resetDraft: () =>
     set((state) => ({
