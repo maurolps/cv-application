@@ -2,16 +2,15 @@ import "../styles/header.css";
 import React, { FC } from "react";
 import DarkMode from "./DarkMode";
 import { svgAutofill, svgTrash } from "./Svgs";
-import { defaultData, exampleData, expData, eduData } from "./Data";
-import { HeaderProps } from "@Types/header";
+import { exampleData, expData, eduData } from "./Data";
+import useAppStore from "../store/useAppStore";
 
-export const Header: FC<HeaderProps> = ({
-  setFieldsData,
-  setUpdateExp,
-  setUpdateEdu,
-  setAddingExp,
-  setAddingEdu,
-}) => {
+export const Header = () => {
+  const editFields = useAppStore((s) => s.editFields);
+  const addExpItem = useAppStore((s) => s.addExpItem);
+  const addEduItem = useAppStore((s) => s.addEduItem);
+  const resetStore = useAppStore((s) => s.resetStore);
+
   const handleAutoFill = () => {
     setTimeout(() => {
       const profileImg = document.getElementById(
@@ -21,17 +20,17 @@ export const Header: FC<HeaderProps> = ({
         profileImg.src = "/assets/john-doe.png";
       }
     }, 50);
-    setFieldsData(exampleData);
-    setUpdateExp(expData);
-    setUpdateEdu(eduData);
+    editFields(exampleData);
+    expData.forEach((item) => {
+      addExpItem(item);
+    });
+    eduData.forEach((item) => {
+      addEduItem(item);
+    });
   };
 
   const handleClearData = () => {
-    setFieldsData(defaultData);
-    setAddingExp(false);
-    setAddingEdu(false);
-    setUpdateExp(null);
-    setUpdateEdu(null);
+    resetStore();
   };
 
   const svgTrashWhite = React.cloneElement(svgTrash, {
@@ -48,6 +47,7 @@ export const Header: FC<HeaderProps> = ({
         <button
           className="btn-autofill"
           onClick={() => {
+            handleClearData();
             handleAutoFill();
           }}
         >
