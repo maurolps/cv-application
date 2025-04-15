@@ -39,7 +39,7 @@ function App() {
     toggleAddingEdu,
     toggleEditMode,
     toggleEditModeEdu,
-    editing,
+    editFields,
     resetDraft,
     addExpItem,
     addEduItem,
@@ -47,21 +47,15 @@ function App() {
     updateEduItem,
     delExpItem,
     delEduItem,
-  } = useAppStore();
+  } = useAppStore(); // avoid destructuring the entire store, can cause unnecessary re-renders.
 
   return (
     <>
       <main>
         <div className="container">
-          {/* <header>
-            <Header
-              setFieldsData={setFieldsData}
-              setUpdateExp={setUpdateExp}
-              setUpdateEdu={setUpdateEdu}
-              setAddingEdu={setAddingEdu}
-              setAddingExp={setAddingExp}
-            />
-          </header> */}
+          <header>
+            <Header />
+          </header>
 
           <LoadCard
             title="Personal Details"
@@ -95,7 +89,7 @@ function App() {
             addItem={addExpItem}
             delItem={delExpItem}
             updateItem={updateExpItem}
-            editing={editing}
+            editing={editFields}
             toggleEdit={toggleEditMode}
             editMode={editMode}
             fieldsData={fieldsData}
@@ -114,7 +108,7 @@ function App() {
             addItem={addEduItem}
             delItem={delEduItem}
             updateItem={updateEduItem}
-            editing={editing}
+            editing={editFields}
             toggleEdit={toggleEditModeEdu}
             editMode={editModeEdu}
             fieldsData={fieldsData}
