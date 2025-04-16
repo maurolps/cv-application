@@ -8,26 +8,28 @@ import {
 export type AppStore = {
   cardCollapse: string;
   fieldsData: FieldsData;
-  updateExp: ExperienceItem[] | null;
-  addingExp: boolean;
-  editMode: EditMode;
-  updateEdu: EducationItem[] | null;
-  addingEdu: boolean;
-  editModeEdu: EditMode;
+  sections: {
+    experience: {
+      items: ExperienceItem[];
+      adding: boolean;
+      editMode: EditMode;
+    };
+    education: {
+      items: EducationItem[];
+      adding: boolean;
+      editMode: EditMode;
+    };
+  };
 
   resetStore: () => void;
-  toggleCards: (title: string) => void;
-  toggleAddingExp: () => void;
-  toggleAddingEdu: () => void;
-  toggleEditMode: (index?: number | null) => void;
-  toggleEditModeEdu: (index?: number | null) => void;
-  editFields: (data: FieldsData) => void;
+  toggleField: (field: keyof AppStore) => void;
+  updateFieldData: (field: keyof AppStore, data: any) => void;
   resetDraft: () => void;
-  addExpItem: (item: ExperienceItem) => void;
-  addEduItem: (item: EducationItem) => void;
-  updateExpItem: (item: ExperienceItem, index: number) => void;
-  updateEduItem: (item: EducationItem, index: number) => void;
-  delExpItem: (index: number) => void;
-  delEduItem: (index: number) => void;
+  editSection: (
+    section: "experience" | "education",
+    action: string,
+    item?: ExperienceItem | EducationItem,
+    index?: number | null
+  ) => void;
   inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };

@@ -5,28 +5,33 @@ import { defaultData } from "../components/Data";
 const initalState = {
   cardCollapse: "Personal Details",
   fieldsData: defaultData,
-  updateExp: null,
-  addingExp: false,
-  editMode: { active: false, index: null },
-  updateEdu: null,
-  addingEdu: false,
-  editModeEdu: { active: false, index: null },
+  sections: {
+    experience: {
+      items: [],
+      adding: false,
+      editMode: { active: false, index: null },
+    },
+    education: {
+      items: [],
+      adding: false,
+      editMode: { active: false, index: null },
+    },
+  },
 };
 
 const useAppStore = create<AppStore>((set) => ({
   ...initalState,
   resetStore: () => set(() => ({ ...initalState })),
-  toggleCards: (title) => set(() => ({ cardCollapse: title })),
-  toggleAddingExp: () => set((state) => ({ addingExp: !state.addingExp })),
-  toggleAddingEdu: () => set((state) => ({ addingEdu: !state.addingEdu })),
-  toggleEditMode: (index = null) =>
-    set((state) => ({ editMode: { active: !state.editMode.active, index } })),
-  toggleEditModeEdu: (index = null) =>
+  toggleField: (field) =>
     set((state) => ({
-      editModeEdu: { active: !state.editModeEdu.active, index },
+      [field]: !state[field],
     })),
-  editFields: (data) =>
-    set((state) => ({ fieldsData: { ...state.fieldsData, ...data } })),
+
+  updateFieldData: (field, data) =>
+    set((state) => ({
+      [field]: { ...(state[field] as any), ...data },
+    })),
+
   resetDraft: () =>
     set((state) => ({
       fieldsData: {
@@ -44,38 +49,37 @@ const useAppStore = create<AppStore>((set) => ({
         region: null,
       },
     })),
-  addExpItem: (item) =>
-    set((state) => ({
-      updateExp: state.updateExp ? [...state.updateExp, item] : [item],
-    })),
-  addEduItem: (item) =>
-    set((state) => ({
-      updateEdu: state.updateEdu ? [...state.updateEdu, item] : [item],
-    })),
-  updateExpItem: (item, index) =>
+
+  editSection: (section, action, item, index = null) =>
     set((state) => {
-      const updated = [...(state.updateExp || [])];
-      updated[index] = item;
-      return { updateExp: updated };
+      const editedSection = { ...state.sections[section] };
+      switch (action) {
+        case "add":
+          if (item) {
+            editedSection.items = [...editedSection.items, item];
+          }
+          break;
+        case "update":
+          if (index !== null && item) editedSection.items[index] = item;
+          break;
+        case "delete":
+          if (index !== null) editedSection.items.splice(index, 1);
+          break;
+        case "toggleAdding":
+          editedSection.adding = !editedSection.adding;
+          break;
+        case "toggleEditMode":
+          editedSection.editMode = {
+            active: !editedSection.editMode.active,
+            index,
+          };
+          break;
+        default:
+          break;
+      }
+      return { sections: { ...state.sections, [section]: editedSection } };
     }),
-  updateEduItem: (item, index) =>
-    set((state) => {
-      const updated = [...(state.updateEdu || [])];
-      updated[index] = item;
-      return { updateEdu: updated };
-    }),
-  delExpItem: (index) =>
-    set((state) => {
-      const updated = [...(state.updateExp || [])];
-      updated.splice(index, 1);
-      return { updateExp: updated };
-    }),
-  delEduItem: (index) =>
-    set((state) => {
-      const updated = [...(state.updateEdu || [])];
-      updated.splice(index, 1);
-      return { updateEdu: updated };
-    }),
+
   inputChange: (e) => {
     const { id, value } = e.target;
     set((state) => ({
