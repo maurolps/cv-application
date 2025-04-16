@@ -4,16 +4,20 @@ import "../styles/loadCard.css";
 import { svgAdd, svgTrash, svgEdit } from "./Svgs";
 import { LoadCardProps } from "@Types/loadcard";
 import { ExperienceItem } from "@Types/app";
+import useAppStore from "../store/useAppStore";
 
 export function LoadCard(props: LoadCardProps) {
+  const setExpandedCard = useAppStore((s) => s.setExpandedCard);
+  const cardCollapse = useAppStore((s) => s.cardCollapse);
+
   const svgTrashBlack = React.cloneElement(svgTrash, {
     fill: "#bbb",
     width: "15px",
   });
 
-  const isCardExpanded = props.collapse === props.title;
+  const isCardExpanded = cardCollapse === props.title;
   const handleTitleClick = () => {
-    isCardExpanded ? props.toggle("") : props.toggle(props.title);
+    setExpandedCard(props.title);
   };
 
   return (
@@ -44,23 +48,20 @@ export function LoadCard(props: LoadCardProps) {
         <>
           {props.title === "Personal Details" && (
             <>
-              <props.component
-                inputChange={props.inputChange}
-                update={props.update}
-              />
+              <props.component />
             </>
           )}
 
-          {props.title === "Skills" && (
+          {/* {props.title === "Skills" && (
             <>
               <props.component
                 inputChange={props.inputChange}
                 update={props.update}
               />
             </>
-          )}
+          )} */}
 
-          {(props.title === "Education" ||
+          {/* {(props.title === "Education" ||
             props.title === "Work Experience") && (
             <>
               {props.adding && (
@@ -159,7 +160,7 @@ export function LoadCard(props: LoadCardProps) {
                 </>
               )}
             </>
-          )}
+          )} */}
         </>
       )}
     </div>
