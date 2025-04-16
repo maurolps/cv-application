@@ -17,38 +17,11 @@ import {
 import "./App.css";
 import { PdfOptions } from "@Types/app";
 
-import useAppStore from "./store/useAppStore";
-
 const pdfOptions: PdfOptions = {
   method: "open",
 };
 
 function App() {
-  const {
-    cardCollapse,
-    fieldsData,
-    updateExp,
-    addingExp,
-    editMode,
-    updateEdu,
-    addingEdu,
-    editModeEdu,
-    toggleCards,
-    inputChange,
-    toggleAddingExp,
-    toggleAddingEdu,
-    toggleEditMode,
-    toggleEditModeEdu,
-    editFields,
-    resetDraft,
-    addExpItem,
-    addEduItem,
-    updateExpItem,
-    updateEduItem,
-    delExpItem,
-    delEduItem,
-  } = useAppStore(); // avoid destructuring the entire store, can cause unnecessary re-renders.
-
   return (
     <>
       <main>
@@ -61,13 +34,13 @@ function App() {
             title="Personal Details"
             svg={svgPersonal}
             component={Personal}
-            toggle={toggleCards}
-            collapse={cardCollapse}
-            inputChange={inputChange}
-            update={fieldsData}
+            // toggle={toggleCards}
+            // collapse={cardCollapse}
+            // inputChange={inputChange}
+            // update={fieldsData}
           />
 
-          <LoadCard
+          {/* <LoadCard
             title="Skills"
             svg={svgSkills}
             component={Skills}
@@ -75,9 +48,9 @@ function App() {
             collapse={cardCollapse}
             inputChange={inputChange}
             update={fieldsData}
-          />
+          /> */}
 
-          <LoadCard
+          {/* <LoadCard
             title="Work Experience"
             svg={svgExp}
             component={Experience}
@@ -95,8 +68,8 @@ function App() {
             fieldsData={fieldsData}
             resetDraft={resetDraft}
             toggleAdding={toggleAddingExp}
-          />
-          <LoadCard
+          /> */}
+          {/* <LoadCard
             title="Education"
             svg={svgEdu}
             component={Education}
@@ -114,15 +87,15 @@ function App() {
             fieldsData={fieldsData}
             resetDraft={resetDraft}
             toggleAdding={toggleAddingEdu}
-          />
+          /> */}
         </div>
-        <div className="preview-wrapper">
+        {/* <div className="preview-wrapper">
           <Preview
-            update={fieldsData}
-            updateExp={updateExp}
-            updateEdu={updateEdu}
-            editMode={editMode}
-            editModeEdu={editModeEdu}
+            // update={fieldsData}
+            // updateExp={updateExp}
+            // updateEdu={updateEdu}
+            // editMode={editMode}
+            // editModeEdu={editModeEdu}
           />
           <div className="action">
             <button
@@ -138,7 +111,7 @@ function App() {
               PDF {svgDownload}
             </button>
           </div>
-        </div>
+        </div> */}
       </main>
       <footer>
         {svgGithub}{" "}
