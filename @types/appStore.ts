@@ -22,6 +22,7 @@ export type AppStore = {
   };
 
   resetStore: () => void;
+  setExpandedCard: (title: string) => void;
   toggleField: (field: keyof AppStore) => void;
   updateFieldData: (field: keyof AppStore, data: any) => void;
   resetDraft: () => void;
@@ -31,5 +32,7 @@ export type AppStore = {
     item?: ExperienceItem | EducationItem,
     index?: number | null
   ) => void;
-  inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  inputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 };

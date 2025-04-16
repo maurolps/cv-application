@@ -22,6 +22,12 @@ const initalState = {
 const useAppStore = create<AppStore>((set) => ({
   ...initalState,
   resetStore: () => set(() => ({ ...initalState })),
+
+  setExpandedCard: (title) =>
+    set((state) => ({
+      cardCollapse: state.cardCollapse === title ? "" : title,
+    })),
+
   toggleField: (field) =>
     set((state) => ({
       [field]: !state[field],
