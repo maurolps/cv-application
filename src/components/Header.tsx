@@ -1,15 +1,14 @@
 import "../styles/header.css";
-import React, { FC } from "react";
+import React from "react";
 import DarkMode from "./DarkMode";
 import { svgAutofill, svgTrash } from "./Svgs";
 import { exampleData, expData, eduData } from "./Data";
 import useAppStore from "../store/useAppStore";
 
 export const Header = () => {
-  const editFields = useAppStore((s) => s.editFields);
-  const addExpItem = useAppStore((s) => s.addExpItem);
-  const addEduItem = useAppStore((s) => s.addEduItem);
   const resetStore = useAppStore((s) => s.resetStore);
+  const updateFields = useAppStore((s) => s.updateFieldData);
+  const editSections = useAppStore((s) => s.editSection);
 
   const handleAutoFill = () => {
     setTimeout(() => {
@@ -20,12 +19,13 @@ export const Header = () => {
         profileImg.src = "/assets/john-doe.png";
       }
     }, 50);
-    editFields(exampleData);
+
+    updateFields("fieldsData", exampleData);
     expData.forEach((item) => {
-      addExpItem(item);
+      editSections("experience", "add", item);
     });
     eduData.forEach((item) => {
-      addEduItem(item);
+      editSections("education", "add", item);
     });
   };
 
