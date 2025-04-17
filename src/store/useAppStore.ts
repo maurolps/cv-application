@@ -66,10 +66,18 @@ const useAppStore = create<AppStore>((set) => ({
           }
           break;
         case "update":
-          if (index !== null && item) editedSection.items[index] = item;
+          if (index !== null && item) {
+            editedSection.items = state.sections[section].items.map((it, i) =>
+              i === index ? item : it
+            );
+          }
           break;
         case "delete":
-          if (index !== null) editedSection.items.splice(index, 1);
+          if (index !== null) {
+            editedSection.items = state.sections[section].items.filter(
+              (_, i) => i !== index
+            );
+          }
           break;
         case "toggleAdding":
           editedSection.adding = !editedSection.adding;
