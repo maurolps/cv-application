@@ -34,41 +34,16 @@ function App() {
             title="Personal Details"
             svg={svgPersonal}
             component={Personal}
-            // toggle={toggleCards}
-            // collapse={cardCollapse}
-            // inputChange={inputChange}
-            // update={fieldsData}
           />
 
-          {/* <LoadCard
-            title="Skills"
-            svg={svgSkills}
-            component={Skills}
-            toggle={toggleCards}
-            collapse={cardCollapse}
-            inputChange={inputChange}
-            update={fieldsData}
-          /> */}
+          <LoadCard title="Skills" svg={svgSkills} component={Skills} />
 
-          {/* <LoadCard
+          <LoadCard
             title="Work Experience"
             svg={svgExp}
             component={Experience}
-            toggle={toggleCards}
-            collapse={cardCollapse}
-            inputChange={inputChange}
-            update={updateExp}
-            adding={addingExp}
-            addItem={addExpItem}
-            delItem={delExpItem}
-            updateItem={updateExpItem}
-            editing={editFields}
-            toggleEdit={toggleEditMode}
-            editMode={editMode}
-            fieldsData={fieldsData}
-            resetDraft={resetDraft}
-            toggleAdding={toggleAddingExp}
-          /> */}
+          />
+
           {/* <LoadCard
             title="Education"
             svg={svgEdu}
