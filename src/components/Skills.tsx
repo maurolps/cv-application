@@ -1,14 +1,8 @@
-import { FieldsData } from "@Types/app";
+import useAppStore from "../store/useAppStore";
 
-type SkillsProps = {
-  inputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  update: FieldsData;
-};
-
-export function Skills(props: SkillsProps) {
-  const { inputChange, update } = props;
+export function Skills() {
+  const inputChange = useAppStore((s) => s.inputChange);
+  const fieldsData = useAppStore((s) => s.fieldsData);
   return (
     <>
       <textarea
@@ -17,9 +11,7 @@ export function Skills(props: SkillsProps) {
         cols={30}
         rows={8}
         onChange={inputChange}
-        value={
-          update["skills"] && typeof update == "object" ? update["skills"] : ""
-        }
+        value={fieldsData.skills || ""}
         placeholder="HTML, CSS, JavaScript, React, Node.js..."
       ></textarea>
     </>
