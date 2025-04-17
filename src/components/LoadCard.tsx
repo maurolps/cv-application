@@ -1,19 +1,11 @@
-import { svgArrowDown, svgArrowUp } from "./Svgs";
-import React from "react";
 import "../styles/loadCard.css";
-import { svgAdd, svgTrash, svgEdit } from "./Svgs";
+import { svgArrowDown, svgArrowUp } from "./Svgs";
 import { LoadCardProps } from "@Types/loadcard";
-import { ExperienceItem } from "@Types/app";
 import useAppStore from "../store/useAppStore";
 
 export function LoadCard(props: LoadCardProps) {
   const setExpandedCard = useAppStore((s) => s.setExpandedCard);
   const cardCollapse = useAppStore((s) => s.cardCollapse);
-
-  const svgTrashBlack = React.cloneElement(svgTrash, {
-    fill: "#bbb",
-    width: "15px",
-  });
 
   const isCardExpanded = cardCollapse === props.title;
   const handleTitleClick = () => {
@@ -44,125 +36,7 @@ export function LoadCard(props: LoadCardProps) {
         <p>{isCardExpanded ? svgArrowUp : svgArrowDown}</p>
       </div>
 
-      {isCardExpanded && (
-        <>
-          {props.title === "Personal Details" && (
-            <>
-              <props.component />
-            </>
-          )}
-
-          {/* {props.title === "Skills" && (
-            <>
-              <props.component
-                inputChange={props.inputChange}
-                update={props.update}
-              />
-            </>
-          )} */}
-
-          {/* {(props.title === "Education" ||
-            props.title === "Work Experience") && (
-            <>
-              {props.adding && (
-                <>
-                  <props.component
-                    inputChange={props.inputChange}
-                    update={props.fieldsData || {}}
-                  />
-                  <div className="card-actions btn-actions">
-                    <button
-                      className="btn-cancel"
-                      onClick={() => {
-                        props.toggleAdding?.();
-                        props.editMode?.active && props.toggleEdit?.();
-                        props.resetDraft?.();
-                      }}
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={() => {
-                        if (props.editMode?.active) {
-                          props.updateItem?.(
-                            props.fieldsData || {},
-                            props.editMode.index || 0
-                          );
-                        } else {
-                          props.addItem?.(props.fieldsData || {});
-                        }
-                        props.toggleAdding?.();
-                        props.editMode?.active && props.toggleEdit?.();
-                        props.resetDraft?.();
-                      }}
-                    >
-                      {props.editMode?.active ? <>Update</> : <>Add</>}
-                    </button>
-                  </div>
-                </>
-              )}
-
-              {!props.adding && (
-                <>
-                  {props.update !== null && (
-                    <div className="exp-item-container">
-                      {props.update.map(
-                        (experience: ExperienceItem, index: number) => (
-                          <div className="exp-item" key={index}>
-                            <div>
-                              <div>
-                                {experience["position-title"] ||
-                                  experience["degree"]}
-                              </div>
-                              <div className="exp-item-date">
-                                {experience["company-name"] ||
-                                  experience["school"]}{" "}
-                                |{" "}
-                                {experience["start-date"] ||
-                                  experience["start"]}{" "}
-                                - {experience["end-date"] || experience["end"]}
-                              </div>
-                            </div>
-                            <div className="exp-item-btn">
-                              <button
-                                onClick={() => {
-                                  props.editing?.(experience);
-                                  props.toggleEdit?.(index);
-                                  props.toggleAdding?.();
-                                }}
-                              >
-                                {svgEdit}
-                              </button>
-                              <button
-                                aria-label="Remove item"
-                                onClick={() => {
-                                  props.delItem?.(index);
-                                }}
-                              >
-                                {svgTrashBlack}
-                              </button>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  )}
-                  <div className="btn-add">
-                    <button
-                      onClick={() => {
-                        props.editMode?.active && props.toggleEdit?.();
-                        props.toggleAdding?.();
-                      }}
-                    >
-                      {svgAdd}{" "}
-                    </button>
-                  </div>
-                </>
-              )}
-            </>
-          )} */}
-        </>
-      )}
+      {isCardExpanded && <>{<props.component />}</>}
     </div>
   );
 }
