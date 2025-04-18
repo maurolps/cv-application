@@ -44,25 +44,7 @@ function App() {
             component={Experience}
           />
 
-          {/* <LoadCard
-            title="Education"
-            svg={svgEdu}
-            component={Education}
-            toggle={toggleCards}
-            collapse={cardCollapse}
-            inputChange={inputChange}
-            update={updateEdu}
-            adding={addingEdu}
-            addItem={addEduItem}
-            delItem={delEduItem}
-            updateItem={updateEduItem}
-            editing={editFields}
-            toggleEdit={toggleEditModeEdu}
-            editMode={editModeEdu}
-            fieldsData={fieldsData}
-            resetDraft={resetDraft}
-            toggleAdding={toggleAddingEdu}
-          /> */}
+          <LoadCard title="Education" svg={svgEdu} component={Education} />
         </div>
         {/* <div className="preview-wrapper">
           <Preview
