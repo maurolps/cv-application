@@ -46,14 +46,8 @@ function App() {
 
           <LoadCard title="Education" svg={svgEdu} component={Education} />
         </div>
-        {/* <div className="preview-wrapper">
-          <Preview
-            // update={fieldsData}
-            // updateExp={updateExp}
-            // updateEdu={updateEdu}
-            // editMode={editMode}
-            // editModeEdu={editModeEdu}
-          />
+        <div className="preview-wrapper">
+          <Preview />
           <div className="action">
             <button
               className="btn-download"
@@ -68,7 +62,7 @@ function App() {
               PDF {svgDownload}
             </button>
           </div>
-        </div> */}
+        </div>
       </main>
       <footer>
         {svgGithub}{" "}
