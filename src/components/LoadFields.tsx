@@ -1,12 +1,13 @@
-import { FieldsData } from "@Types/app";
+import useAppStore from "../store/useAppStore";
 
 type LoadFieldsProps = {
   inputList: string[];
-  inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  update: FieldsData | null;
 };
 
 export function LoadFields(props: LoadFieldsProps) {
+  const fieldsData = useAppStore((s) => s.fieldsData);
+  const inputChange = useAppStore((s) => s.inputChange);
+
   return (
     <div className="fields-container">
       {props.inputList.map((inputName) => {
@@ -18,13 +19,13 @@ export function LoadFields(props: LoadFieldsProps) {
               type="text"
               id={inputId}
               placeholder={inputName}
-              onChange={props.inputChange}
+              onChange={inputChange}
               name={inputId}
               value={
-                props.update &&
-                typeof props.update == "object" &&
-                props.update[inputId]
-                  ? props.update[inputId]
+                fieldsData &&
+                typeof fieldsData == "object" &&
+                fieldsData[inputId]
+                  ? fieldsData[inputId]
                   : ""
               }
             />

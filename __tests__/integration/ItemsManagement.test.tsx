@@ -1,11 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { addItemHelper, newItemHelper } from "../utils/integrationHelpers";
+import useAppStore from "../../src/store/useAppStore";
 import App from "../../src/App";
 import "@testing-library/jest-dom";
 
 describe("Add, Update and Delete Items", () => {
   beforeEach(() => {
+    useAppStore.getState().resetStore();
     render(<App />);
+  });
+
+  afterEach(() => {
+    cleanup();
   });
 
   test("Adding a new item should display the new input fields", async () => {

@@ -1,33 +1,21 @@
 import { LoadFields } from "./LoadFields";
+import useAppStore from "../store/useAppStore";
 
-type PersonalProps = {
-  inputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  update: {
-    [key: string]: string;
-  };
-};
-
-export function Personal(props: PersonalProps) {
+export function Personal() {
   const inputs = ["Name", "Email", "Phone Number", "Address"];
+  const fieldsData = useAppStore((s) => s.fieldsData);
+  const inputChange = useAppStore((s) => s.inputChange);
 
   return (
     <>
-      <LoadFields
-        inputList={inputs}
-        inputChange={props.inputChange}
-        update={props.update}
-      />
+      <LoadFields inputList={inputs} />
       <textarea
         name="Personal Description"
         id="p-description"
         cols={30}
         rows={8}
-        onChange={props.inputChange}
-        value={
-          typeof props.update == "object" ? props.update["p-description"] : ""
-        }
+        onChange={inputChange}
+        value={fieldsData["p-description"] || ""}
         placeholder="<optional> Tell something about your history..."
       ></textarea>
     </>

@@ -1,14 +1,6 @@
-import { LoadFields } from "./LoadFields";
-import { FieldsData } from "@Types/app";
+import { EditableSection } from "./EditableSection";
 
-type ExperienceProps = {
-  inputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  update: FieldsData;
-};
-
-export function Experience(props: ExperienceProps) {
+export function Experience() {
   const inputs = [
     "Company Name",
     "Position Title",
@@ -18,11 +10,5 @@ export function Experience(props: ExperienceProps) {
     "Description",
   ];
 
-  return (
-    <LoadFields
-      inputList={inputs}
-      inputChange={props.inputChange}
-      update={props.update}
-    />
-  );
+  return <EditableSection section="experience" inputs={inputs} />;
 }

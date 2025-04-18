@@ -2,7 +2,7 @@ import { svgEdu, svgExp } from "./Svgs";
 import { ProfileImage } from "./ProfileImage";
 import React from "react";
 import "../styles/preview.css";
-import { PreviewProps } from "@Types/preview";
+import useAppStore from "../store/useAppStore";
 
 function parseSkills(skills: string): string[] {
   return skills
@@ -11,13 +11,13 @@ function parseSkills(skills: string): string[] {
     .filter((skill) => skill !== "");
 }
 
-export function Preview({
-  update,
-  updateExp,
-  updateEdu,
-  editMode,
-  editModeEdu,
-}: PreviewProps) {
+export function Preview() {
+  const update = useAppStore((s) => s.fieldsData);
+  const updateExp = useAppStore((s) => s.sections.experience.items);
+  const updateEdu = useAppStore((s) => s.sections.education.items);
+  const editMode = useAppStore((s) => s.sections.experience.editMode);
+  const editModeEdu = useAppStore((s) => s.sections.education.editMode);
+
   const skillsInput = update.skills || "";
   const skills: string[] = skillsInput ? parseSkills(skillsInput) : [];
 
