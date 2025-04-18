@@ -25,7 +25,7 @@ export function EditableSection({ section, inputs }: EditableSectionProps) {
 
   const handleCancelAdding = () => {
     editSection(section, "toggleAdding", {});
-    editSection(section, "toggleEditMode", {});
+    editMode.active && editSection(section, "toggleEditMode", {});
     resetDraft();
   };
 
