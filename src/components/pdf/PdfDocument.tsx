@@ -54,7 +54,7 @@ export const PdfDocument: React.FC<PreviewPDFProps> = ({ state }) => {
           <View style={styles.skillsContainer}>
             {skills.map((skill, idx) => (
               <Text key={idx} style={styles.skillTag}>
-                {skill}
+                {skill.toUpperCase()}
               </Text>
             ))}
           </View>
@@ -62,7 +62,9 @@ export const PdfDocument: React.FC<PreviewPDFProps> = ({ state }) => {
 
         {/* Experience section */}
         <View style={styles.section}>
-          <Text style={styles.sectionHeader}>EXPERIENCE</Text>
+          <View style={styles.headerContainer}>
+            <Text style={styles.sectionHeader}>EXPERIENCE</Text>
+          </View>
           {expList.map((item, i) => (
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>

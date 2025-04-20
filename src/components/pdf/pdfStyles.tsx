@@ -71,12 +71,18 @@ export const styles = StyleSheet.create({
     margin: 2,
   },
   section: {
-    marginTop: 8,
+    marginTop: 20,
   },
+
+  headerContainer: {
+    width: "30%",
+    alignItems: "flex-end",
+    marginBottom: 10,
+  },
+
   sectionHeader: {
     fontSize: 11,
     fontWeight: "bold",
-    marginBottom: 6,
     letterSpacing: 0.5,
   },
   entry: {
