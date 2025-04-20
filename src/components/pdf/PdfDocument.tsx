@@ -66,17 +66,22 @@ export const PdfDocument: React.FC<PreviewPDFProps> = ({ state }) => {
           {expList.map((item, i) => (
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>
-                <Text style={styles.entryTitle}>
-                  {item["position-title"].toUpperCase()}
-                </Text>
-                <Text style={styles.entryDate}>
-                  {item["start-date"]} - {item["end-date"]}
-                </Text>
+                <View style={styles.entryColLeft}>
+                  <Text style={styles.entryTitle}>
+                    {item["position-title"].toUpperCase()}
+                  </Text>
+                  <Text style={styles.entryDate}>
+                    {item["start-date"]} - {item["end-date"]}
+                  </Text>
+                </View>
+                <View style={styles.entryColRight}>
+                  <Text style={styles.entryCompany}>
+                    {item["company-name"].toUpperCase()} -{" "}
+                    {item.location.toUpperCase()}
+                  </Text>
+                  <Text style={styles.entryDesc}>{item.description}</Text>
+                </View>
               </View>
-              <Text style={styles.entryCompany}>
-                {item["company-name"]} – {item.location}
-              </Text>
-              <Text style={styles.entryDesc}>{item.description}</Text>
             </View>
           ))}
         </View>

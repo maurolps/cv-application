@@ -84,8 +84,16 @@ export const styles = StyleSheet.create({
   },
   entryRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "baseline",
+  },
+  entryColLeft: {
+    width: "30%",
+    alignItems: "flex-end",
+    flexDirection: "column",
+  },
+  entryColRight: {
+    width: "70%",
+    paddingLeft: 20,
+    flexDirection: "column",
   },
   entryTitle: {
     fontSize: 9,
@@ -97,14 +105,13 @@ export const styles = StyleSheet.create({
     color: "#666666",
   },
   entryCompany: {
-    fontSize: 8,
+    fontSize: 9,
     fontWeight: "600",
-    marginTop: 2,
   },
+
   entryDesc: {
     fontSize: 8,
     fontStyle: "italic",
-    marginTop: 2,
     lineHeight: 1.2,
     color: "#444444",
   },
