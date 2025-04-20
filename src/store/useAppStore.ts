@@ -1,10 +1,12 @@
 import { create } from "zustand";
 import { AppStore } from "@Types/appStore";
 import { defaultData } from "../components/Data";
+import { ChangeEvent } from "react";
 
 const initalState = {
   cardCollapse: "Personal Details",
   fieldsData: defaultData,
+  profileImage: "/assets/img-placeholder.png",
   sections: {
     experience: {
       items: [],
@@ -37,6 +39,19 @@ const useAppStore = create<AppStore>((set) => ({
     set((state) => ({
       [field]: { ...(state[field] as any), ...data },
     })),
+
+  updateProfileImage: (e) =>
+    set((state) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          set({ profileImage: reader.result as string });
+        };
+        reader.readAsDataURL(file);
+      }
+      return { profileImage: state.profileImage };
+    }),
 
   resetDraft: () =>
     set((state) => ({
