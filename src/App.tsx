@@ -16,6 +16,7 @@ import {
 } from "./components/Svgs";
 import "./App.css";
 import { PdfOptions } from "@Types/app";
+import { ViewPDF } from "./components/pdf/viewPDF";
 
 const pdfOptions: PdfOptions = {
   method: "open",
@@ -49,7 +50,8 @@ function App() {
         <div className="preview-wrapper">
           <Preview />
           <div className="action">
-            <button
+            <ViewPDF />
+            {/* <button
               className="btn-download"
               onClick={() => {
                 const pdfTarget = () => document.getElementById("pdf-content");
@@ -60,7 +62,7 @@ function App() {
               }}
             >
               PDF {svgDownload}
-            </button>
+            </button> */}
           </div>
         </div>
       </main>
