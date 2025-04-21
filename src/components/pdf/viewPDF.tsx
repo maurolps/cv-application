@@ -1,6 +1,7 @@
 import { pdf } from "@react-pdf/renderer";
 import { PdfDocument } from "./PdfDocument";
 import useAppStore from "../../store/useAppStore";
+import { svgDownload } from "../Svgs";
 
 const handleView = async () => {
   const state = useAppStore.getState();
@@ -11,6 +12,6 @@ const handleView = async () => {
 
 export const ViewPDF = () => (
   <button className="btn-download" onClick={handleView}>
-    View PDF
+    {svgDownload} View PDF
   </button>
 );

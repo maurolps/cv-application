@@ -90,20 +90,26 @@ export function PdfDocument({ state }: PdfDocumentProps) {
 
         {/* Education section */}
         <View style={styles.section}>
-          <Text style={styles.sectionHeader}>EDUCATION</Text>
+          <View style={styles.sectionHeaderContainer}>
+            <Text style={styles.sectionHeader}>EDUCATION</Text>
+          </View>
           {eduList.map((item, i) => (
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>
-                <Text style={styles.entryTitle}>
-                  {item.degree?.toUpperCase()}
-                </Text>
-                <Text style={styles.entryDate}>
-                  {item.start} - {item.end}
-                </Text>
+                <View style={styles.entryColLeft}>
+                  <Text style={styles.entryTitle}>
+                    {item.degree?.toUpperCase()}
+                  </Text>
+                  <Text style={styles.entryDate}>
+                    {item.start} - {item.end}
+                  </Text>
+                </View>
+                <View style={styles.entryColRight}>
+                  <Text style={styles.entryCompany}>
+                    {item.school?.toUpperCase()} - {item.region?.toUpperCase()}
+                  </Text>
+                </View>
               </View>
-              <Text style={styles.entryCompany}>
-                {item.school} – {item.region}
-              </Text>
             </View>
           ))}
         </View>
