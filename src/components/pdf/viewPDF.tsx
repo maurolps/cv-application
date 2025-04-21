@@ -5,6 +5,7 @@ import { svgDownload } from "../Svgs";
 
 const handleView = async () => {
   const state = useAppStore.getState();
+  localStorage.setItem("cvState", JSON.stringify(state));
   const blob = await pdf(<PdfDocument state={state} />).toBlob();
   const url = URL.createObjectURL(blob);
   window.open(url);
