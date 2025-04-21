@@ -3,6 +3,10 @@ import userEvent from "@testing-library/user-event";
 import App from "../../src/App";
 import "@testing-library/jest-dom";
 
+jest.mock("../../src/components/pdf/PdfDocument", () => ({
+  PdfDocument: () => <div>Mocked PDF Document</div>,
+}));
+
 describe("Card Collapse Behavior", () => {
   beforeEach(() => {
     render(<App />);
