@@ -4,7 +4,7 @@ import useAppStore from "../store/useAppStore";
 
 export function ProfileImage() {
   const profileImage = useAppStore((s) => s.profileImage);
-  const updateProfileImage = useAppStore((s) => s.updateProfileImage);
+  const loadProfileImage = useAppStore((s) => s.loadProfileImage);
 
   return (
     <>
@@ -21,7 +21,7 @@ export function ProfileImage() {
           type="file"
           id="img-file"
           accept="image/*"
-          onChange={updateProfileImage}
+          onChange={loadProfileImage}
         />
       </div>
     </>

@@ -26,7 +26,8 @@ export type AppStore = {
   setExpandedCard: (title: string) => void;
   toggleField: (field: keyof AppStore) => void;
   updateFieldData: (field: keyof AppStore, data: any) => void;
-  updateProfileImage: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  loadProfileImage: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  setProfileImage: (url: string) => void;
   resetDraft: () => void;
   editSection: (
     section: "experience" | "education",

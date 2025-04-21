@@ -9,17 +9,10 @@ export const Header = () => {
   const resetStore = useAppStore((s) => s.resetStore);
   const updateFields = useAppStore((s) => s.updateFieldData);
   const editSections = useAppStore((s) => s.editSection);
+  const setProfileImage = useAppStore((s) => s.setProfileImage);
 
   const handleAutoFill = () => {
-    setTimeout(() => {
-      const profileImg = document.getElementById(
-        "profile-img"
-      ) as HTMLImageElement;
-      if (profileImg) {
-        profileImg.src = "/assets/john-doe.png";
-      }
-    }, 50);
-
+    setProfileImage("/assets/john-doe.png");
     updateFields("fieldsData", exampleData);
     expData.forEach((item) => {
       editSections("experience", "add", item);

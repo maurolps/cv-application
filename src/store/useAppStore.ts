@@ -40,7 +40,12 @@ const useAppStore = create<AppStore>((set) => ({
       [field]: { ...(state[field] as any), ...data },
     })),
 
-  updateProfileImage: (e) =>
+  setProfileImage: (url) =>
+    set(() => ({
+      profileImage: url,
+    })),
+
+  loadProfileImage: (e) =>
     set((state) => {
       const file = e.target.files?.[0];
       if (file) {
