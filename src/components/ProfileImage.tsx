@@ -1,20 +1,10 @@
 import { useState, ChangeEvent } from "react";
 import { svgPhotoEdit } from "./Svgs";
+import useAppStore from "../store/useAppStore";
 
 export function ProfileImage() {
-  const [profileImage, setProfileImage] = useState<string | null>(null);
-
-  const imageUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  const profileImage = useAppStore((s) => s.profileImage);
+  const loadProfileImage = useAppStore((s) => s.loadProfileImage);
 
   return (
     <>
@@ -31,7 +21,7 @@ export function ProfileImage() {
           type="file"
           id="img-file"
           accept="image/*"
-          onChange={imageUpload}
+          onChange={loadProfileImage}
         />
       </div>
     </>

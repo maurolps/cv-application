@@ -5,7 +5,6 @@ import { Education } from "./components/Education";
 import { LoadCard } from "./components/LoadCard";
 import { Preview } from "./components/Preview";
 import { Skills } from "./components/Skills";
-import generatePDF from "react-to-pdf";
 import {
   svgPersonal,
   svgExp,
@@ -16,6 +15,7 @@ import {
 } from "./components/Svgs";
 import "./App.css";
 import { PdfOptions } from "@Types/app";
+import { ViewPDF } from "./components/pdf/viewPDF";
 
 const pdfOptions: PdfOptions = {
   method: "open",
@@ -49,18 +49,7 @@ function App() {
         <div className="preview-wrapper">
           <Preview />
           <div className="action">
-            <button
-              className="btn-download"
-              onClick={() => {
-                const pdfTarget = () => document.getElementById("pdf-content");
-                const pdfContent = pdfTarget();
-                pdfContent?.classList.add("print-pdf");
-                generatePDF(pdfTarget, pdfOptions);
-                pdfContent?.classList.remove("print-pdf");
-              }}
-            >
-              PDF {svgDownload}
-            </button>
+            <ViewPDF />
           </div>
         </div>
       </main>

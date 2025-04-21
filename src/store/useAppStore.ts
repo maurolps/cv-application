@@ -2,9 +2,11 @@ import { create } from "zustand";
 import { AppStore } from "@Types/appStore";
 import { defaultData } from "../components/Data";
 
-const initalState = {
+const savedState = localStorage.getItem("cvState");
+const defaultState = {
   cardCollapse: "Personal Details",
   fieldsData: defaultData,
+  profileImage: "/assets/img-placeholder.png",
   sections: {
     experience: {
       items: [],
@@ -19,9 +21,11 @@ const initalState = {
   },
 };
 
+const initialState = savedState ? JSON.parse(savedState) : defaultState;
+
 const useAppStore = create<AppStore>((set) => ({
-  ...initalState,
-  resetStore: () => set(() => ({ ...initalState })),
+  ...initialState,
+  resetStore: () => set(() => ({ ...defaultState })),
 
   setExpandedCard: (title) =>
     set((state) => ({
@@ -37,6 +41,24 @@ const useAppStore = create<AppStore>((set) => ({
     set((state) => ({
       [field]: { ...(state[field] as any), ...data },
     })),
+
+  setProfileImage: (url) =>
+    set(() => ({
+      profileImage: url,
+    })),
+
+  loadProfileImage: (e) =>
+    set((state) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          set({ profileImage: reader.result as string });
+        };
+        reader.readAsDataURL(file);
+      }
+      return { profileImage: state.profileImage };
+    }),
 
   resetDraft: () =>
     set((state) => ({

@@ -4,6 +4,10 @@ import useAppStore from "../../src/store/useAppStore";
 import App from "../../src/App";
 import "@testing-library/jest-dom";
 
+jest.mock("../../src/components/pdf/PdfDocument", () => ({
+  PdfDocument: () => <div>Mocked PDF Document</div>,
+}));
+
 describe("Add, Update and Delete Items", () => {
   beforeEach(() => {
     useAppStore.getState().resetStore();

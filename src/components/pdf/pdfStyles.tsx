@@ -1,0 +1,126 @@
+import { StyleSheet } from "@react-pdf/renderer";
+
+export const styles = StyleSheet.create({
+  page: {
+    padding: 24,
+    fontSize: 10,
+    color: "#333333",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+
+  photoWrapper: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    width: "30%",
+  },
+
+  photoContainer: {
+    width: 88,
+    height: 88,
+    borderRadius: 100,
+    borderWidth: 2,
+    borderColor: "#f0f0f0",
+    overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  photo: {
+    width: 88,
+    height: 88,
+    objectFit: "cover",
+  },
+
+  nameContainer: {
+    flex: 1,
+    marginLeft: 20,
+  },
+  name: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#111111",
+  },
+  role: {
+    fontSize: 9,
+    color: "#555555",
+    marginTop: 2,
+  },
+  contactContainer: {
+    width: 140,
+    fontSize: 8,
+    textAlign: "right",
+  },
+  contact: {
+    marginBottom: 2,
+  },
+  skillsContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    marginVertical: 10,
+  },
+  skillTag: {
+    borderWidth: 1,
+    borderColor: "#0ca3a3",
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    fontSize: 8,
+    color: "#0ca3a3",
+    margin: 2,
+  },
+  section: {
+    marginTop: 20,
+  },
+
+  sectionHeaderContainer: {
+    width: "30%",
+    alignItems: "flex-end",
+    marginBottom: 10,
+  },
+
+  sectionHeader: {
+    fontSize: 11,
+    fontWeight: "bold",
+    letterSpacing: 0.5,
+  },
+  entry: {
+    marginBottom: 10,
+  },
+  entryRow: {
+    flexDirection: "row",
+  },
+  entryColLeft: {
+    width: "30%",
+    alignItems: "flex-end",
+    flexDirection: "column",
+  },
+  entryColRight: {
+    width: "70%",
+    paddingLeft: 20,
+    flexDirection: "column",
+  },
+  entryTitle: {
+    fontSize: 9,
+    fontWeight: "bold",
+    color: "#0ca3a3",
+  },
+  entryDate: {
+    fontSize: 8,
+    color: "#666666",
+  },
+  entryCompany: {
+    fontSize: 9,
+    fontWeight: "600",
+  },
+
+  entryDesc: {
+    fontSize: 8,
+    fontStyle: "italic",
+    lineHeight: 1.2,
+    color: "#444444",
+  },
+});
