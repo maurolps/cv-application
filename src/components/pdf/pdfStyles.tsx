@@ -11,12 +11,19 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 12,
   },
+
+  photoWrapper: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    width: "30%",
+  },
+
   photoContainer: {
     width: 88,
     height: 88,
-    borderRadius: 44,
+    borderRadius: 100,
     borderWidth: 2,
-    borderColor: "#cccccc",
+    borderColor: "#f0f0f0",
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
@@ -26,15 +33,10 @@ export const styles = StyleSheet.create({
     height: 88,
     objectFit: "cover",
   },
-  photoPlaceholder: {
-    width: 88,
-    height: 88,
-    backgroundColor: "#f0f0f0",
-    borderRadius: 44,
-  },
+
   nameContainer: {
     flex: 1,
-    marginLeft: 12,
+    marginLeft: 20,
   },
   name: {
     fontSize: 20,
@@ -74,7 +76,7 @@ export const styles = StyleSheet.create({
     marginTop: 20,
   },
 
-  headerContainer: {
+  sectionHeaderContainer: {
     width: "30%",
     alignItems: "flex-end",
     marginBottom: 10,
