@@ -15,20 +15,38 @@ export function LoadFields(props: LoadFieldsProps) {
         return (
           <div key={inputId}>
             <label htmlFor={inputId}></label>
-            <input
-              type="text"
-              id={inputId}
-              placeholder={inputName}
-              onChange={inputChange}
-              name={inputId}
-              value={
-                fieldsData &&
-                typeof fieldsData == "object" &&
-                fieldsData[inputId]
-                  ? fieldsData[inputId]
-                  : ""
-              }
-            />
+            {inputId !== "description" ? (
+              <input
+                type="text"
+                id={inputId}
+                placeholder={inputName}
+                onChange={inputChange}
+                name={inputId}
+                value={
+                  fieldsData &&
+                  typeof fieldsData == "object" &&
+                  fieldsData[inputId]
+                    ? fieldsData[inputId]
+                    : ""
+                }
+              />
+            ) : (
+              <textarea
+                name={inputId}
+                id={inputId}
+                cols={30}
+                rows={8}
+                onChange={inputChange}
+                value={
+                  fieldsData &&
+                  typeof fieldsData == "object" &&
+                  fieldsData[inputId]
+                    ? fieldsData[inputId]
+                    : ""
+                }
+                placeholder={`• Add your description list here...\n• Add your description list here...`}
+              ></textarea>
+            )}
           </div>
         );
       })}
