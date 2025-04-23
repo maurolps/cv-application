@@ -1,21 +1,39 @@
 import { StyleSheet } from "@react-pdf/renderer";
+const fontSizes = {
+  name: 20,
+  role: 12,
+  contact: 9,
+  headings: 14,
+  subheadings: 12,
+  date: 9,
+  text: 10,
+  skills: 8,
+};
+
+const colors = {
+  primary: "#0ca3a3",
+  // primary: "#3457c4",
+  text: "#333333",
+};
 
 export const styles = StyleSheet.create({
   page: {
     padding: 24,
-    fontSize: 10,
-    color: "#333333",
+    color: colors.text,
+    flexDirection: "column",
+    alignItems: "center",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 12,
+    width: 430,
   },
 
   photoWrapper: {
     flexDirection: "row",
     justifyContent: "flex-end",
-    width: "30%",
+    width: "88",
   },
 
   photoContainer: {
@@ -39,18 +57,16 @@ export const styles = StyleSheet.create({
     marginLeft: 20,
   },
   name: {
-    fontSize: 20,
+    fontSize: fontSizes.name,
     fontWeight: "bold",
-    color: "#111111",
   },
   role: {
-    fontSize: 9,
-    color: "#555555",
+    fontSize: fontSizes.role,
     marginTop: 2,
   },
   contactContainer: {
     width: 140,
-    fontSize: 8,
+    fontSize: fontSizes.contact,
     textAlign: "right",
   },
   contact: {
@@ -60,16 +76,15 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
-    marginVertical: 10,
   },
   skillTag: {
     borderWidth: 1,
-    borderColor: "#0ca3a3",
+    borderColor: colors.primary,
     borderRadius: 4,
     paddingHorizontal: 6,
     paddingVertical: 2,
-    fontSize: 8,
-    color: "#0ca3a3",
+    fontSize: fontSizes.skills,
+    fontWeight: "bold",
     margin: 2,
   },
   summaryContainer: {
@@ -78,17 +93,17 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     justifyContent: "center",
     alignItems: "center",
+    width: 470,
   },
   summaryHeader: {
-    fontSize: 11,
+    fontSize: fontSizes.headings,
     fontWeight: "bold",
     letterSpacing: 0.5,
-    marginBottom: 5,
+    marginBottom: 10,
   },
   summary: {
-    fontSize: 8,
+    fontSize: fontSizes.text,
     lineHeight: 1.2,
-    color: "#3f3c3c",
     marginBottom: 10,
   },
 
@@ -97,13 +112,13 @@ export const styles = StyleSheet.create({
   },
 
   sectionHeaderContainer: {
-    width: "30%",
+    width: 140,
     alignItems: "flex-end",
-    marginBottom: 10,
+    marginBottom: 15,
   },
 
   sectionHeader: {
-    fontSize: 11,
+    fontSize: fontSizes.headings,
     fontWeight: "bold",
     letterSpacing: 0.5,
   },
@@ -114,38 +129,38 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
   },
   entryColLeft: {
-    width: "30%",
+    width: 140,
     alignItems: "flex-end",
     flexDirection: "column",
   },
   entryColRight: {
-    width: "70%",
+    width: 350,
     paddingLeft: 20,
     flexDirection: "column",
   },
   entryTitle: {
-    fontSize: 9,
+    fontSize: fontSizes.subheadings,
     fontWeight: "bold",
-    color: "#0ca3a3",
+    color: colors.primary,
+    textAlign: "right",
   },
   entryDate: {
-    fontSize: 8,
-    color: "#666666",
+    fontSize: fontSizes.date,
+    fontWeight: 300,
   },
   entryCompany: {
-    fontSize: 9,
+    fontSize: fontSizes.subheadings,
     fontWeight: "600",
+    marginBottom: 5,
   },
 
   entryDesc: {
-    fontSize: 8,
-    fontStyle: "italic",
+    fontSize: fontSizes.text,
     lineHeight: 1.2,
-    color: "#444444",
   },
 
   entryStack: {
-    fontSize: 8,
+    fontSize: fontSizes.text,
     fontWeight: "bold",
   },
 });

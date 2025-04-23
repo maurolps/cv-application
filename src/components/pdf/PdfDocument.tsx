@@ -56,9 +56,7 @@ export function PdfDocument({ state }: PdfDocumentProps) {
           </View>
           <View style={styles.nameContainer}>
             <Text style={styles.name}>{fieldsData.name}</Text>
-            <Text style={styles.role}>
-              {fieldsData["p-description"]?.toUpperCase()}
-            </Text>
+            <Text style={styles.role}>{fieldsData["p-description"]}</Text>
           </View>
           <View style={styles.contactContainer}>
             <Text style={styles.contact}>{fieldsData["phone-number"]}</Text>
@@ -96,7 +94,7 @@ export function PdfDocument({ state }: PdfDocumentProps) {
               <View style={styles.entryRow}>
                 <View style={styles.entryColLeft}>
                   <Text style={styles.entryTitle}>
-                    {item["position-title"]?.toUpperCase()}
+                    {item["position-title"]}
                   </Text>
                   <Text style={styles.entryDate}>
                     {item["start-date"]} - {item["end-date"]}
@@ -104,8 +102,7 @@ export function PdfDocument({ state }: PdfDocumentProps) {
                 </View>
                 <View style={styles.entryColRight}>
                   <Text style={styles.entryCompany}>
-                    {item["company-name"]?.toUpperCase()} -{" "}
-                    {item.location?.toUpperCase()}
+                    {item["company-name"]} - {item.location}
                   </Text>
                   {/* <Text style={styles.entryDesc}>{item.description}</Text> */}
                   {item.description && (
@@ -126,16 +123,14 @@ export function PdfDocument({ state }: PdfDocumentProps) {
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>
                 <View style={styles.entryColLeft}>
-                  <Text style={styles.entryTitle}>
-                    {item.degree?.toUpperCase()}
-                  </Text>
+                  <Text style={styles.entryTitle}>{item.degree}</Text>
                   <Text style={styles.entryDate}>
                     {item.start} - {item.end}
                   </Text>
                 </View>
                 <View style={styles.entryColRight}>
                   <Text style={styles.entryCompany}>
-                    {item.school?.toUpperCase()} - {item.region?.toUpperCase()}
+                    {item.school} - {item.region}
                   </Text>
                   {item.description && (
                     <DescriptionList description={item.description} />
@@ -155,9 +150,7 @@ export function PdfDocument({ state }: PdfDocumentProps) {
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>
                 <View style={styles.entryColLeft}>
-                  <Text style={styles.entryTitle}>
-                    {item["tech-title"]?.toUpperCase()}
-                  </Text>
+                  <Text style={styles.entryTitle}>{item["tech-title"]}</Text>
                 </View>
                 <View style={styles.entryColRight}>
                   <Text style={styles.entryStack}>{item["tech-content"]}</Text>
