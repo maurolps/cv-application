@@ -16,6 +16,8 @@ const defaultData = {
   ["end"]: "",
   ["region"]: "",
   ["skills"]: "",
+  ["tech-title"]: "",
+  ["tech-content"]: "",
 };
 
 const exampleData = {
@@ -64,4 +66,15 @@ const eduData = [
   },
 ];
 
-export { defaultData, exampleData, expData, eduData };
+const techData = [
+  {
+    ["tech-title"]: "Front-End",
+    ["tech-content"]: `HTML, CSS, JavaScript, React, Redux, Vue.js`,
+  },
+  {
+    ["tech-title"]: "Back-End",
+    ["tech-content"]: `Node.js, Express, TypeScript, MongoDB, PostgreSQL`,
+  },
+];
+
+export { defaultData, exampleData, expData, eduData, techData };

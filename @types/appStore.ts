@@ -20,6 +20,11 @@ export type AppStore = {
       adding: boolean;
       editMode: EditMode;
     };
+    techstack: {
+      items: EducationItem[];
+      adding: boolean;
+      editMode: EditMode;
+    };
   };
 
   resetStore: () => void;
@@ -30,7 +35,7 @@ export type AppStore = {
   setProfileImage: (url: string) => void;
   resetDraft: () => void;
   editSection: (
-    section: "experience" | "education",
+    section: "experience" | "education" | "techstack",
     action: string,
     item?: ExperienceItem | EducationItem,
     index?: number | null

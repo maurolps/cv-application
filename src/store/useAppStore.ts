@@ -19,6 +19,11 @@ const defaultState = {
       adding: false,
       editMode: { active: false, index: null },
     },
+    techstack: {
+      items: [],
+      adding: false,
+      editMode: { active: false, index: null },
+    },
   },
 };
 
@@ -33,7 +38,8 @@ const isValidState = (state: any): state is typeof defaultState => {
       "fieldsData" in state &&
       "profileImage" in state &&
       "experience" in state.sections &&
-      "education" in state.sections
+      "education" in state.sections &&
+      "techstack" in state.sections
     );
   } catch {
     return false;
@@ -97,6 +103,8 @@ const useAppStore = create<AppStore>((set) => ({
         start: null,
         end: null,
         region: null,
+        "tech-title": null,
+        "tech-content": null,
       },
     })),
 

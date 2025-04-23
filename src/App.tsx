@@ -14,12 +14,8 @@ import {
   svgGithub,
 } from "./components/Svgs";
 import "./App.css";
-import { PdfOptions } from "@Types/app";
 import { ViewPDF } from "./components/pdf/viewPDF";
-
-const pdfOptions: PdfOptions = {
-  method: "open",
-};
+import { TechStack } from "./components/TechStack";
 
 function App() {
   return (
@@ -45,7 +41,10 @@ function App() {
           />
 
           <LoadCard title="Education" svg={svgEdu} component={Education} />
+
+          <LoadCard title="TechStack" svg={svgSkills} component={TechStack} />
         </div>
+
         <div className="preview-wrapper">
           <Preview />
           <div className="action">
