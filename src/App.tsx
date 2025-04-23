@@ -9,9 +9,9 @@ import {
   svgPersonal,
   svgExp,
   svgEdu,
-  svgDownload,
   svgSkills,
   svgGithub,
+  svgTechStack,
 } from "./components/Svgs";
 import "./App.css";
 import { ViewPDF } from "./components/pdf/viewPDF";
@@ -42,7 +42,11 @@ function App() {
 
           <LoadCard title="Education" svg={svgEdu} component={Education} />
 
-          <LoadCard title="TechStack" svg={svgSkills} component={TechStack} />
+          <LoadCard
+            title="TechStack"
+            svg={svgTechStack}
+            component={TechStack}
+          />
         </div>
 
         <div className="preview-wrapper">

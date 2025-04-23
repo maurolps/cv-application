@@ -1,4 +1,4 @@
-import { svgEdu, svgExp, svgSkills } from "./Svgs";
+import { svgEdu, svgExp, svgTechStack } from "./Svgs";
 import { ProfileImage } from "./ProfileImage";
 import React from "react";
 import "../styles/preview.css";
@@ -29,7 +29,7 @@ export function Preview() {
   const svgExpBlack = React.cloneElement(svgExp, {
     style: { fill: "var(--text-color" },
   });
-  const svgSkillsBlack = React.cloneElement(svgSkills, {
+  const svgTechStackBlack = React.cloneElement(svgTechStack, {
     style: { fill: "var(--text-color" },
   });
 
@@ -166,7 +166,7 @@ export function Preview() {
 
           <div className="section-wrapper">
             <div className="prev-section grid">
-              <div className="section-title">{svgSkillsBlack} Techstack</div>
+              <div className="section-title">{svgTechStackBlack} Techstack</div>
             </div>
             {updateTech !== null &&
               updateTech.map((stack, index) => (
