@@ -3,6 +3,7 @@ import { AppStore } from "@Types/appStore";
 import { defaultData } from "../components/Data";
 
 const savedState = localStorage.getItem("cvState");
+
 const defaultState = {
   cardCollapse: "Personal Details",
   fieldsData: defaultData,
@@ -21,7 +22,28 @@ const defaultState = {
   },
 };
 
-const initialState = savedState ? JSON.parse(savedState) : defaultState;
+// Simple type guard to check if the stored state still valid
+// consider adding zod lib if needed
+const isValidState = (state: any): state is typeof defaultState => {
+  try {
+    return (
+      typeof state === "object" &&
+      state !== null &&
+      "cardCollapse" in state &&
+      "fieldsData" in state &&
+      "profileImage" in state &&
+      "experience" in state.sections &&
+      "education" in state.sections
+    );
+  } catch {
+    return false;
+  }
+};
+
+const initialState =
+  savedState && isValidState(JSON.parse(savedState))
+    ? JSON.parse(savedState)
+    : defaultState;
 
 const useAppStore = create<AppStore>((set) => ({
   ...initialState,
