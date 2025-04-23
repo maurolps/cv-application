@@ -94,7 +94,7 @@ export function PdfDocument({ state }: PdfDocumentProps) {
               <View style={styles.entryRow}>
                 <View style={styles.entryColLeft}>
                   <Text style={styles.entryTitle}>
-                    {item["position-title"]}
+                    {item["position-title"]?.toUpperCase()}
                   </Text>
                   <Text style={styles.entryDate}>
                     {item["start-date"]} - {item["end-date"]}
@@ -104,7 +104,6 @@ export function PdfDocument({ state }: PdfDocumentProps) {
                   <Text style={styles.entryCompany}>
                     {item["company-name"]} - {item.location}
                   </Text>
-                  {/* <Text style={styles.entryDesc}>{item.description}</Text> */}
                   {item.description && (
                     <DescriptionList description={item.description} />
                   )}
@@ -123,7 +122,9 @@ export function PdfDocument({ state }: PdfDocumentProps) {
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>
                 <View style={styles.entryColLeft}>
-                  <Text style={styles.entryTitle}>{item.degree}</Text>
+                  <Text style={styles.entryTitle}>
+                    {item.degree?.toUpperCase()}
+                  </Text>
                   <Text style={styles.entryDate}>
                     {item.start} - {item.end}
                   </Text>
@@ -150,7 +151,9 @@ export function PdfDocument({ state }: PdfDocumentProps) {
             <View key={i} style={styles.entry}>
               <View style={styles.entryRow}>
                 <View style={styles.entryColLeft}>
-                  <Text style={styles.entryTitle}>{item["tech-title"]}</Text>
+                  <Text style={styles.entryTitle}>
+                    {item["tech-title"]?.toUpperCase()}
+                  </Text>
                 </View>
                 <View style={styles.entryColRight}>
                   <Text style={styles.entryStack}>{item["tech-content"]}</Text>

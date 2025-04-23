@@ -1,19 +1,21 @@
 import { StyleSheet } from "@react-pdf/renderer";
 const fontSizes = {
   name: 20,
-  role: 12,
+  role: 11,
   contact: 9,
-  headings: 14,
-  subheadings: 12,
-  date: 9,
+  headings: 13,
+  subHeadings: 9.5,
+  subHeadingsUpperCase: 9,
+  date: 8,
   text: 10,
-  skills: 8,
+  skills: 7,
 };
 
 const colors = {
   primary: "#0ca3a3",
   // primary: "#3457c4",
   text: "#333333",
+  date: "#666666",
 };
 
 export const styles = StyleSheet.create({
@@ -76,6 +78,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
+    alignItems: "center",
   },
   skillTag: {
     borderWidth: 1,
@@ -139,7 +142,7 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
   },
   entryTitle: {
-    fontSize: fontSizes.subheadings,
+    fontSize: fontSizes.subHeadingsUpperCase,
     fontWeight: "bold",
     color: colors.primary,
     textAlign: "right",
@@ -147,9 +150,10 @@ export const styles = StyleSheet.create({
   entryDate: {
     fontSize: fontSizes.date,
     fontWeight: 300,
+    color: colors.date,
   },
   entryCompany: {
-    fontSize: fontSizes.subheadings,
+    fontSize: fontSizes.subHeadings,
     fontWeight: "600",
     marginBottom: 5,
   },
