@@ -46,7 +46,7 @@ const expData = [
     ["company-name"]: "Quantum CNC",
     ["position-title"]: "Full Stack Ruby on Rails",
     ["start-date"]: "Jun 2013",
-    ["end-date"]: "Out 2016",
+    ["end-date"]: "Oct 2016",
     ["location"]: "California, EUA",
     ["description"]: `Develop and maintain full-stack applications, participate in system architecture design, troubleshoot and debug issues, collaborate with cross-functional teams.
     `,
@@ -60,6 +60,8 @@ const eduData = [
     ["start"]: "Sep 2014",
     ["end"]: "May 2018",
     ["region"]: "São Paulo, Brasil",
+    ["description"]:
+      "Bachelor's degree in Computer Science with a focus on software development, algorithms, and data structures. Participated in various projects and internships that enhanced practical skills in programming and system design.",
   },
   {
     ["school"]: "Innovate",
@@ -67,6 +69,8 @@ const eduData = [
     ["start"]: "Jan 2019",
     ["end"]: "Present",
     ["region"]: "California, EUA",
+    ["description"]:
+      "Software Engineer with a focus on web development and cloud technologies. Gained hands-on experience in building scalable applications and working with modern frameworks and tools.",
   },
 ];
 

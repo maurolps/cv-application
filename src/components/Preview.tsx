@@ -88,14 +88,14 @@ export function Preview() {
                     </div>
                     <div className="prev-date">
                       {experience["start-date"]}
-                      {experience["start-date"] ? "-" : ""}
+                      {experience["start-date"] ? " - " : ""}
                       {experience["end-date"]}
                     </div>
                   </div>
                   <div>
                     <div className="prev-location">
                       {experience["company-name"]}
-                      {experience["company-name"] ? "-" : ""}
+                      {experience["company-name"] ? " - " : ""}
                       {experience.location}
                     </div>
                     <div className="prev-description">
@@ -127,19 +127,22 @@ export function Preview() {
               <div className="section-title">{svgEduBlack} Education</div>
             </div>
             {updateEdu !== null &&
-              updateEdu.map((experience, index) => (
+              updateEdu.map((education, index) => (
                 <div className="education grid" key={index}>
                   <div>
-                    <div className="prev-title">{experience.degree}</div>
+                    <div className="prev-title">{education.degree}</div>
                     <div className="prev-date">
-                      {experience.start} {experience.start ? "-" : ""}{" "}
-                      {experience.end}
+                      {education.start} {education.start ? " - " : ""}
+                      {education.end}
                     </div>
                   </div>
                   <div>
                     <div className="prev-location">
-                      {experience.school} {experience.school ? "-" : ""}{" "}
-                      {experience.region}
+                      {education.school} {education.school ? " - " : ""}
+                      {education.region}
+                    </div>
+                    <div className="prev-description">
+                      {education.description}
                     </div>
                   </div>
                 </div>
@@ -156,6 +159,7 @@ export function Preview() {
                   <div className="prev-location">
                     {update.school} -{update.school} {update.region}
                   </div>
+                  <div className="prev-description">{update.description}</div>
                 </div>
               </div>
             )}
