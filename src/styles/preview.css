@@ -151,6 +151,12 @@
   font-style: italic;
 }
 
+.prev-description ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .prev-image {
   display: flex;
   position: relative;

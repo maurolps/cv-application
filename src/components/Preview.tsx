@@ -5,10 +5,19 @@ import "../styles/preview.css";
 import useAppStore from "../store/useAppStore";
 
 function parseSkills(skills: string): string[] {
-  return skills
-    .split(",")
-    .map((skill) => skill.trim())
-    .filter((skill) => skill !== "");
+  return skills.split(",");
+}
+
+function DescriptionList({ description }: { description: string }) {
+  const parsedDescription = description.split("\n");
+
+  return (
+    <ul>
+      {parsedDescription.map((desc, index) => (
+        <li key={index}>{desc}</li>
+      ))}
+    </ul>
+  );
 }
 
 export function Preview() {
@@ -99,7 +108,9 @@ export function Preview() {
                       {experience.location}
                     </div>
                     <div className="prev-description">
-                      {experience.description}
+                      {experience.description && (
+                        <DescriptionList description={experience.description} />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -116,7 +127,11 @@ export function Preview() {
                   <div className="prev-location">
                     {update["company-name"]} - {update.location}
                   </div>
-                  <div className="prev-description">{update.description}</div>
+                  <div className="prev-description">
+                    {update.description && (
+                      <DescriptionList description={update.description} />
+                    )}
+                  </div>
                 </div>
               </div>
             )}
@@ -142,7 +157,9 @@ export function Preview() {
                       {education.region}
                     </div>
                     <div className="prev-description">
-                      {education.description}
+                      {education.description && (
+                        <DescriptionList description={education.description} />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -159,7 +176,11 @@ export function Preview() {
                   <div className="prev-location">
                     {update.school} -{update.school} {update.region}
                   </div>
-                  <div className="prev-description">{update.description}</div>
+                  <div className="prev-description">
+                    {update.description && (
+                      <DescriptionList description={update.description} />
+                    )}
+                  </div>
                 </div>
               </div>
             )}
