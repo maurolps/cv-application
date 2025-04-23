@@ -72,6 +72,26 @@ export const styles = StyleSheet.create({
     color: "#0ca3a3",
     margin: 2,
   },
+  summaryContainer: {
+    display: "flex",
+    flexDirection: "column",
+    marginTop: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  summaryHeader: {
+    fontSize: 11,
+    fontWeight: "bold",
+    letterSpacing: 0.5,
+    marginBottom: 5,
+  },
+  summary: {
+    fontSize: 8,
+    lineHeight: 1.2,
+    color: "#3f3c3c",
+    marginBottom: 10,
+  },
+
   section: {
     marginTop: 20,
   },
@@ -122,5 +142,10 @@ export const styles = StyleSheet.create({
     fontStyle: "italic",
     lineHeight: 1.2,
     color: "#444444",
+  },
+
+  entryStack: {
+    fontSize: 8,
+    fontWeight: "bold",
   },
 });
