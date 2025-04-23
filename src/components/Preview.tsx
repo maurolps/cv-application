@@ -67,15 +67,12 @@ export function Preview() {
                   })}
               </ul>
             </div>
-            <div className="prev-summary">
-              <h2>Summary</h2>
-              <p>
-                I'm a Full stack web developer that enhance user interfaces for
-                web applications, collaborate with UX/UI designers to implement
-                visually appealing and responsive designs, optimize website
-                performance, and ensure a seamless user experience.
-              </p>
-            </div>
+            {update["summary"] && (
+              <div className="prev-summary">
+                <h2>Summary</h2>
+                <p>{update["summary"]}</p>
+              </div>
+            )}
           </div>
 
           <div className="section-wrapper">

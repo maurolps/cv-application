@@ -3,6 +3,7 @@ const defaultData = {
   ["email"]: "",
   ["phone-number"]: "",
   ["address"]: "",
+  ["summary"]: "",
   ["p-description"]: "",
   ["company-name"]: "",
   ["position-title"]: "",
@@ -26,7 +27,10 @@ const exampleData = {
   ["phone-number"]: "555-3035284",
   ["address"]: "164 Main Street, Cityville State, 235-12345",
   ["p-description"]: "FULLSTACK WEB DEVELOPER",
-  ["skills"]: `HTML, CSS, JavaScript, React, Node.js, TypeScript, Unit Testing, RESTful APIs, Git, Design Patterns, SOLID, Sorting Algorithms, Data Structures`,
+  ["summary"]:
+    "Dynamic and detail-oriented Full Stack Web Developer with over 5 years of experience in building responsive web applications. Proficient in both front-end and back-end technologies, with a strong focus on user experience and performance optimization.",
+  ["skills"]:
+    "HTML, CSS, JavaScript, React, Node.js, TypeScript, Unit Testing, RESTful APIs, Git, Design Patterns, SOLID, Sorting Algorithms, Data Structures",
 };
 
 const expData = [
