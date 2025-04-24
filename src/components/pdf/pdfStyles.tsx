@@ -66,6 +66,18 @@ export const styles = StyleSheet.create({
     fontSize: fontSizes.role,
     marginTop: 2,
   },
+
+  iconContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+  },
+  icon: {
+    width: 10,
+    height: 10,
+    marginRight: 5,
+    alignSelf: "center",
+  },
   contactContainer: {
     width: 140,
     fontSize: fontSizes.contact,

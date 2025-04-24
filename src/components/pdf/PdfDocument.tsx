@@ -1,4 +1,4 @@
-import { Document, Page, Text, View, Image } from "@react-pdf/renderer";
+import { Document, Page, Text, View, Image, Link } from "@react-pdf/renderer";
 import { styles } from "./pdfStyles";
 import { AppStore } from "@Types/appStore";
 
@@ -12,7 +12,7 @@ const DescriptionList = ({ description }: { description: string }) => {
     .filter((line) => line.trim() !== "");
 
   return (
-    <View style={styles.entryDesc}>
+    <View wrap={false} style={styles.entryDesc}>
       {parsedDescription &&
         parsedDescription.map((desc, index) => (
           <Text key={index} style={styles.entryDesc}>
@@ -30,12 +30,43 @@ export function PdfDocument({ state }: PdfDocumentProps) {
   const techList = sections.techstack.items;
   const summary = fieldsData.summary;
 
+  const ContactPhone = ({ phoneNumber }: { phoneNumber: string | null }) => {
+    const isWhatsapp = phoneNumber?.endsWith("w");
+
+    if (!isWhatsapp)
+      return (
+        <>
+          <Text style={styles.contact}>{phoneNumber}</Text>
+        </>
+      );
+
+    const number = phoneNumber?.substring(0, phoneNumber?.length - 1);
+    const rawPhoneNumber = phoneNumber?.replace(/[^0-9]/g, "");
+    const whatsAppLink = "https:/wa.me/" + rawPhoneNumber;
+
+    return (
+      <View style={styles.iconContainer}>
+        <Image style={styles.icon} src="/assets/whatsapp.png"></Image>
+        <Link href={whatsAppLink} style={styles.contact}>
+          {number}
+        </Link>
+      </View>
+    );
+  };
+
   const skills: string[] = fieldsData.skills
     ? fieldsData.skills
         .split(",")
         .map((s: string) => s.trim())
         .filter(Boolean)
     : [];
+
+  const formatLink = (link: string) => {
+    if (link.startsWith("http://") || link.startsWith("https://")) {
+      return link;
+    }
+    return `https://${link}`;
+  };
 
   return (
     <Document>
@@ -59,8 +90,26 @@ export function PdfDocument({ state }: PdfDocumentProps) {
             <Text style={styles.role}>{fieldsData["p-description"]}</Text>
           </View>
           <View style={styles.contactContainer}>
-            <Text style={styles.contact}>{fieldsData["phone-number"]}</Text>
-            <Text style={styles.contact}>{fieldsData.email}</Text>
+            <ContactPhone phoneNumber={fieldsData["phone-number"]} />
+
+            {fieldsData.email && (
+              <Link href={"mailto:" + fieldsData.email} style={styles.contact}>
+                {fieldsData.email}
+              </Link>
+            )}
+            {fieldsData.social && (
+              <Link href={formatLink(fieldsData.social)} style={styles.contact}>
+                {fieldsData.social}
+              </Link>
+            )}
+            {fieldsData.portfolio && (
+              <Link
+                href={formatLink(fieldsData.portfolio)}
+                style={styles.contact}
+              >
+                {fieldsData.portfolio}
+              </Link>
+            )}
             <Text style={styles.contact}>{fieldsData.address}</Text>
           </View>
         </View>
@@ -87,7 +136,7 @@ export function PdfDocument({ state }: PdfDocumentProps) {
         {/* Experience section */}
         <View style={styles.section}>
           <View style={styles.sectionHeaderContainer}>
-            <Text style={styles.sectionHeader}>EXPERIENCE</Text>
+            <Text style={styles.sectionHeader}>WORK EXPERIENCE</Text>
           </View>
           {expList.map((item, i) => (
             <View key={i} style={styles.entry}>
