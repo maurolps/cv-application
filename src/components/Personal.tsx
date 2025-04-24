@@ -2,7 +2,14 @@ import { LoadFields } from "./LoadFields";
 import useAppStore from "../store/useAppStore";
 
 export function Personal() {
-  const inputs = ["Name", "Email", "Phone Number", "Address"];
+  const inputs = [
+    "Name",
+    "Email",
+    "Phone Number",
+    "Social",
+    "Address",
+    "Portfolio",
+  ];
   const fieldsData = useAppStore((s) => s.fieldsData);
   const inputChange = useAppStore((s) => s.inputChange);
 

@@ -19,7 +19,11 @@ export function LoadFields(props: LoadFieldsProps) {
               <input
                 type="text"
                 id={inputId}
-                placeholder={inputName}
+                placeholder={
+                  inputName !== "Phone Number"
+                    ? inputName
+                    : "Phone: Icon eg.: +(55) 11 99999-9999w"
+                }
                 onChange={inputChange}
                 name={inputId}
                 value={

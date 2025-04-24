@@ -64,7 +64,9 @@ export function Preview() {
                 <div className="prev-contact">
                   <span>{update["phone-number"]}</span>
                   <span>{update.email}</span>
+                  <span>{update.social}</span>
                   <span>{update.address}</span>
+                  <span>{update.portfolio}</span>
                 </div>
               </div>
             </div>
