@@ -5,6 +5,9 @@ const defaultData = {
   ["address"]: "",
   ["summary"]: "",
   ["p-description"]: "",
+  ["skills"]: "",
+  ["portfolio"]: "",
+  ["social"]: "",
   ["company-name"]: "",
   ["position-title"]: "",
   ["start-date"]: "",
@@ -16,7 +19,6 @@ const defaultData = {
   ["start"]: "",
   ["end"]: "",
   ["region"]: "",
-  ["skills"]: "",
   ["tech-title"]: "",
   ["tech-content"]: "",
 };
@@ -24,32 +26,33 @@ const defaultData = {
 const exampleData = {
   ["name"]: "John Doe",
   ["email"]: "john.doe@techxlead.com",
-  ["phone-number"]: "555-3035284",
-  ["address"]: "164 Main Street, Cityville State, 235-12345",
-  ["p-description"]: "FULLSTACK WEB DEVELOPER",
+  ["phone-number"]: "(+99) 553-35284w",
+  ["address"]: "164 Main Street, CT, Brazil",
+  ["p-description"]: "SENIOR FULLSTACK DEVELOPER\nReact | NodeJs | TypeScript",
   ["summary"]:
-    "Dynamic and detail-oriented Full Stack Web Developer with over 5 years of experience in building responsive web applications. Proficient in both front-end and back-end technologies, with a strong focus on user experience and performance optimization.",
+    "Senior Full Stack Developer with 7+ years of hands-on experience designing, developing, and scaling modern web applications. Proven ability to drive complex projects from conception to deployment with deep expertise in the JavaScript ecosystem. Seeking senior-level opportunities to lead and innovate in cutting-edge product teams.",
   ["skills"]:
-    "HTML, CSS, JavaScript, React, Node.js, TypeScript, Unit Testing, RESTful APIs, Git, Design Patterns, SOLID, Sorting Algorithms, Data Structures",
+    "Leadership, System Architecture, Scalable Solutions, Agile Development",
+  ["portfolio"]: "johndoe.tech",
+  ["social"]: "linkedin.com/in/johndoe",
 };
 
 const expData = [
   {
-    ["company-name"]: "Tech Solutions Inc.",
-    ["position-title"]: "Front-End Engineer",
-    ["start-date"]: "Jan 2018",
+    ["company-name"]: "Freelance / Remote Contracts",
+    ["position-title"]: "Senior Full Stack Web Developer",
+    ["start-date"]: "Aug 2020",
     ["end-date"]: "Present",
-    ["location"]: "São Paulo, Brasil",
-    ["description"]: `Craft and enhance user interfaces for web applications, collaborate with UX/UI designers to implement visually appealing and responsive designs, optimize website performance, and ensure a seamless user experience. Additionally, actively participate in agile development processes, conduct code reviews, and contribute to the continuous improvement of development workflows.`,
+    ["location"]: "Remote",
+    ["description"]: `Spearheaded architecture and full-cycle development for enterprise-level web apps using React, Node.js, and TypeScript.\n\nLed backend microservices design with NestJS and PostgreSQL, ensuring performance and maintainability.\n\nCollaborated with cross-functional remote teams in Agile environments, delivering scalable products aligned with business objectives.`,
   },
   {
     ["company-name"]: "Quantum CNC",
-    ["position-title"]: "Full Stack Ruby on Rails",
-    ["start-date"]: "Jun 2013",
-    ["end-date"]: "Oct 2016",
+    ["position-title"]: "Software Engineer",
+    ["start-date"]: "Jun 2017",
+    ["end-date"]: "May 2020",
     ["location"]: "California, EUA",
-    ["description"]: `Develop and maintain full-stack applications, participate in system architecture design, troubleshoot and debug issues, collaborate with cross-functional teams.
-    `,
+    ["description"]: `Oversaw technology initiatives, including the transition to modern web platforms and tools.\n\nDirected multidisciplinary teams, mentoring developers and aligning workflows with strategic goals.\n\nImplemented agile practices, optimizing delivery cycles and fostering a continuous improvement culture.`,
   },
 ];
 
@@ -77,11 +80,15 @@ const eduData = [
 const techData = [
   {
     ["tech-title"]: "Front-End",
-    ["tech-content"]: `HTML, CSS, JavaScript, React, Redux, Vue.js`,
+    ["tech-content"]: `React, Redux, Next.js, TypeScript, Tailwind CSS`,
   },
   {
     ["tech-title"]: "Back-End",
-    ["tech-content"]: `Node.js, Express, TypeScript, MongoDB, PostgreSQL`,
+    ["tech-content"]: `Node.js, Express, TypeScript, MongoDB, PostgreSQL, NestJS, GraphQL, REST APIs`,
+  },
+  {
+    ["tech-title"]: "DevOps",
+    ["tech-content"]: `Docker, Kubernetes, CI/CD, AWS, Azure, Terraform, GitHub Flow`,
   },
 ];
 

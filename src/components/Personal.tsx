@@ -4,11 +4,11 @@ import useAppStore from "../store/useAppStore";
 export function Personal() {
   const inputs = [
     "Name",
-    "Email",
     "Phone Number",
+    "Email",
     "Social",
-    "Address",
     "Portfolio",
+    "Address",
   ];
   const fieldsData = useAppStore((s) => s.fieldsData);
   const inputChange = useAppStore((s) => s.inputChange);
