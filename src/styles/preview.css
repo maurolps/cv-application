@@ -58,14 +58,17 @@
 }
 
 .prev-summary {
-  /* background-color: black; */
   max-width: 100%;
   place-self: center;
-  font-size: 12px;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.prev-summary p {
+  font-size: 0.8rem;
 }
 
 .update-photo input {
@@ -128,27 +131,33 @@
 
 .prev-title,
 .prev-location {
-  text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: end;
   color: var(--primary-color);
 }
 
 .prev-location {
+  display: flex;
+  margin-top: -2px;
   text-align: start;
+  font-size: 0.8rem;
   color: var(--text-color);
+}
+
+.prev-title {
+  text-transform: uppercase;
 }
 
 .prev-date {
   text-transform: capitalize;
   font-size: 0.6rem;
   text-align: end;
+  opacity: 80%;
 }
 
 .prev-description {
-  font-size: 0.6rem;
-  font-style: italic;
+  font-size: 0.8rem;
 }
 
 .prev-description ul {
@@ -201,13 +210,13 @@
   width: 100%;
   max-width: 140px;
   font-style: italic;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 
 .prev-name h1 {
   text-transform: uppercase;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 1px;
   line-height: 35px;
@@ -217,8 +226,20 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   text-align: end;
+}
+
+.prev-phone {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+}
+
+.prev-phone img {
+  width: 10px;
+  height: 10px;
 }
 
 .prev-draft {
