@@ -1,28 +1,34 @@
 # CV Application
 
-<p>CV APP is a mobile-friendly React project designed for creating resumes. It features a live preview, and supports PDF generation for convenient sharing.</p>
-<p>The project intentionally avoids using React State Management solutions, relying solely on useState to explore React concepts. The application supports light/dark themes for an improved user experience.</p>
+CV APP is a mobile-friendly React project designed for creating resumes. It features a live preview, and supports vectorized PDF generation.
+
+## Preview
 
 Live: https://cv-application-steel-eight.vercel.app/
+![App Preview](./public/assets/cv-preview.png)
 
-<h2>💡 Skills</h2>
-<ul>
-  <li>State Management</li>
-  <li>Responsive Design</li>
-  <li>Dynamic Rendering</li>
-  <li>Conditional Rendering</li>
-  <li>Controlled Components</li>
-</ul>
+## 🛠️ Technologies & Tools
 
-<h2>🛠️ Built with</h2>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>JSX</li>
-  <li>React</li>
-  <li>Vite</li>
-  <li>ESlint</li>
-</ul>
+- **Vite**
+- **React**
+- **TypeScript**
+- **Zustand**
+- **Jest**
+- **React Testing Library (RTL)**
+- **react-pdf/renderer**
 
-This project is part of The Odin Project Curriculum: https://www.theodinproject.com/
+## ✨ Key Features
+
+- Real-time CV preview with live updates
+- Download high-quality, selectable-text PDFs
+- Add, edit, and delete multiple entries
+- Clean, modular, and scalable codebase
+- Comprehensive integration tests ensuring reliability
+
+## 🧪 Testing Coverage
+
+All main application flows are covered with automated tests using React Testing Library and Jest.
+
+![Tests](./public/assets/cv-tests.png)
+
+This project is based on The Odin Project Curriculum: https://www.theodinproject.com/
