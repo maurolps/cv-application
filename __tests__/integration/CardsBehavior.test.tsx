@@ -13,13 +13,13 @@ describe("Card Collapse Behavior", () => {
   });
 
   test("Initially, Personal Details should be expanded", () => {
-    const personalExpandedCard = screen.getByPlaceholderText(/Phone Number/i);
+    const personalExpandedCard = screen.getByPlaceholderText(/Email/i);
     expect(personalExpandedCard).toBeInTheDocument();
   });
 
   test("Clicking on a card should toggle its expanded state", async () => {
     const user = userEvent.setup();
-    const personalExpandedCard = screen.queryByPlaceholderText(/Phone Number/i);
+    const personalExpandedCard = screen.queryByPlaceholderText(/Email/i);
     const workCard = screen.getByRole("button", {
       name: /Work Experience/i,
     });
