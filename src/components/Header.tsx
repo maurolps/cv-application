@@ -2,7 +2,7 @@ import "../styles/header.css";
 import React from "react";
 import DarkMode from "./DarkMode";
 import { svgAutofill, svgTrash } from "./Svgs";
-import { exampleData, expData, eduData } from "./Data";
+import { exampleData, expData, eduData, techData } from "./Data";
 import useAppStore from "../store/useAppStore";
 
 export const Header = () => {
@@ -19,6 +19,9 @@ export const Header = () => {
     });
     eduData.forEach((item) => {
       editSections("education", "add", item);
+    });
+    techData.forEach((item) => {
+      editSections("techstack", "add", item);
     });
   };
 

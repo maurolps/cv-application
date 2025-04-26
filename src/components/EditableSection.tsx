@@ -1,11 +1,11 @@
 import { LoadFields } from "./LoadFields";
-import { ExperienceItem, EducationItem } from "@Types/app";
+import { ExperienceItem, EducationItem, TechStackItem } from "@Types/app";
 import useAppStore from "../store/useAppStore";
 import { svgAdd, svgEdit, svgTrash } from "./Svgs";
 import React from "react";
 
 type EditableSectionProps = {
-  section: "experience" | "education";
+  section: "experience" | "education" | "techstack";
   inputs: string[];
 };
 
@@ -82,13 +82,22 @@ export function EditableSection({ section, inputs }: EditableSectionProps) {
         <>
           <div className="exp-item-container">
             {editableItems.map(
-              (item: ExperienceItem | EducationItem, index: number) => (
+              (
+                item: ExperienceItem | EducationItem | TechStackItem,
+                index: number
+              ) => (
                 <div className="exp-item" key={index}>
                   <div>
-                    <div>{item["position-title"] || item["degree"]}</div>
+                    <div>
+                      {item["position-title"] ||
+                        item["degree"] ||
+                        item["tech-title"]}
+                    </div>
                     <div className="exp-item-date">
-                      {item["company-name"] || item["school"]} |{" "}
-                      {item["start-date"] || item["start"]} -{" "}
+                      {item["company-name"] ||
+                        item["school"] ||
+                        item["tech-content"]}{" "}
+                      | {item["start-date"] || item["start"]} -{" "}
                       {item["end-date"] || item["end"]}
                     </div>
                   </div>

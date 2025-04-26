@@ -11,7 +11,8 @@ export type CardSectionTitle =
   | "Personal Details"
   | "Skills"
   | "Work Experience"
-  | "Education";
+  | "Education"
+  | "TechStack";
 
 export type ExperienceItem = {
   [key: string]: string | null;
@@ -20,6 +21,7 @@ export type ExperienceItem = {
 export type EducationItem = {
   [key: string]: string | null;
 };
-export type PdfOptions = {
-  method: "open" | "save" | "build";
+
+export type TechStackItem = {
+  [key: string]: string | null;
 };

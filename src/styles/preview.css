@@ -31,6 +31,7 @@
 .section-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
   width: 90%;
 }
@@ -38,7 +39,9 @@
 .skill-list ul {
   display: flex;
   gap: 10px;
+  justify-content: center;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 .skill-list li {
@@ -54,64 +57,18 @@
   border: 1px solid var(--primary-color);
 }
 
-.print-pdf {
-  width: 600px;
-  padding: 100px;
-  color: black;
-  --text-color: black;
+.prev-summary {
+  max-width: 100%;
+  place-self: center;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.print-pdf .prev-title {
-  font-size: 16px;
-}
-
-.print-pdf .prev-description {
-  font-size: 12px;
-}
-
-.print-pdf .prev-section {
-  font-size: 18px;
-}
-
-.print-pdf .prev-location {
-  font-size: 16px;
-  color: black;
-}
-
-.print-pdf .prev-date {
-  font-size: 12px;
-}
-
-.print-pdf .prev-image {
-  width: 100px;
-  height: 100px;
-}
-
-.print-pdf .prev-name {
-  font-size: 12px;
-  max-width: 400px;
-}
-
-.print-pdf .prev-name h1 {
-  font-size: 26px;
-  line-height: 46px;
-}
-
-.print-pdf .prev-contact {
-  font-size: 12px;
-}
-
-.print-pdf .prev-image img {
-  width: 110px;
-  height: 110px;
-}
-
-.print-pdf .update-photo {
-  display: none;
-}
-
-.print-pdf .grid {
-  grid-template: 1fr / 150px 3fr;
+.prev-summary p {
+  font-size: 0.8rem;
 }
 
 .update-photo input {
@@ -140,9 +97,18 @@
   z-index: 10;
 }
 
+.grid-header {
+  display: grid;
+  grid-template: 1fr / 85px 1fr;
+  place-content: center;
+  place-self: center;
+  column-gap: 20px;
+  width: 70%;
+}
+
 .grid {
   display: grid;
-  grid-template: 1fr / minmax(100px, 1fr) 2fr;
+  grid-template: 1fr / minmax(100px, 150px) 3fr;
   column-gap: 20px;
 }
 
@@ -155,7 +121,8 @@
 .section-title {
   display: flex;
   justify-content: end;
-  gap: 10px;
+  align-items: end;
+  gap: 5px;
 }
 
 .prev-separator {
@@ -164,27 +131,39 @@
 
 .prev-title,
 .prev-location {
-  text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: end;
   color: var(--primary-color);
 }
 
 .prev-location {
+  display: flex;
+  margin-top: -2px;
   text-align: start;
+  font-size: 0.8rem;
   color: var(--text-color);
+}
+
+.prev-title {
+  text-transform: uppercase;
 }
 
 .prev-date {
   text-transform: capitalize;
   font-size: 0.6rem;
   text-align: end;
+  opacity: 80%;
 }
 
 .prev-description {
-  font-size: 0.6rem;
-  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.prev-description ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .prev-image {
@@ -203,6 +182,7 @@
   width: 80px;
   height: 80px;
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .prev-image-wrapper {
@@ -230,13 +210,13 @@
   width: 100%;
   max-width: 140px;
   font-style: italic;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 
 .prev-name h1 {
   text-transform: uppercase;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 1px;
   line-height: 35px;
@@ -246,8 +226,20 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   text-align: end;
+}
+
+.prev-phone {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+}
+
+.prev-phone img {
+  width: 10px;
+  height: 10px;
 }
 
 .prev-draft {
