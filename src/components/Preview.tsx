@@ -8,17 +8,48 @@ function parseSkills(skills: string): string[] {
   return skills.split(",");
 }
 
-function DescriptionList({ description }: { description: string }) {
+function DescriptionList({
+  description,
+  listItem = true,
+}: {
+  description: string;
+  listItem?: boolean;
+}) {
   const parsedDescription = description.split("\n");
 
+  if (listItem) {
+    return (
+      <ul>
+        {parsedDescription.map((desc, index) => (
+          <li key={index}>{desc}</li>
+        ))}
+      </ul>
+    );
+  }
+
   return (
-    <ul>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {parsedDescription.map((desc, index) => (
-        <li key={index}>{desc}</li>
+        <span key={index}>{desc}</span>
       ))}
-    </ul>
+    </div>
   );
 }
+
+const ContactPhone = ({ phoneNumber }: { phoneNumber: string | null }) => {
+  const isWhatsapp = phoneNumber?.endsWith("w");
+
+  if (!isWhatsapp) return <span>{phoneNumber}</span>;
+
+  const number = phoneNumber?.substring(0, phoneNumber?.length - 1);
+
+  return (
+    <div className="prev-phone">
+      <img src="/assets/prev-whatsapp.png" alt="WhatsApp" />
+      <span>{number}</span>
+    </div>
+  );
+};
 
 export function Preview() {
   const update = useAppStore((s) => s.fieldsData);
@@ -59,14 +90,19 @@ export function Preview() {
               <div className="prev-profile">
                 <div className="prev-name">
                   <h1>{update["name"]}</h1>
-                  <span>{update["p-description"]}</span>
+                  {update["p-description"] && (
+                    <DescriptionList
+                      description={update["p-description"]}
+                      listItem={false}
+                    />
+                  )}
                 </div>
                 <div className="prev-contact">
-                  <span>{update["phone-number"]}</span>
+                  <ContactPhone phoneNumber={update["phone-number"]} />
                   <span>{update.email}</span>
                   <span>{update.social}</span>
-                  <span>{update.address}</span>
                   <span>{update.portfolio}</span>
+                  <span>{update.address}</span>
                 </div>
               </div>
             </div>
