@@ -4,7 +4,7 @@ CV APP is a mobile-friendly React project designed for creating resumes. It feat
 
 ## Preview
 
-Live: https://cv-application-steel-eight.vercel.app/
+Live: https://maurolps.dev/cv-application
 ![App Preview](./public/assets/cv-preview.png)
 
 ## 🛠️ Technologies & Tools
